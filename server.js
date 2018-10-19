@@ -29,7 +29,12 @@ app.use('/api/solitaire-engagement-rings', solitaireEngagementRings);
 app.use('/api/three-stone-engagement-rings', threeStoneEngagementRings);
 app.use('/api/vintage-engagement-rings', vintageEngagementRings);
 
-
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
+}
 //app.get('/', (req, res) => res.json({hello:'world'}));
 
 app.use(handle.notFound);
@@ -51,12 +56,12 @@ app.use(handle.errorHandler);
     //"build": "cd client && npm build",
     //"heroku-postbuild": "cd client && npm install && npm install --only=dev && npm run build"
 
-  if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('client/build'));
-    app.get('*', (req, res) => {
-      res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-    });
-  }
+  // if (process.env.NODE_ENV === 'production') {
+  //   app.use(express.static('client/build'));
+  //   app.get('*', (req, res) => {
+  //     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  //   });
+  // }
   
   // else {
   //   app.use(express.static(path.join(__dirname, '/client/public')));
