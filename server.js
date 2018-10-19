@@ -30,7 +30,7 @@ app.use('/api/three-stone-engagement-rings', threeStoneEngagementRings);
 app.use('/api/vintage-engagement-rings', vintageEngagementRings);
 
 
-app.get('/', (req, res) => res.json({hello:'world'}));
+//app.get('/', (req, res) => res.json({hello:'world'}));
 
 app.use(handle.notFound);
 app.use(handle.errorHandler);
@@ -58,12 +58,12 @@ app.use(handle.errorHandler);
     });
   }
   
-  else {
-    app.use(express.static(path.join(__dirname, '/client/public')));
-    app.get('*', function(req, res) {
-      res.sendFile(path.join(__dirname, "./client/public/index.html"));
-    });
-  }
+  // else {
+  //   app.use(express.static(path.join(__dirname, '/client/public')));
+  //   app.get('*', function(req, res) {
+  //     res.sendFile(path.join(__dirname, "./client/public/index.html"));
+  //   });
+  // }
 
 const port = process.env.PORT || 3000;
 
