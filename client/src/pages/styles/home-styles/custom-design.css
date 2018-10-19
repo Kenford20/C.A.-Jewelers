@@ -1,0 +1,53 @@
+#custom-design-image{
+	background:linear-gradient(rgba(255, 255, 255, 0.0), rgba(255, 255, 255, 0.0)),
+	url(../../images/BridalSetPrincesscut.jpg) no-repeat;
+	background-size:cover;
+  background-position:center;
+}
+
+/* Zooming animation was taken from Berk on codepen */
+/* The outermost element*/
+.wrapper {
+  overflow: hidden;
+}
+
+.zoom-in {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-animation: zoomin 15s ease-in infinite;
+  animation: zoomin 15s ease-in infinite;
+  transition: all .5s ease-in-out;
+}
+
+/* The innermost element*/
+.zoom-out {
+  -webkit-animation: zoomout 15s ease-in infinite;
+  animation: zoomout 15s ease-in infinite;
+  transition: all .5s ease-in-out;
+}
+
+/* Zoom in Keyframes */
+@-webkit-keyframes zoomin {
+  0% {transform: scale(1);}
+  50% {transform: scale(1.5);}
+  100% {transform: scale(1);}
+}
+@keyframes zoomin {
+  0% {transform: scale(1);}
+  50% {transform: scale(1.5);}
+  100% {transform: scale(1);}
+} /*End of Zoom in Keyframes */
+
+/* Zoom out Keyframes */
+@-webkit-keyframes zoomout {
+  0% {transform: scale(1);}
+  50% {transform: scale(0.67);}
+  100% {transform: scale(1);}
+}
+@keyframes zoomout {
+    0% {transform: scale(1);}
+  50% {transform: scale(0.67);}
+  100% {transform: scale(1);}
+}/*End of Zoom out Keyframes */
+

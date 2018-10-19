@@ -1,0 +1,44 @@
+#catalog-top{
+    color:#464646;
+    font-family:"Slabo 27px";
+    margin-top:10px;
+}
+
+.catalog-route{
+    padding:15px;
+    font-size:12px;
+}
+.bg-lightgrey{
+    background:rgb(243, 241, 241);
+}
+.catalog-route-border{
+    border-top:2px solid var(--yellow);
+}
+.catalog-route-active{
+    color:var(--yellow);
+}
+#catalog-top a{
+    color:#464646;
+}
+#catalog-top a:hover{
+    color:var(--yellow);
+}
+
+#sort-select{
+    font-size:14px;
+    width:125px;
+    margin-bottom:10px;
+}
+
+.col-lg-5{
+    padding-right:5px;
+}
+
+@media only screen and (min-width:995px) and (max-width:4000px){
+    #sort{
+        display:block;
+    }
+    #num-items-mobile{
+        display:none;
+    }
+}

@@ -1,0 +1,29 @@
+#catalog-product .card{
+    margin:5px;
+    border:0;
+    font-family:"Slabo 27px", Tahoma, sans-serif;
+    max-height:375px;
+}
+.card >div >h2{
+    font-size:1rem;
+}
+.td-none{
+    color:rgb(59, 59, 59);
+    box-sizing:border-box;
+    min-height:400px;
+    font-size:0.9rem;
+}
+.td-none:hover{
+    text-decoration:none;
+    color:rgb(165, 152, 152);
+    border:1px solid rgb(172, 164, 164);
+}
+.yellow{
+    color:var(--yellow);
+    font-size:1rem;
+}
+
+#catalog-product .card-img-top{
+    min-height:225px;
+    border-radius:0;
+}

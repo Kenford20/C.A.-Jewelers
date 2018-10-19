@@ -1,0 +1,36 @@
+#jewelry-header{
+    width:100%;
+}
+
+#jewelry-header-image{
+    background:linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.35)),
+    url(../../images/jewelry/header.jpeg) no-repeat;
+    margin:0;
+    padding:0;
+    background-size: cover;
+    height: 400px;
+    background-position: center;
+}
+
+#jewelry-header-image h2, #jewelry-header-image h3{
+	font-family:"Tangerine", Tahoma, Helvetica, Arial, serif;
+	font-size:3rem;
+    color:white;
+    text-shadow: 3px 3px 3px rgb(248, 55, 55);
+}
+
+#jewelry-header-text > h3{
+    font-size:2rem;
+}
+
+.jewelry-btn{
+	font-family:'Gotham SSm',sans-serif;
+    letter-spacing: .09em;
+	font-size:12px;
+	padding:10px 15px 10px 15px;
+	background:white;
+    color:rgb(248, 55, 55);
+    border:0;
+	border-radius:3px;
+    margin:10px 0px 5px 0px;
+}

@@ -1,0 +1,17 @@
+#header-image{
+	background:linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.45)),
+	url(../../images/header.jpg) no-repeat;
+	background-size: cover;
+	min-height:450px;
+    height: auto;
+	background-position: center;
+	width:100%;
+}
+
+#header-image-container{
+	width:100%;
+}
+
+@media only screen and (min-width:765px) and (max-width:4000px){
+
+}

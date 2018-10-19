@@ -1,0 +1,63 @@
+#engagement-header, #solitaires, #halo, #three-stone, #vintage{
+    font-family:"Tangerine", Helvetica, Arial, serif;
+    margin:auto;
+}
+
+#engagement-header-image{
+    background:linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.45)),
+	url(../../images/engagement-rings/engagement-header.jpeg) no-repeat;
+	background-size: cover;
+    height: 400px;
+    background-position: center;
+    text-align:center;
+}
+#engagement-header-text{
+    padding-top:25px;
+    margin:auto;
+    width:50%;
+}
+
+.engagement-body-image{
+    margin-top:20px !important;
+    width:92%;
+}
+
+.image-header{
+    padding-top:20px;
+    font-size:3.5rem;
+    color:white;
+    text-shadow: 4px 4px 4px #aaa;
+}
+
+.image-text{
+    font-size:2.2rem;
+    color:white;
+    text-shadow: 4px 4px 4px black;
+}
+
+.image-caption-header{
+    padding-top:20px;
+    font-size:2.1rem;
+    color:black;
+    width:80%;
+    margin:auto;
+    line-height:32px;
+    word-spacing:0.09em;
+}
+
+.image-caption-header p{
+    margin-bottom:2px;
+}
+
+.image-caption-link{
+    padding-bottom:0;
+    text-decoration:underline;
+    font-size:0.8rem;
+    font-family: 'Gotham SSm',sans-serif;
+    color:rgb(53, 53, 53);
+    word-spacing:0;
+}
+
+.image-caption-link:hover{
+    color:var(--yellow) !important;
+}

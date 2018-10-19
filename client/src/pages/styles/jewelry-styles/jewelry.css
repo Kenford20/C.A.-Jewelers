@@ -1,0 +1,25 @@
+.jewelry-caption-header{
+	margin-bottom:2px;
+	margin-top:15px;
+	font-family:"Slabo 27px";
+	letter-spacing: .05em;
+	font-size:1.7rem;
+	text-shadow: 3px 3px 3px white;
+	color:black;
+}
+
+.jewelry-caption-text{
+	margin-bottom:2px;
+	font-family:"Parisienne";
+	letter-spacing: .05em;
+	font-size:1.2rem;
+	text-decoration:underline;
+	text-shadow: 3px 3px 3px white;
+	color:black;
+}
+
+.jewelry-containers{
+	text-align:center;
+	margin:auto;
+	width:90%;
+}
