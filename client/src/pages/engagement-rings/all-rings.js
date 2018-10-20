@@ -24,7 +24,7 @@ class AllRings extends Component {
     };
 
     componentDidMount(){
-        let apiEndpoint = 'http://localhost:4000/api/all-rings';
+        let apiEndpoint = '/api/all-rings';
         axios.get(apiEndpoint).then(res=> {
             console.log(res);
             this.setState({products: res.data});
