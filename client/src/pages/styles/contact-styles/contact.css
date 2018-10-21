@@ -2,10 +2,7 @@ body{
     font-family: "Tahoma";
     font-size:0.85rem;
     letter-spacing: .09em;
-}
-
-#contact h3, #contact h4,#contact h5{
-    font-family:"nunito" ,Verdana,Arial,sans-serif;
+    font-family: "Slabo 27px", Tahoma, sans-serif;
 }
 
 .icon-grey{

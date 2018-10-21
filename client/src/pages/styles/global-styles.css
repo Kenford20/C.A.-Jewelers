@@ -71,3 +71,7 @@ body{
 	margin-top:0;
 	border-radius:0 !important;
 }
+
+#about-page, #education-page{
+	font-family: "Slabo 27px", Tahoma, sans-serif;
+}

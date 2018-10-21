@@ -20,10 +20,10 @@ const HeaderNavbar = ({onToggle}) => {
                             <div class="collapse navbar-collapse" id="engagement-rings">
                                 <ul class="navbar-nav">
                                     <li class="nav-item dropdown-item-bg"><a class="nav-link navbar-collapse-dropdown-item" href="./engagement-rings">Browse Engagement Rings</a></li>
-                                    <li class="nav-item dropdown-item-bg"><a class="nav-link navbar-collapse-dropdown-item" href="./catalog">Solitaire</a></li>
-                                    <li class="nav-item dropdown-item-bg"><a class="nav-link navbar-collapse-dropdown-item" href="./catalog">Halo</a></li>
-                                    <li class="nav-item dropdown-item-bg"><a class="nav-link navbar-collapse-dropdown-item" href="./catalog">Three Stone</a></li>
-                                    <li class="nav-item dropdown-item-bg"><a class="nav-link navbar-collapse-dropdown-item" href="./catalog">Vintage</a></li>
+                                    <li class="nav-item dropdown-item-bg"><a class="nav-link navbar-collapse-dropdown-item" href="./engagement-rings/solitaire-rings">Solitaire</a></li>
+                                    <li class="nav-item dropdown-item-bg"><a class="nav-link navbar-collapse-dropdown-item" href="./engagement-rings/halo-rings">Halo</a></li>
+                                    <li class="nav-item dropdown-item-bg"><a class="nav-link navbar-collapse-dropdown-item" href="./engagement-rings/three-stone-rings">Three Stone</a></li>
+                                    <li class="nav-item dropdown-item-bg"><a class="nav-link navbar-collapse-dropdown-item" href="./engagement-rings/vintage-rings">Vintage</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -31,8 +31,8 @@ const HeaderNavbar = ({onToggle}) => {
                             <div class="collapse navbar-collapse" id="wedding-bands">
                                 <ul class="navbar-nav">
                                 <li class="nav-item dropdown-item-bg"><a class="nav-link navbar-collapse-dropdown-item" href="./wedding-bands">Browse Wedding Bands</a></li>
-                                    <li class="nav-item dropdown-item-bg" ><a class="nav-link navbar-collapse-dropdown-item" href="./catalog">Mens</a></li>
-                                    <li class="nav-item dropdown-item-bg" ><a class="nav-link navbar-collapse-dropdown-item" href="./catalog">Ladies</a></li>
+                                    <li class="nav-item dropdown-item-bg" ><a class="nav-link navbar-collapse-dropdown-item" href="./wedding/mens-wedding-rings">Mens</a></li>
+                                    <li class="nav-item dropdown-item-bg" ><a class="nav-link navbar-collapse-dropdown-item" href="./wedding/womens-wedding-rings">Womens</a></li>
                                 </ul>
                             </div>
                         </li>
