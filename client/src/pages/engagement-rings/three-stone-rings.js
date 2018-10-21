@@ -17,7 +17,8 @@ class ThreeStoneEngagementRings extends Component {
     };
 
     componentDidMount(){
-        let apiEndpoint = 'http://localhost:4000/api/three-stone-engagement-rings';
+        //let apiEndpoint = 'http://localhost:4000/api/three-stone-engagement-rings';
+        let apiEndpoint = window.location.origin+'/api/three-stone-engagement-rings';
         axios.get(apiEndpoint).then(res=> {
             console.log(res);
             this.setState({products: res.data});

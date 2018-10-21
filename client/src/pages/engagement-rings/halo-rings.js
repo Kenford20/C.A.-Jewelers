@@ -17,7 +17,9 @@ class HaloEngagementRings extends Component {
     };
 
     componentDidMount(){
-        let apiEndpoint = 'http://localhost:4000/api/halo-engagement-rings';
+        //let apiEndpoint = 'http://localhost:4000/api/halo-engagement-rings';
+        let apiEndpoint = window.location.origin+'/api/halo-engagement-rings';
+
         axios.get(apiEndpoint).then(res=> {
             console.log(res);
             this.setState({products: res.data});

@@ -16,7 +16,9 @@ class Earrings extends Component {
     };
 
     componentDidMount(){
-        let apiEndpoint = 'http://localhost:4000/api/vintage-engagement-rings';
+        //let apiEndpoint = 'http://localhost:4000/api/vintage-engagement-rings';
+        let apiEndpoint = window.location.origin+'/api/earrings';
+
         axios.get(apiEndpoint).then(res=> {
             console.log(res);
             this.setState({products: res.data});
