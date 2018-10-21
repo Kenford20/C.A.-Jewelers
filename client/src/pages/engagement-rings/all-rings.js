@@ -23,32 +23,16 @@ class AllRings extends Component {
         numProducts: 0,
     };
 
-    // componentDidMount(){
-    //     //let apiEndpoint = 'http://localhost:4000/api/all-rings';
-    //     let apiEndpoint = window.location.origin+'/api/all-rings';
+    componentDidMount(){
+        //let apiEndpoint = 'http://localhost:4000/api/all-rings';
+        let apiEndpoint = window.location.origin+'/api/all-rings';
 
-    //     axios.get(apiEndpoint).then(res=> {
-    //         console.log(res);
-    //         this.setState({products: res.data});
-    //         this.setState({numProducts: this.state.products.length});
-    //     });
-    // }
-
-    componentDidMount() {
-        fetch('/api/all-rings')
-          .then(response => {
-            if (!response.ok) {
-              throw new Error(`status ${response.status}`);
-            }
-            return response.json();
-          })
-          .then(json => {
-            this.setState({
-              products: json,
-              fetching: false
-            });
-          })
-      }
+        axios.get(apiEndpoint).then(res=> {
+            console.log(res);
+            this.setState({products: res.data});
+            this.setState({numProducts: this.state.products.length});
+        });
+    }
 
     render() { 
         return ( 
