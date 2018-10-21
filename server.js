@@ -70,12 +70,7 @@ app.use(handle.errorHandler);
   //   });
   // }
 
-// const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 
-// app.listen(port, console.log(`Server started on port ${port}`));
+app.listen(port, console.log(`Server started on port ${port}`));
 
-// Initialize the app.
-var server = app.listen(process.env.PORT || 3000, function () {
-  var port = server.address().port;
-  console.log("App now running on port", port);
-});
