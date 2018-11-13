@@ -1,6 +1,6 @@
 #bracelets-image{
 	background:linear-gradient(rgba(255, 255, 255, 0.0), rgba(255, 255, 255, 0.0)),
-	url(../../images/jewelry/bracelet.jpg) no-repeat;
+	url(https://s3.amazonaws.com/media-cajewelers.com/bracelet.jpg) no-repeat;
 	background-size:cover;
 	background-position:center;
 	min-height:250px;

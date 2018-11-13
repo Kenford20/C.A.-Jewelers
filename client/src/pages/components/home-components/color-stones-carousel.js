@@ -8,13 +8,13 @@ const ColorStones = () => {
             
 	            <div class="carousel-inner">
 	                <div class="carousel-item">
-	                    <img class="d-block w-100" src={require("../../images/gemstone-carousel/AquamarineRing.jpg")} alt="Aquamarine Ring"></img>
+	                    <img class="d-block w-100" src={"https://s3.amazonaws.com/media-cajewelers.com/AquamarineRing.jpg"} alt="Aquamarine Ring"></img>
 	                </div>
 	                <div class="carousel-item active">
-	                    <img class="d-block w-100" src={require("../../images/gemstone-carousel/green2.jpg")} alt="Emerald Ring"></img>
+	                    <img class="d-block w-100" src={"https://s3.amazonaws.com/media-cajewelers.com/green2.jpg"} alt="Emerald Ring"></img>
 	                </div>
 	                <div class="carousel-item">
-	                    <img class="d-block w-100" src={require("../../images/gemstone-carousel/DiamondRubyBand.jpg")} alt="Ruby Ring"></img>
+	                    <img class="d-block w-100" src={"https://s3.amazonaws.com/media-cajewelers.com/DiamondRubyBand.jpg"} alt="Ruby Ring"></img>
 	                </div>
 	            </div>
                 <a class="carousel-control-prev" href="#abc" role="button" data-slide="prev">

@@ -21,7 +21,6 @@ app.use(cors());
 const db = require('./models');
 const handle = require('./handlers');
 
-
 // Use Routes
 app.use('/api/products', products);
 app.use('/api/all-rings', allRings);
@@ -30,6 +29,7 @@ app.use('/api/solitaire-engagement-rings', solitaireEngagementRings);
 app.use('/api/three-stone-engagement-rings', threeStoneEngagementRings);
 app.use('/api/vintage-engagement-rings', vintageEngagementRings);
 
+// Set static folder
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
   app.get('*', (req, res) => {
@@ -40,37 +40,6 @@ if (process.env.NODE_ENV === 'production') {
 
 app.use(handle.notFound);
 app.use(handle.errorHandler);
-
-
-// Set static folder
-//app.use(express.static('client/build'));
-//app.use(express.static(path.join(__dirname, './client/build')));
-//app.use('/static', express.static(path.join(__dirname, 'client/build')));
-
-// app.get('*', (req, res) => {
-//     res.sendFile(path.join(__dirname, './client/build/index.html'));
-// });
-
-// app.get('/*', function (req, res) {
-//     res.sendFile(path.join(__dirname, 'build', 'index.html'));
-//   });
-    //"build": "cd client && npm build",
-    //"heroku-postbuild": "cd client && npm install && npm install --only=dev && npm run build"
-
-  // if (process.env.NODE_ENV === 'production') {
-  //   app.use(express.static('client/build'));
-  //   app.get('*', (req, res) => {
-  //     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-  //   });
-  // }
-  
-  // else {
-  //   app.use(express.static(path.join(__dirname, '/client/public')));
-  //   app.get('*', function(req, res) {
-  //     res.sendFile(path.join(__dirname, "./client/public/index.html"));
-  //   });
-  // }
-
 
 app.listen(port, console.log(`Server started on port ${port}`));
 

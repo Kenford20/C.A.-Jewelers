@@ -8,7 +8,6 @@ import BodyOpener from './components/home-components/body-opener';
 import CustomDesign from './components/home-components/custom-design';
 import ColorStones from './components/home-components/color-stones-carousel';
 import ColorStonesDescription from './components/home-components/color-stones-description';
-import DiamondsJewelry from './components/home-components/diamonds-jewelry';
 import VisitUs from './components/home-components/visit-us';
 import Testimonials from './components/home-components/testimonials';
 import GlobalFooter from './components/global-footer';

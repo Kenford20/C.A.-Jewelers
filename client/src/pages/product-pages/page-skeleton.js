@@ -18,7 +18,7 @@ const ProductPageLayout = (props) => {
             <div class="row container m-auto">
                 <div class="col-lg-6">
                     <div class="product-image-container">
-                        <img class="product-image" src={require("../images/BeadSet.jpg")} alt="Card image cap"></img>
+                        <img class="product-image" src={"https://s3.amazonaws.com/media-cajewelers.com/BeadSet.jpg"} alt="Card image cap"></img>
                     </div>
                 </div>
 

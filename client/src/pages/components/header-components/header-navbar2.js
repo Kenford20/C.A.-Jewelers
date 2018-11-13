@@ -56,7 +56,7 @@ const HeaderNavbar2 = () => {
  
               <div class="col-md-6 text-center">
                 <a href="">
-                  <img src={require("../../images/BridalSetPrincess1.jpg")} alt="engagement-thumbnail" width="300px" height="200px" ></img>
+                  <img src={"https://s3.amazonaws.com/media-cajewelers.com/BridalSetPrincess1.jpg"} alt="engagement-thumbnail" width="300px" height="200px" ></img>
                 </a>              </div>
           </div>
  
@@ -160,7 +160,7 @@ const HeaderNavbar2 = () => {
  
               <div class="col-md-6 text-center">
                 <a href="">
-                  <img src={require("../../images/Settings.jpg")} alt="engagement-thumbnail" width="300px" height="200px" ></img>
+                  <img src={"https://s3.amazonaws.com/media-cajewelers.com/Settings.jpg"} alt="engagement-thumbnail" width="300px" height="200px" ></img>
                 </a>              </div>
           </div>
  
