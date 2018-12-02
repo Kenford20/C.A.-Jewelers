@@ -28,7 +28,7 @@ const Product = (props) => {
     return ( 
         <a href={props.link} class="col-sm-6 col-md-4 col-lg-4 td-none" id="catalog-product">
             <div class="card">
-                <img class="card-img-top" src={"https://s3.amazonaws.com/media-cajewelers.com/BeadSet.jpg"} alt="Card image cap"></img>
+                <img class="card-img-top" src={"https://s3.amazonaws.com/media-cajewelers.com/BeadSet-resized.jpg"} alt="Card image cap"></img>
                 <div class="card-body text-center">
                     <h2 class="card-title">{props.title}</h2>
                     <p class="card-text">{props.description}</p>

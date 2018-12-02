@@ -22,13 +22,13 @@ const PopularProducts = () => {
                     </div>
                     <div class="col-sm-6 col-md-3 col-l-3 p-1">
                         <div class="text-center">
-                        <a href="#"><img id="product"  src={"https://s3.amazonaws.com/media-cajewelers.com/Necklace1.jpg"} alt="Classic Ring"></img></a>
+                        <a href="#"><img id="product"  src={"https://s3.amazonaws.com/media-cajewelers.com/SapphireRing-resized.jpg"} alt="Classic Ring"></img></a>
                         <div class="mt-10"><a href="#"> SHOP DIAMOND NECKLACES </a></div>
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-3 col-l-3 p-1">
                         <div class="text-center">
-                        <a href="#"><img src={"https://s3.amazonaws.com/media-cajewelers.com/RubyTourmalineRings.jpg"} alt="Ruby + Tourmaline Ring"></img></a>
+                        <a href="#"><img src={"https://s3.amazonaws.com/media-cajewelers.com/SapphireRing-resized.jpg"} alt="Ruby Tourmaline Ring"></img></a>
                         <div class="mt-10"><a href="#"> SHOP GEMSTONE RINGS </a></div>
                         </div>
                     </div>

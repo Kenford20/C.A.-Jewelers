@@ -23,7 +23,12 @@ class ProductsList extends Component {
             <div>
                 <div className="container">
                     {this.props.products.map(product => 
-                        <Product key={product._id} path={product.imagePath} title={product.title} description={product.description} price={product.price} link={product.link}/>
+                        <Product 
+                            key={product._id} 
+                            path={product.imagePath} title={product.title} 
+                            description={product.description} price={product.price} 
+                            link={product.link}
+                        />
                     )}
                 </div>
             </div>
