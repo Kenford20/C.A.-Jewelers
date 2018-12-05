@@ -4,11 +4,15 @@ import '../../styles/home-styles/custom-design.css';
 const CustomDesign = () => {
     return ( 
         <div id="custom-design">
-            <div className="wrapper">
+            {/* <div className="wrapper">
                 <div className="body-images zoom-in" id="custom-design-image">
                     <div className="zoom-out"></div>
                 </div>
-            </div>
+            </div> */}
+            <video width="100%" height="500px" muted={true} autoPlay={true} loop={true} playsInline={true} preload="none" poster="https://s3.amazonaws.com/media-cajewelers.com/diamonds-poster.jpg" className="hidden-xs">
+                <source src="https://s3.amazonaws.com/media-cajewelers.com/rotating-diamonds.mp4" type="video/mp4"></source>
+            </video>
+
 
             <div className="container-fluid text-center" id="body-design">
                 <h3 className="body-subtitles"> CUSTOM DESIGN AND MANUFACTURING </h3>

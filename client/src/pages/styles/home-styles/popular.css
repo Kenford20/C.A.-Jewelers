@@ -28,7 +28,6 @@
 }
 
 #popular-images > div > div > div > div > a{
-    font-family: "Slabo 27px";
     text-decoration:underline;
     color:black;
 }
@@ -40,10 +39,4 @@
 .mt-10{
     margin-top:15px;
     margin-bottom:10px;
-}
-
-@media (min-width: 992px){
-    /* .col-md-3 {
-        width: 25%;
-    } */
 }

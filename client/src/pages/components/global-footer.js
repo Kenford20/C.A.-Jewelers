@@ -1,14 +1,15 @@
 import React from 'react';
-import Subscribe from './footer-components/subscribe';
 import Connect from './footer-components/connect';
 // import FooterInfo from './footer-components/footer-info';
 import MobileFooter from './footer-components/mobile-footer';
+import Email from './footer-components/email';
 import '../styles/footer.css';
 
 
 const GlobalFooter = () => {
     return (
         <div id="global-footer" className="footer-bg">
+            <Email />
             <MobileFooter/>
             <div className="container" id="footer-info">
                 <div className="row" id="footer-info">
@@ -40,7 +41,6 @@ const GlobalFooter = () => {
                         </div>
                         <div className="col-lg-4">
                             <Connect/>
-                            <Subscribe/>
                         </div>
                 </div>
 

@@ -33,16 +33,6 @@
     max-width: 100%;
 }
 
-#popular-images > div > div > div > div > a{
-    font-family: "Slabo 27px";
-    text-decoration:underline;
-    color:black;
-}
-
-#popular-images > div > div > div > div > a:hover{
-    color:var(--yellow);
-}
-
 .mt-10{
     margin-top:15px;
     margin-bottom:10px;

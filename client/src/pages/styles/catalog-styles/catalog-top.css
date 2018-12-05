@@ -1,6 +1,6 @@
 #catalog-top{
     color:#464646;
-    font-family:"Slabo 27px";
+    font-family:Montserrat, Tahoma, serif;
     margin-top:10px;
 }
 
@@ -34,7 +34,7 @@
     padding-right:5px;
 }
 
-@media only screen and (min-width:995px) and (max-width:4000px){
+@media only screen and (min-width:995px){
     #sort{
         display:block;
     }
@@ -42,3 +42,4 @@
         display:none;
     }
 }
+

@@ -1,9 +1,11 @@
 body{	
 	--yellow: #b59734;
+	font-family:Montserrat, Tahoma, serif;
+	letter-spacing:0;
 }
 
 .header-subtitle{
-	font-family:"Tangerine", Tahoma, Helvetica, Arial, serif;
+	font-family:"Tangerine", Montserrat, serif;
 	font-size:4rem;
     color:white;
     text-shadow: 3px 3px 3px var(--yellow);
@@ -41,7 +43,8 @@ body{
 .body-subtitles{
 	color:rgb(65, 65, 65);
 	margin: 50px 0px 20px 0px;
-	font-family:'Slabo 27px';	
+	font-family:Montserrat, Tahoma, serif;	
+	letter-spacing:0;
 }
 
 .container{
@@ -73,5 +76,5 @@ body{
 }
 
 #about-page, #education-page{
-	font-family: "Slabo 27px", Tahoma, sans-serif;
+	font-family: "Montserrat, Tahoma, serif", Montserrat, sans-serif;
 }

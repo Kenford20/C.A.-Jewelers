@@ -1,39 +1,59 @@
 /* Footer Styles
 ---------------------*/
-
-@media only screen and (min-width:765px){
-	.footer-bg{
-		border-top:1px solid rgb(212, 212, 212);
-	}
+#email-wrapper{
+	background-color:var(--yellow);
+	height:160px;
+	width:100%;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+#email{
+	height:100%;
+	width:680px;
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+}
+#email-disclaimer{
+	font-size:10px;
+	color:white;
+	font-family:Montserrat;
+	margin-top:10px;
+}
+#email-title{
+	display:inline-block;
+	color:white;
+	font-size:18px;
+	margin-right:20px;
+	font-family:Montserrat;
+}
+#email input{
+	margin-top:20px;
+	width:250px;
+	height:40px;
+	display:inline-block;
+	border:0;
+}
+#email-btn{
+	display:inline-block;
+	margin-left:10px;
+	color:white;
+	background:var(--yellow);
+	border:1px solid white;
+	font-size:12px;
+	height:41px;
+	width:85px;
+}
+#email-btn:hover{
+	background:lightgrey;
+	color:rgb(40,40,40);
 }
 
 /*Subscribe*/
 #subscribe{
-	margin-top:30px;
-}
-
-#subscribe h5{
-	padding-bottom:5px;
-}
-
-#subscribe input{
-	width:60%;
-	height:35px;
-	display:inline-block;
-}
-
-#email-btn{
-	margin-left:6px;
-	color:white;
-	background:var(--yellow);
-	border:0;
-	padding:4px 12px;
-	font-size:12px;
-}
-
-#email-btn:hover{
-	background:lightgrey;
-	color:var(--yellow);
+	
 }
 
 #global-footer input{
@@ -51,9 +71,8 @@
 
 #connect h5{
 	color:black;
-	font-family:"Slabo 27px";
+	font-family:"Montserrat, Tahoma, serif";
 }
-
 .social{
 	padding:0;
 }
@@ -61,23 +80,18 @@
 	font-size: 1.75em;
 	padding:0.7rem;
 }
-
 .fa-facebook{
 	color: #3b5998;
 }
-
 .fa-twitter{
 	color:#00aced;
 }
-
 .fa-twitch{
 	color:#6441a5;
 }
-
 .fa-instagram{
 	color:#517fa4;
 }
-
 .fa-youtube {
 	color:#bb0000;
 }
@@ -93,10 +107,8 @@
 /* Footer Info*/
 #footer-info{
     padding-top:1px;
-    /* background-color:#e5e6e8; */
     padding-bottom:8px;
 }
-
 #footer-info{
 	margin-top:10px;
 	padding-top:20px;
@@ -111,14 +123,13 @@
 #footer{
 	margin: 10px 0px;
 }
-
 #footer h6{
 	font-size:0.7rem;
 }
 
 .footer-links{
 	color:rgb(51, 51, 51);
-	font-family:"Slabo 27px", Tahoma, sans-serif;
+	font-family:"Montserrat, Tahoma, serif", Tahoma, sans-serif;
 }
 .footer-links:hover{
 	color:var(--yellow);
@@ -130,9 +141,9 @@
 	}
 
 	#mobile-footer{
+		margin-top:50px;
 		margin-bottom:30px;
 	}
-
 	#mobile-footer .list-group-item-success{
 		font-size:1rem;
 	}
@@ -142,10 +153,33 @@
 		color:rgb(110, 110, 110);
 		font-size:0.8rem;
 	}
+
+	#email-wrapper{
+		height:300px;
+	}
+	#email{
+		width:75%;
+	}
+	#email-btn{
+		width:100%;
+		margin: 10px 0;
+		font-size:16px;
+	} 
+	#email input{
+		width:100%;
+		margin: 10px 0;
+		font-size:15px;
+	}
+	#email-btn, #email input, #email-title{
+		display:block;
+	}
 }
 
 @media only screen and (min-width:765px){
 	#mobile-footer{
 		display:none;
+	}
+	.footer-bg{
+		border-top:1px solid rgb(212, 212, 212);
 	}
 }

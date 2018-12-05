@@ -3,7 +3,8 @@ import React from 'react';
 const Map = () => {
     const mapStyle = {
         width: '100%',
-        height: '500px'
+        height: '500px',
+        marginBottom: '50px'
       };
 
     return ( 

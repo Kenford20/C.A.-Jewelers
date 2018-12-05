@@ -3,7 +3,7 @@ import React from 'react';
 const NumItemsMobile = (props) => {
 
     const fontStyle = {
-        fontFamily: 'Slabo 27px',
+        fontFamily: 'Montserrat, Tahoma, serif',
         fontSize: '14px'
     };
 

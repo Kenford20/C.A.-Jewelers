@@ -1,7 +1,7 @@
 #catalog-product .card{
     margin:5px;
     border:0;
-    font-family:"Slabo 27px", Tahoma, sans-serif;
+    font-family:"Montserrat, Tahoma, serif", Tahoma, sans-serif;
     max-height:375px;
 }
 .card >div >h2{

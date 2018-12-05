@@ -11,7 +11,7 @@
     box-sizing:border-box;
     background:white;
     color:rgb(110, 110, 110);
-    font-family: "Slabo 27px";
+    font-family: "Montserrat, Tahoma, serif";
     font-size:1.3rem;
 }
 .list-group-item:hover{

@@ -126,10 +126,9 @@
     border-left: solid 1px #ccc;
 }
 
-@media only screen and (min-width:765px) and (max-width:4000px){
+@media only screen and (min-width:765px){
     #global-header{
         border-bottom:1px solid rgb(212, 212, 212) !important;
-
     }
 
 	#header-nav{
@@ -138,8 +137,6 @@
 
 	#header-nav2{
         display:block;
-        /* width:100%; */
-        /* max-width:800px; */
         margin:0 auto;
     }
 
@@ -175,16 +172,15 @@
         padding-top:15px;
     }
 
-
     .navbar-dark .navbar-nav .nav-link {
-        color: rgba(5, 4, 4, 0.5);
+        font-size:12px;
+        color: rgb(50,50,50);
         border:0;
     }
     /* remove the padding from the navbar so the dropdown hover state is not broken */
     .navbar {
     padding-top:0px;
     padding-bottom:0px;
-    /* border-bottom:1px solid rgb(212, 212, 212) !important; */
     height:60px;
     }
 
@@ -223,15 +219,13 @@
     border-top:0;
     }
     
-    
-    
-    
     /* shows the dropdown menu on hover */
     .navbar .dropdown:hover .dropdown-menu, .navbar .dropdown .dropdown-menu:hover {
     display:block;
     visibility: visible;
     opacity: 1;
     transition: visibility 0s, opacity 0.3s linear;
+    height:250px;
     }
     
     .navbar .dropdown-menu {
@@ -268,7 +262,7 @@
     /* } */
 }
 
-@media only screen and (min-width:992px) and (max-width:4000px){
+@media only screen and (min-width:992px){
     .w-60{
         width:80%;
     }
@@ -279,7 +273,7 @@
     }
 }
 
-@media only screen and (min-width:1200px) and (max-width:4000px){
+@media only screen and (min-width:1200px){
     .nav-link-spacing{
         margin:0 25px;
     }
