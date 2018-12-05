@@ -28,12 +28,12 @@ class Home extends Component {
                 <HeaderImage/>
                 <BodyOpener/>
                 <CustomDesign/>
-                {/* <div class="row"> */}
-                    {/* <div class="col-lg-6"> */}
+                {/* <div className="row"> */}
+                    {/* <div className="col-lg-6"> */}
                         <WeddingHeader/>
                         <ColorStonesDescription/>
                     {/* </div>
-                    <div class="col-lg-6"> */}
+                    <div className="col-lg-6"> */}
                         <ColorStones/>
                     {/* </dsiv>   */}
                 {/* </div> */}

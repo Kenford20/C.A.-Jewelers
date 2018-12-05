@@ -5,7 +5,7 @@ import ContactForm from './contact-form';
 const ContactInfo = () => {
     return ( 
         <div id="contact">
-            <div class="container-fluid text-center">
+            <div className="container-fluid text-center">
                 <br></br>
                 <h3>CONTACT US</h3>
                 <br></br>
@@ -13,20 +13,20 @@ const ContactInfo = () => {
                 <br></br>
             </div>
             
-            <div class="container-fluid text-center" id="contact-info">
+            <div className="container-fluid text-center" id="contact-info">
                 <p><strong>Contact: </strong>Susie Lam & Tommy Lam</p>
-                <p><i class="fas fa-phone icon-grey"></i> (312) 419-8829</p>
-                <p><i class="fas fa-phone icon-grey"></i> (312) 332-3883</p>
-                <p><i class="fas fa-fax icon-grey"></i> (312) 419-8281</p>
-                <i class="fas fa-envelope icon-grey"></i><a> info@cajewelers.com</a>
+                <p><i className="fas fa-phone icon-grey"></i> (312) 419-8829</p>
+                <p><i className="fas fa-phone icon-grey"></i> (312) 332-3883</p>
+                <p><i className="fas fa-fax icon-grey"></i> (312) 419-8281</p>
+                <i className="fas fa-envelope icon-grey"></i><a> info@cajewelers.com</a>
                 <br></br>
-                <input id="appointment-btn" type="submit" class="btn submit-form-btn" value="SCHEDULE AN APPOINTMENT"></input>
+                <input id="appointment-btn" type="submit" className="btn submit-form-btn" value="SCHEDULE AN APPOINTMENT"></input>
             </div>
             <br></br>
-            <h5 class="text-center"><strong>EMAIL US</strong></h5>
+            <h5 className="text-center"><strong>EMAIL US</strong></h5>
             <br></br>
             <ContactForm/>
-            <div class="container-fluid text-center">
+            <div className="container-fluid text-center">
                 <h5><strong>Store Hours </strong></h5>
                 <p>Monday - Friday: 10:30am - 6:00pm <br></br>
                     Saturday: 10:30am - 5:00pm <br></br>

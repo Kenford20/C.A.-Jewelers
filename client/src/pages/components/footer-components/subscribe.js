@@ -4,9 +4,9 @@ const Subscribe = () => {
     return ( 
         <div>
             <div>
-                <div class="text-center" id="subscribe">
+                <div className="text-center" id="subscribe">
                     <h6> Join newsletter to get free stuff! </h6>
-                    <input type="email" class="form-control" placeholder="Enter email"></input>
+                    <input type="email" className="form-control" placeholder="Enter email"></input>
                     <button type="submit" id="email-btn"> Subscribe </button>
                 </div>  
             </div>

@@ -15,22 +15,22 @@ const Jewelry = () => {
         <div id="jewelry-page">
             <GlobalHeader/>
             <JewelryHeader/>
-            <div class="container">  
-                <div class="row">
-                    <div class="col-md-5">
+            <div className="container">  
+                <div className="row">
+                    <div className="col-md-5">
                         <Earrings/>
                     </div>
-                    <div class="col-md-7">
-                        <Rings/>
+                    <div className="col-md-7">
+                        <Bracelets/>
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-md-7">
+                <div className="row">
+                    <div className="col-md-7">
                         <Necklaces/>
                     </div>
-                    <div class="col-md-5">
-                        <Bracelets/>
+                    <div className="col-md-5">
+                        <Rings/>
                     </div>
                 </div>
             </div>

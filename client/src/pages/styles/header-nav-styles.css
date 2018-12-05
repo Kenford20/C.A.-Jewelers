@@ -62,7 +62,7 @@
 
 
 
-/* custom classes for dropdown menu items*/
+/* custom classNamees for dropdown menu items*/
 .dropdown-toggler{
     font-size:1rem !important;
     border-bottom:1px solid lightgrey !important;
@@ -153,7 +153,7 @@
     }
 
     /* adds some margin below the link sets  */
-    .navbar .dropdown-menu div[class*="col"] {
+    .navbar .dropdown-menu div[className*="col"] {
         margin-bottom:1rem;
     }    
 

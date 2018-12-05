@@ -5,12 +5,12 @@ const Necklaces = () => {
     return ( 
         <div id="necklaces">
             <a href="/jewelry/necklaces" id="shop-necklaces">
-		        <div class="body-image text-center" id="necklaces-image"></div>
+		        <div className="body-image text-center" id="necklaces-image"></div>
 	        </a>
-			<div class="text-center jewelry-containers">
-				<h4 class="jewelry-caption-header"> C.A. NECKLACES </h4>
-				<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut pharetra ipsum. Quisque mattis nulla et ullamcorper aliquet. Aenean fringilla.</p>
-				<a href="/jewelry/necklaces"><h5 class="jewelry-caption-text"> Shop for Necklaces > </h5></a>
+			<div className="text-center jewelry-containers">
+				<h4 className="jewelry-caption-header"> C.A. NECKLACES </h4>
+				<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut pharetra ipsum. Quisque mattis nulla et ullamcorper aliquet. Aenean fringilla. Aenean fringilla. Aenean fringilla.</p>
+				<a href="/jewelry/necklaces"><h5 className="jewelry-caption-text"> Shop for Necklaces > </h5></a>
 			</div>
 		</div>
      );

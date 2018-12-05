@@ -1,6 +1,6 @@
 #custom-design-image{
 	background:linear-gradient(rgba(255, 255, 255, 0.0), rgba(255, 255, 255, 0.0)),
-	url(https://s3.amazonaws.com/media-cajewelers.com/SapphireRing-resized.jpg) no-repeat;
+	url(https://s3.amazonaws.com/media-cajewelers.com/BridalSetPrincessCut.jpg) no-repeat;
 	background-size:cover;
   background-position:center;
 }
@@ -30,24 +30,24 @@
 /* Zoom in Keyframes */
 @-webkit-keyframes zoomin {
   0% {transform: scale(1);}
-  50% {transform: scale(1.5);}
+  50% {transform: scale(1.7);}
   100% {transform: scale(1);}
 }
 @keyframes zoomin {
   0% {transform: scale(1);}
-  50% {transform: scale(1.5);}
+  50% {transform: scale(1.7);}
   100% {transform: scale(1);}
 } /*End of Zoom in Keyframes */
 
 /* Zoom out Keyframes */
 @-webkit-keyframes zoomout {
   0% {transform: scale(1);}
-  50% {transform: scale(0.67);}
+  50% {transform: scale(1.7);}
   100% {transform: scale(1);}
 }
 @keyframes zoomout {
     0% {transform: scale(1);}
-  50% {transform: scale(0.67);}
+  50% {transform: scale(1.7);}
   100% {transform: scale(1);}
 }/*End of Zoom out Keyframes */
 
