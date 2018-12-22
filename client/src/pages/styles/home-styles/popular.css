@@ -23,7 +23,7 @@
 #popular-images > div > div > div > div{
     padding: 5px 0px;
     text-align:center;
-    margin:auto;
+    margin: 10px auto;
     width:80%;
 }
 
@@ -35,6 +35,8 @@
 #popular-images > div > div > div > div > a:hover{
     color:var(--yellow);
 }
+
+
 
 .mt-10{
     margin-top:15px;

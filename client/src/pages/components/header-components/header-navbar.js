@@ -5,13 +5,13 @@ const HeaderNavbar = ({onToggle}) => {
         <div id="header-nav" className="hide-md">
             <nav className="navbar navbar-expand-md navbar-light sticky-top">
                 <div className="container-fluid">
-                    <div className="social">
-                    <a id="search-btn" href="" onClick={onToggle}><i className="fas fa-search"></i></a>
-                    </div>
-                    <a id="header-log" className="center" href="/"><img src={require("../../images/logo2.png")} alt="logo" height="55px" width="185px"></img></a>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
                         <span className="navbar-toggler-icon"></span>
                     </button>  
+                    <a id="header-log" className="center" href="/"><img src={require("../../images/logo2.png")} alt="logo" height="55px" width="185px"></img></a>
+                    <div className="social">
+                    <a id="search-btn" href="" onClick={onToggle}><i className="fas fa-search"></i></a>
+                    </div>
                 </div>
                 <div className="collapse navbar-collapse" id="navbarResponsive">
                     <ul className="navbar-nav">

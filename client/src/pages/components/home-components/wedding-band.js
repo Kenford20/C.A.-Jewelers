@@ -1,4 +1,5 @@
 import React from 'react';
+import WeddingDescription from '../home-components/wedding-description';
 import '../../styles/home-styles/wedding-band.css';
 
 const WeddingHeader = () => {
@@ -12,6 +13,7 @@ const WeddingHeader = () => {
                     <a href="/wedding/womens-wedding-rings" className="wedding-btn text-dec-none"> FOR HER </a>
                 </div>
             </div>
+            <WeddingDescription/>
         </div>
      );
 }

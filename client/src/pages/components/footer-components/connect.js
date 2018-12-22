@@ -3,7 +3,7 @@ import React from 'react';
 const Connect = () => {
     return ( 
         <div>
-            <div className="well container-fluid padding" id="connect">
+            <div className="padding" id="connect">
 		        <div className="row text-center padding">
 			        <div className="col 12">
 				        <h5> STAY CONNECTED </h5>

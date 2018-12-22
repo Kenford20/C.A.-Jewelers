@@ -1,7 +1,6 @@
 .jewelry-caption-header{
 	margin-bottom:2px;
 	margin-top:15px;
-	font-family:"Montserrat, Tahoma, serif";
 	letter-spacing: .05em;
 	font-size:1.7rem;
 	text-shadow: 3px 3px 3px white;
@@ -10,7 +9,6 @@
 
 .jewelry-caption-text{
 	margin-bottom:2px;
-	font-family:"Parisienne";
 	letter-spacing: .05em;
 	font-size:1.2rem;
 	text-decoration:underline;

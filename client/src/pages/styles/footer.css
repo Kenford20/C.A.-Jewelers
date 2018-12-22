@@ -1,6 +1,7 @@
 /* Footer Styles
 ---------------------*/
 #email-wrapper{
+	margin-top:40px;
 	background-color:var(--yellow);
 	height:160px;
 	width:100%;
@@ -51,15 +52,6 @@
 	color:rgb(40,40,40);
 }
 
-/*Subscribe*/
-#subscribe{
-	
-}
-
-#global-footer input{
-	border-radius:0;
-}
-
 /* Connect */
 /* #connect{
 	margin-top:50px;
@@ -69,18 +61,15 @@
 	background-color:#e5e6e8;
 } */
 
-#connect h5{
-	color:black;
-	font-family:"Montserrat, Tahoma, serif";
-}
 .social{
 	padding:0;
 }
 .social a{
+	color:grey;
 	font-size: 1.75em;
 	padding:0.7rem;
 }
-.fa-facebook{
+/* .fa-facebook{
 	color: #3b5998;
 }
 .fa-twitter{
@@ -94,23 +83,28 @@
 }
 .fa-youtube {
 	color:#bb0000;
-}
+} */
 
 .fa-facebook:hover,
 .fa-instagram:hover,
 .fa-youtube:hover,
 .fa-twitter:hover,
 .fa-twitch:hover{
-	color:#d5d5d5;
+	color:var(--yellow);
 }
 
 /* Footer Info*/
+
+#global-footer input{
+	border-radius:0;
+}
 #footer-info{
-    padding-top:1px;
+	padding-top:1px;
     padding-bottom:8px;
 }
 #footer-info{
 	margin-top:10px;
+	margin-bottom:30px;
 	padding-top:20px;
 	line-height: 2em;
 }
@@ -120,11 +114,32 @@
 	margin-bottom:10px;
 }
 
-#footer{
-	margin: 10px 0px;
+#global-footer{
+	margin-bottom:0px;
+}
+#footer-container{
+	margin:12px auto;
+	display:flex;
 }
 #footer h6{
 	font-size:0.7rem;
+}
+#footer span{
+	padding:0 15px;
+	font-size:16px;
+}
+#footer{
+	flex-basis:60%;
+	display:flex;
+	align-items:flex-end;
+}
+
+#socials{
+	flex-basis:40%;
+}
+#socials-container{
+	margin-left:auto;
+	width:250px;
 }
 
 .footer-links{
@@ -173,13 +188,58 @@
 	#email-btn, #email input, #email-title{
 		display:block;
 	}
+	#email-title{
+		font-size:16px;
+	}
+	#footer-container{
+		flex-direction:column;
+	}
+	#socials-container, #footer{
+		margin: 10px auto;
+	}
+	#socials-container{
+		width:320px;
+		margin:auto;
+	}
+	#socials{
+		order:-1;
+	}
+	.social a{
+		font-size:40px;
+		padding:12px;
+	}
 }
 
 @media only screen and (min-width:765px){
 	#mobile-footer{
 		display:none;
 	}
-	.footer-bg{
-		border-top:1px solid rgb(212, 212, 212);
+	.global-footer-container{
+		margin:25px;
+		width:90%;
+		margin:auto;
+	}
+	#footer-container{
+		width:90%;
+	}
+}
+
+
+@media only screen and (min-width:1200px){
+	.global-footer-container{
+		margin:auto;
+		width:75%;
+	}
+	#footer-container{
+		width:75%;
+	}
+}
+
+@media only screen and (min-width: 1500px){
+	.global-footer-container{
+		width:50%;
+	}
+	#footer-container{
+		width:50%;
 	}
 }

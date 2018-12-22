@@ -89,7 +89,7 @@
 
 /* Search Bar */
 #search-btn svg{
-    padding:4px !important;
+    padding:8px !important;
 }
 
 #custom-search-input{
@@ -250,7 +250,7 @@
     }
 
     .nav-link-align{
-        padding-left:0 !important;
+        padding-left:0px !important;
         padding-top:1px;
         font-size:12px;
     }
@@ -258,8 +258,18 @@
     .container-small{
         width:40%;
     }
-
-    /* } */
+}
+@media only screen and (min-width:765px) and (max-width:995px){
+    .nav-link-align{
+        margin-left:25px;
+    }
+    #header-nav2 span{
+        margin-left:25px;
+    }
+    .navbar-dark .navbar-nav .nav-link{
+        margin-top:2px;
+        font-size:10px;
+    }
 }
 
 @media only screen and (min-width:992px){

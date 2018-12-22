@@ -11,7 +11,7 @@ const PopularProducts = () => {
                     <div className="col-sm-6 col-md-3 col-l-3 p-1">
                         <div className="text-center">
                         <a href="#"><img src={"https://s3.amazonaws.com/media-cajewelers.com/TennisBracelets.jpg"} alt="Tennis Bracelets"></img></a>
-                        <div className="mt-10"><a href="#"> SHOP TENNIS BRACELETS </a></div>
+                        <div className="mt-10" id="abcd"><a href="#"> SHOP TENNIS BRACELETS </a></div>
                         </div>
                     </div>
                     <div className="col-sm-6 col-md-3 col-l-3 p-1">

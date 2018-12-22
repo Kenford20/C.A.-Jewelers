@@ -1,0 +1,55 @@
+/* description */
+#color-stone-description{
+    text-align:center;
+    width:90%;
+    margin:auto;
+    color:rgb(65, 65, 65);
+}
+
+#color-stone-description h2{
+    margin-top:40px;
+}
+
+#color-stone-description a{
+    color:black;
+    text-decoration:underline;
+    margin:15px;
+}
+#color-stone-description a:hover{
+    color:var(--yellow);
+}
+
+/* slider */
+#color-stones-slider{
+    width:90%;
+    margin:0px auto;
+}
+
+#color-stones-slider img{
+    margin:30px auto 0px auto;
+    width:100%;
+    height:300px;
+}
+
+/* slider arrows */ 
+#color-stones-slider .slick-prev:before,
+#color-stones-slider .slick-next:before {
+    color:black;
+}
+
+#color-stones-slider .slick-prev{
+    top:53%;
+    left: 13px;
+    z-index:2;
+}
+#color-stones-slider .slick-next{
+    top:53%;
+    right: 28px;
+    z-index:2;
+}
+
+@media only screen and (max-width: 768px){
+    #color-stones-slider{
+        width:100%;
+    }
+}

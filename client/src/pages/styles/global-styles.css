@@ -75,6 +75,45 @@ body{
 	border-radius:0 !important;
 }
 
-#about-page, #education-page{
-	font-family: "Montserrat, Tahoma, serif", Montserrat, sans-serif;
+/* slick sliders */
+.slick-prev:before,
+.slick-next:before {
+  color: var(--yellow);
+}
+
+.slick-prev:before, .slick-next:before {
+    font-size:35px;
+}
+
+.slick-prev{
+	left:-40px;
+}
+
+@media only screen and (max-width: 768px){
+	.body-subtitles{
+		font-size:24px;
+	}
+}
+
+@media only screen and (min-width:775px){
+	#home-desktop-view{
+		display:grid;
+		grid-template-columns:50% 50%;
+		grid-template-areas:
+			"wedding gemstones"
+			"wedding description";
+	}
+	#wedding-bands{
+		grid-area:wedding;
+	}	
+	#color-stones{
+		grid-area:gemstones;
+	}
+	#color-stones-slider{
+		grid-area:gemstones;
+	}
+	#body-color{
+		grid-area:description;
+	}
+
 }

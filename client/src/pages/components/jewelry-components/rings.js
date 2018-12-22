@@ -10,7 +10,7 @@ const Rings = () => {
 			<div className="text-center jewelry-containers">
 				<h4 className="jewelry-caption-header"> C.A. RINGS </h4>
 				<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut pharetra ipsum. Quisque mattis nulla et ullamcorper aliquet.</p>
-				<a href="/jewelry/rings"><h5 className="jewelry-caption-text"> Shop for Rings > </h5></a>
+				<a href="/jewelry/rings"><h5 className="jewelry-caption-text"> Shop for Rings </h5></a>
 			</div>
         </div>
      );

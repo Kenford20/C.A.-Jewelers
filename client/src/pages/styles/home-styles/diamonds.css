@@ -1,0 +1,42 @@
+#diamonds-slider{
+    width:80%;
+    margin:auto;
+}
+
+#diamonds-slider p{
+    margin-top: 10px;
+}
+
+#diamonds-slider .slick-slide{
+    margin:auto;
+    height:200px;
+    /* margin-top:75px; */
+}
+#diamonds-slider .slick-list{
+    height:300px;
+}
+.diamonds-div{
+    margin-top:55px;
+}
+
+#diamonds-slider .slick-current{
+    transform: scale(1.4);
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1440px){
+    #diamonds-slider img{
+        width:80px;
+    }
+    #diamonds-slider .slick-list{
+        height:230px;
+    }
+}
+
+@media only screen and (max-width: 480px){  
+    #diamonds-slider img{
+        width:50px;
+    }
+    #diamonds-slider .slick-list{
+        height:200px;
+    }
+}

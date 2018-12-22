@@ -11,6 +11,12 @@
 #header-image-container{
 	width:100%;
 }
+#header-image{
+	text-align:center;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
 
 @media only screen and (min-width:765px){
 
