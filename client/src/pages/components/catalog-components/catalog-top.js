@@ -1,28 +1,30 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import '../../styles/catalog-styles/catalog-top.css';
 
-const CatalogTop = (props) => {
+
+const CatalogTop = ({ heading, pageDescription, categoryRoute, categoryRouteName, subcategoryRouteName, numProducts }) => {
     return ( 
         <div id="catalog-top">
             <div className="w-100">
                 <div className="container text-center">
-                    <h1>{props.heading}</h1>
-                    <p>{props.pageDescription}</p>
+                    <h1>{ heading }</h1>
+                    <p>{ pageDescription }</p>
                 </div>
             </div>
             <div className="w-100 bg-lightgrey catalog-route-border">
                 <div className="container">    
                     <p className="catalog-route">
                         <a href="/"> HOME </a> / 
-                        <a href={props.categoryRoute}> {props.categoryRouteName} </a> /  
-                        <span className="catalog-route-active"> {props.subcategoryRouteName} </span>
+                        <a href={ categoryRoute }> { categoryRouteName } </a> /  
+                        <span className="catalog-route-active"> { subcategoryRouteName } </span>
                     </p>
                 </div>
             </div>
             <div id="sort" className="hide container">
                 <div className="row">
                     <div className="col-lg-7 text-right">
-                        <span> {props.numProducts} ITEMS </span>
+                        <span> { numProducts } ITEMS </span>
                     </div>
                     <div className="col-lg-5 text-right"> 
                     <span>Sort By: </span>
@@ -36,6 +38,15 @@ const CatalogTop = (props) => {
             </div>
         </div>
      );
-}
- 
-export default CatalogTop;
+    }
+
+    CatalogTop.propTypes = {
+        heading: PropTypes.string,
+        pageDescription: PropTypes.string,
+        categoryRoute: PropTypes.string,
+        categoryRouteName: PropTypes.string,
+        subcategoryRouteName: PropTypes.string,
+        numProducts: PropTypes.number
+    };
+    
+    export default CatalogTop;

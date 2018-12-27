@@ -1,5 +1,5 @@
 import React from 'react';
-import Subscribe from '../footer-components/subscribe';
+import '../../styles/footer-styles/email.css';
 
 const Email = () => {
     return ( 

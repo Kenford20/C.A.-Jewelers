@@ -1,0 +1,74 @@
+#email-wrapper{
+	margin-top:40px;
+	background-color:var(--yellow);
+	height:160px;
+	width:100%;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+#email{
+	height:100%;
+	width:680px;
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+}
+#email-disclaimer{
+	font-size:10px;
+	color:white;
+	margin-top:10px;
+}
+#email-title{
+	display:inline-block;
+	color:white;
+	font-size:18px;
+	margin-right:20px;
+}
+#email input{
+	margin-top:20px;
+	width:250px;
+	height:40px;
+	display:inline-block;
+	border:0;
+}
+#email-btn{
+	display:inline-block;
+	margin-left:10px;
+	color:white;
+	background:var(--yellow);
+	border:1px solid white;
+	font-size:12px;
+	height:41px;
+	width:85px;
+}
+#email-btn:hover{
+	background:lightgrey;
+	color:rgb(40,40,40);
+}
+
+@media only screen and (max-width:768px){
+	#email-wrapper{
+		height:300px;
+	}
+	#email{
+		width:75%;
+	}
+	#email-btn{
+		width:100%;
+		margin: 10px 0;
+		font-size:16px;
+	} 
+	#email input{
+		width:100%;
+		margin: 10px 0;
+		font-size:15px;
+	}
+	#email-btn, #email input, #email-title{
+		display:block;
+	}
+	#email-title{
+		font-size:16px;
+	}
+}

@@ -7,10 +7,6 @@
     width:100%;
 }
 
-.products-page, .product-details{
-    font-family:"Montserrat, Tahoma, serif", Tahoma, sans-serif;
-}
-
 .product-details > h2{
     font-size:1.5rem;
 }

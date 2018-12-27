@@ -1,57 +1,19 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import GlobalHeader from '../components/global-header';
-import GlobalFooter from '../components/global-footer';
-import ProductsList from '../components/catalog-components/productsList';
-import CatalogTop from '../components/catalog-components/catalog-top';
-import FilterSort from '../components/catalog-components/filter-sort'; 
-import FilterSortMobile from '../components/catalog-components/filter-sort-mobile';
-import NumItemsMobile from '../components/catalog-components/num-items-mobile';
-
+import CatalogPage from '../components/catalog-components/catalog-page';
 
 class Necklaces extends Component {
-    state = {
-        products: [],
-        numProducts: 0,
-    };
-
-    componentDidMount(){
-        //let apiEndpoint = 'http://localhost:4000/api/vintage-engagement-rings';
-        let apiEndpoint = window.location.origin+'/api/necklaces';
-
-        axios.get(apiEndpoint).then(res=> {
-            console.log(res);
-            this.setState({products: res.data});
-            this.setState({numProducts: this.state.products.length});
-        });
-    }
-
     render() { 
+        let apiEndpoint = window.location.origin + '/api/necklaces';
         return ( 
             <div id="necklaces-page">
-                <GlobalHeader/>
-                <CatalogTop heading="Necklaces" 
-                    categoryRoute="/jewelry"
-                    categoryRouteName="JEWELRY"
-                    subcategoryRouteName="NECKLACES" 
-                    pageDescription="Ut egestas sapien eget enim faucibus, ut lacinia leo molestie. Ut tincidunt a felis sit amet lobortis. Etiam ante ligula, condimentum et augue at, ultrices imperdiet lorem. Morbi scelerisque nibh non nibh vulputate, sit amet lacinia sapien sollicitudin. Nam vitae nisi ultricies, iaculis orci vitae, scelerisque lorem. Donec at maximus quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin congue fringilla posuere. Etiam laoreet, justo id pellentesque sodales, augue mauris ullamcorper tortor, a tristique nisi eros vel tellus. Pellentesque in dolor tempus orci bibendum interdum. Nunc orci felis, lobortis in sollicitudin ut, congue ac lacus. Etiam mi risus, mollis et laoreet congue, dignissim vel ipsum. Curabitur maximus lacinia augue eleifend consequat. Vestibulum enim diam, rhoncus at lorem eget, fringilla vestibulum enim."
-                    numProducts={this.state.numProducts}
+                <CatalogPage 
+                    heading = "Necklaces"
+                    categoryRoute = "/jewelry"
+                    categoryRouteName = "JEWELRY"
+                    subcategoryRouteName = "NECKLACES" 
+                    pageDescription = "Ut et sapien sit amet risus dapibus dapibus quis pulvinar diam. Praesent egestas nec urna quis pretium. Nullam sagittis justo non velit dapibus, non sollicitudin leo elementum. Morbi vel eleifend mauris. Nunc at dolor non turpis ultricies condimentum. Quisque vitae risus sed nulla lacinia ullamcorper at non justo. Donec lacinia sem risus, at rutrum lorem ultrices id. Phasellus nisl sapien, porta non consequat sed, placerat at lacus. Aenean ut lorem vehicula, dapibus est vehicula, semper velit. Mauris a lorem tempor, efficitur leo gravida, dictum neque. Aliquam malesuada semper lorem in sagittis. Nam iaculis nunc et ante facilisis pulvinar. Aliquam erat volutpat. Cras ultricies finibus magna nec lobortis. Suspendisse efficitur finibus felis, at fermentum lorem dapibus nec. Nunc at lobortis quam."
+                    apiEndpoint = { apiEndpoint }
                 />
-
-                <div className="container">
-                    <div className="row">
-                        <div className="col-lg-3">
-                            <FilterSort/>
-                            <FilterSortMobile/>
-                            <NumItemsMobile numProducts={this.state.numProducts}/>
-                        </div>
-                       
-                        <div className="col-lg-9">
-                            <ProductsList products={this.state.products}/>
-                        </div>
-                    </div>
-                </div>
-                <GlobalFooter/>    
             </div>
          );
     }
