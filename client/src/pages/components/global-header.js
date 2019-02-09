@@ -8,21 +8,18 @@ class GlobalHeader extends Component {
         showSearchBar: false
     }
 
-    handleSearchBarToggle = (e) => {
+    toggleSearchBar = (e) => {
         e.preventDefault();
-        this.setState({
-            showSearchBar: !this.state.showSearchBar
-        })
+        this.setState({ showSearchBar: !this.state.showSearchBar });
     }
 
     render() { 
         return ( 
             <div id="global-header">
-            <HeaderNavbar onToggle={this.handleSearchBarToggle}/>
-            <SearchBar active={this.state.showSearchBar}/>
-            <HeaderNavbar2/>  
-            
-        </div>
+                <HeaderNavbar onToggle={ this.toggleSearchBar }/>
+                <SearchBar isActive={ this.state.showSearchBar }/>
+                <HeaderNavbar2/>  
+            </div>
          );
     }
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const HeaderNavbar = ({onToggle}) => {
+const HeaderNavbar = ({ onToggle }) => {
     return ( 
         <div id="header-nav" className="hide-md">
             <nav className="navbar navbar-expand-md navbar-light sticky-top">
@@ -8,10 +8,8 @@ const HeaderNavbar = ({onToggle}) => {
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
                         <span className="navbar-toggler-icon"></span>
                     </button>  
-                    <a id="header-log" className="center" href="/"><img src={require("../../images/logo2.png")} alt="logo" height="55px" width="185px"></img></a>
-                    <div className="social">
-                    <a id="search-btn" href="" onClick={onToggle}><i className="fas fa-search"></i></a>
-                    </div>
+                    <a id="header-logo" href="/"><img src={require("../../images/logo2.png")} alt="logo" height="55px" width="185px"></img></a>  
+                    <a id="search-btn" href="" onClick={ onToggle }><i className="fas fa-search"></i></a>
                 </div>
                 <div className="collapse navbar-collapse" id="navbarResponsive">
                     <ul className="navbar-nav">

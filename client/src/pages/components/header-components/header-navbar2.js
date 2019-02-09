@@ -4,7 +4,7 @@ const HeaderNavbar2 = () => {
     return ( 
         <div id="header-nav2" className="hide container">
             <nav className="navbar navbar-expand-md navbar-dark">
-            <a id="header-log" className="center" href="/"><img src={require("../../images/logo2.png")} alt="logo" height="45px" width="125px"></img></a>
+            <a id="header-logo" className="center" href="/"><img src={require("../../images/logo2.png")} alt="logo" height="45px" width="125px"></img></a>
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>
   </button>

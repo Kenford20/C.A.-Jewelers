@@ -6,10 +6,9 @@
 	float:none;
 }
 
-.fa-search {
-	color:grey;
-}
-.fa-search:hover, .fa-shopping-bag:hover, .fa-address-book:hover{
+.fa-search:hover, 
+.fa-shopping-bag:hover, 
+.fa-address-book:hover{
 	color:var(--yellow);
 }
 
@@ -88,8 +87,13 @@
 }*/
 
 /* Search Bar */
-#search-btn svg{
-    padding:8px !important;
+.fa-search {
+    color:grey;
+}
+
+#search-btn{
+    font-size:25px;
+    padding:12px;
 }
 
 #custom-search-input{

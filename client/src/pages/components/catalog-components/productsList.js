@@ -1,21 +1,27 @@
-import React, { Component } from 'react';
-import axios from 'axios';
+import React from 'react';
+import PropTypes from 'prop-types';
 import Product from './catalog-product';
 import '../../styles/catalog-styles/products-list.css';
 
-const ProductsList = (props) => {
+const ProductsList = ({ products }) => {
     return ( 
         <div className="container">
-            {props.products.map(product => 
+            {products.map(product => 
                 <Product 
-                    key={product._id} 
-                    path={product.imagePath} title={product.title} 
-                    description={product.description} price={product.price} 
-                    link={product.link}
+                    key={ product._id } 
+                    path={ product.imagePath } 
+                    productName={ product.title } 
+                    description={ product.description } 
+                    price={ product.price } 
+                    link={ product.link }
                 />
             )}
         </div>
     );
+}
+
+ProductsList.propTypes = {
+    products: PropTypes.array.isRequired
 }
  
 export default ProductsList;

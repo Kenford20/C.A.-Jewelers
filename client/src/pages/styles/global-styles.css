@@ -94,7 +94,7 @@ body{
 	}
 }
 
-@media only screen and (min-width:775px){
+@media only screen and (min-width:768px){
 	#home-desktop-view{
 		display:grid;
 		grid-template-columns:50% 50%;
@@ -114,5 +114,7 @@ body{
 	#body-color{
 		grid-area:description;
 	}
-
+	#search-bar{
+		display:none;
+	}
 }

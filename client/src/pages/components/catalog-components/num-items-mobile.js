@@ -1,7 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const NumItemsMobile = (props) => {
-
+const NumItemsMobile = ({ numProducts }) => {
     const fontStyle = {
         fontFamily: 'Montserrat, Tahoma, serif',
         fontSize: '14px'
@@ -9,11 +9,15 @@ const NumItemsMobile = (props) => {
 
     return ( 
         <div id="num-items-mobile">
-            <div className="text-center" style={{margin:'15px'}}>
-                <span style={fontStyle}> {props.numProducts} ITEMS </span>
+            <div className="text-center" style={{ margin:'15px' }}>
+                <span style={fontStyle}> { numProducts } ITEMS </span>
             </div>
         </div>
      );
 }
+
+NumItemsMobile.propTypes = {
+    numProducts: PropTypes.number.isRequired
+};
  
 export default NumItemsMobile;

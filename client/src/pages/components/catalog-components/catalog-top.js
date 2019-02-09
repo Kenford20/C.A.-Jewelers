@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import '../../styles/catalog-styles/catalog-top.css';
 
-
 const CatalogTop = ({ heading, pageDescription, categoryRoute, categoryRouteName, subcategoryRouteName, numProducts }) => {
     return ( 
         <div id="catalog-top">
@@ -37,16 +36,16 @@ const CatalogTop = ({ heading, pageDescription, categoryRoute, categoryRouteName
                 </div>             
             </div>
         </div>
-     );
-    }
+    );
+}
 
-    CatalogTop.propTypes = {
-        heading: PropTypes.string,
-        pageDescription: PropTypes.string,
-        categoryRoute: PropTypes.string,
-        categoryRouteName: PropTypes.string,
-        subcategoryRouteName: PropTypes.string,
-        numProducts: PropTypes.number
-    };
+CatalogTop.propTypes = {
+    heading: PropTypes.string.isRequired,
+    pageDescription: PropTypes.string.isRequired,
+    categoryRoute: PropTypes.string.isRequired,
+    categoryRouteName: PropTypes.string.isRequired,
+    subcategoryRouteName: PropTypes.string.isRequired,
+    numProducts: PropTypes.number.isRequired
+};
     
-    export default CatalogTop;
+export default CatalogTop;
