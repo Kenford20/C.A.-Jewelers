@@ -50,7 +50,7 @@
 
 @media only screen and (max-width:768px){
 	#email-wrapper{
-		height:300px;
+		height:350px;
 	}
 	#email{
 		width:75%;
@@ -70,5 +70,6 @@
 	}
 	#email-title{
 		font-size:16px;
+		margin-right:0;
 	}
 }

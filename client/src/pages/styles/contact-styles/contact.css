@@ -39,3 +39,16 @@
 	background:#e5d08a;
 	color:white;
 }
+
+#contact_form {
+    width: 700px;
+    margin: auto;
+}
+@media only screen and (max-width: 480px) {
+    #contact_form {
+        width: 100%;
+    }
+}
+#contact-form .col-lg-8 {
+    margin: auto;
+}
