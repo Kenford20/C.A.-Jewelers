@@ -11,7 +11,10 @@ const Product = ({ link = '/', productName, description, price, imagePath }) => 
                 <div className="card-body text-center">
                     <h2 className="card-title">{ productName }</h2>
                     <p className="card-text">{ description }</p>
-                    <p className="yellow">${ price }</p>
+                    <p className="yellow"> $
+                    { price.toString().slice(0, price.toString().length - 3) + ',' +
+                      price.toString().slice(price.toString().length - 3) 
+                    }</p>
                 </div>
             </div>
         </a>
@@ -19,11 +22,11 @@ const Product = ({ link = '/', productName, description, price, imagePath }) => 
 }
 
 Product.propTypes = {
-    link: PropTypes.string,
-    title: PropTypes.string,
-    description: PropTypes.string,
-    imagePath: PropTypes.string,
-    price: PropTypes.number
+    link: PropTypes.string.isRequired,
+    productName: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    imagePath: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired
 };
  
 export default Product;

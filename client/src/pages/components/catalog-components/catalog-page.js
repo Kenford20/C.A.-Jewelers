@@ -12,18 +12,88 @@ import NumItemsMobile from '../../components/catalog-components/num-items-mobile
 
 class CatalogPage extends Component {
     constructor(props){
-        super(props);    
+        super(props); 
+        this.updateFilters = this.updateFilters.bind(this);
+        
         this.state = {
             products: [],
+            filteredProducts: [],
             numProducts: 0,
+            filterOptions: {
+                style: '',
+                shape: '',
+                metal: '',
+                price: [0, 1000000]
+            }
         }
     }
     
     componentDidMount(){        
         axios.get(this.props.apiEndpoint).then(response => {
             console.log(response);
-            this.setState({ products: response.data });
+            this.setState({ 
+                products: response.data,
+                filteredProducts: response.data
+            });
             this.setState({ numProducts: this.state.products.length });
+        });
+    }
+
+    updateFilters(e) {
+        let filterType = e.target.parentNode.id;
+        let selectedOption = e.target.innerHTML;
+
+        switch(filterType) {
+            case 'style-filter':
+            case 'style-filter-mobile': this.setState(prevState => ({ 
+                filterOptions: {
+                    ...prevState.filterOptions, 
+                    style: selectedOption
+                }
+            }), this.filterProducts); break;
+
+            case 'shape-filter':
+            case 'shape-filter-mobile': this.setState(prevState => ({ 
+                filterOptions: {
+                    ...prevState.filterOptions, 
+                    shape: selectedOption
+                }
+            }), this.filterProducts); break;
+
+            case 'metal-filter':
+            case 'metal-filter-mobile': this.setState(prevState => ({ 
+                filterOptions: {
+                    ...prevState.filterOptions, 
+                    metal: selectedOption
+                }
+            }), this.filterProducts); break;
+
+            case 'price-filter':
+            case 'price-filter-mobile': this.setState(prevState => ({ 
+                filterOptions: {
+                    ...prevState.filterOptions, 
+                    price: selectedOption === '$ 500 or less' ? [0, 500] :
+                    selectedOption === '$ 501 - 1000' ? [501, 1000] :
+                    selectedOption === '$ 1001 - 3000' ? [1001, 3000] :
+                    selectedOption === '$ 3001 - 5000' ? [3001, 5000] : [5000, 1000000]
+                }
+            }), this.filterProducts); break;
+
+            default: alert('something went wrong');
+        }
+    }
+
+    filterProducts() {
+        const { style, price } = this.state.filterOptions;
+
+        this.setState({ 
+            filteredProducts: this.state.products.filter(product => {
+                if(product.subcategory === style.toLowerCase() && 
+                  (product.price > price[0] && product.price < price[1]))
+                    return product;
+            })}, () => { 
+                this.setState({ numProducts: this.state.filteredProducts.length 
+            });
         });
     }
     
@@ -43,13 +113,13 @@ class CatalogPage extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-3">
-                            <FilterSort/>
-                            <FilterSortMobile/>
+                            <FilterSort updateFilters={ this.updateFilters }/>
+                            <FilterSortMobile updateFilters={ this.updateFilters }/>
                             <NumItemsMobile numProducts={ this.state.numProducts }/>
                         </div>
                        
                         <div className="col-lg-9">
-                            <ProductsList products={ this.state.products }/>
+                            <ProductsList products={ this.state.filteredProducts }/>
                         </div>
                     </div>
                 </div>

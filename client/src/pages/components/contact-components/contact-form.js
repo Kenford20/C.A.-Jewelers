@@ -3,7 +3,7 @@ import React from 'react';
 const ContactForm = () => {
     return ( 
         <div id="contact-form">
-            <div className="container">
+            <div>
 <div className="row">
 <div className="col-lg-8 col-lg-offset-2">
 
