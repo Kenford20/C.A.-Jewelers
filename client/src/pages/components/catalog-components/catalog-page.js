@@ -24,6 +24,12 @@ class CatalogPage extends Component {
                 shape: '',
                 metal: '',
                 price: [0, 1000000]
+            },
+            areFiltersActive: {
+                style: false,
+                shape: false,
+                metal: false,
+                price: false
             }
         }
     }
@@ -45,52 +51,95 @@ class CatalogPage extends Component {
 
         switch(filterType) {
             case 'style-filter':
-            case 'style-filter-mobile': this.setState(prevState => ({ 
-                filterOptions: {
-                    ...prevState.filterOptions, 
-                    style: selectedOption
-                }
-            }), this.filterProducts); break;
+            case 'style-filter-mobile': {
+                this.setState(prevState => ({ 
+                    filterOptions: {
+                        ...prevState.filterOptions, 
+                        style: selectedOption,
+                    },
+                    areFiltersActive: {
+                        ...prevState.areFiltersActive,
+                        style: true
+                    }
+                }), this.filterProducts); 
+            } break;
 
             case 'shape-filter':
-            case 'shape-filter-mobile': this.setState(prevState => ({ 
-                filterOptions: {
-                    ...prevState.filterOptions, 
-                    shape: selectedOption
-                }
-            }), this.filterProducts); break;
+            case 'shape-filter-mobile': {
+                this.setState(prevState => ({ 
+                    filterOptions: {
+                        ...prevState.filterOptions, 
+                        shape: selectedOption
+                    },
+                    areFiltersActive: {
+                        ...prevState.areFiltersActive,
+                        shape: true
+                    }
+                }), this.filterProducts); 
+            } break;
 
             case 'metal-filter':
-            case 'metal-filter-mobile': this.setState(prevState => ({ 
-                filterOptions: {
-                    ...prevState.filterOptions, 
-                    metal: selectedOption
-                }
-            }), this.filterProducts); break;
+            case 'metal-filter-mobile': {
+                this.setState(prevState => ({ 
+                    filterOptions: {
+                        ...prevState.filterOptions, 
+                        metal: selectedOption
+                    },
+                    areFiltersActive: {
+                        ...prevState.areFiltersActive,
+                        metal: true
+                    }
+                }), this.filterProducts); 
+            } break;
 
             case 'price-filter':
-            case 'price-filter-mobile': this.setState(prevState => ({ 
-                filterOptions: {
-                    ...prevState.filterOptions, 
-                    price: selectedOption === '$ 500 or less' ? [0, 500] :
-                    selectedOption === '$ 501 - 1000' ? [501, 1000] :
-                    selectedOption === '$ 1001 - 3000' ? [1001, 3000] :
-                    selectedOption === '$ 3001 - 5000' ? [3001, 5000] : [5000, 1000000]
-                }
-            }), this.filterProducts); break;
+            case 'price-filter-mobile': {
+                this.setState(prevState => ({ 
+                    filterOptions: {
+                        ...prevState.filterOptions, 
+                        price: selectedOption === '$ 500 or less' ? [0, 500] :
+                               selectedOption === '$ 501 - 1000' ? [501, 1000] :
+                               selectedOption === '$ 1001 - 3000' ? [1001, 3000] :
+                               selectedOption === '$ 3001 - 5000' ? [3001, 5000] : [5000, 1000000]
+                    },
+                    areFiltersActive: {
+                        ...prevState.areFiltersActive,
+                        price: true
+                    }
+                }), this.filterProducts); 
+            } break;
 
             default: alert('something went wrong');
         }
     }
 
     filterProducts() {
-        const { style, price } = this.state.filterOptions;
+        const { style, shape, metal, price } = this.state.filterOptions;
+
+        // if a filter type is active, use the function as an intended filtering condition
+        // otherwise, the function returns true so that it passes the if block inside the setState method below
+        // took this approach to handle multiple active and inactive filters aka 'conditional if conditions'
+        let shouldFilterStyle = this.state.areFiltersActive.style ? 
+            (product) => { return product.subcategory === style.toLowerCase() } : 
+            () => { return true };
+
+        let shouldFilterShape = this.state.areFiltersActive.shape ? 
+            (product) => { return product.stoneShape === shape.toLowerCase() } : 
+            () => { return true };
+
+        let shouldFilterMetal = this.state.areFiltersActive.metal ? 
+            (product) => { return product.metal === metal.toLowerCase() } : 
+            () => { return true };
 
         this.setState({ 
             filteredProducts: this.state.products.filter(product => {
-                if(product.subcategory === style.toLowerCase() && 
-                  (product.price > price[0] && product.price < price[1]))
+                if(shouldFilterStyle(product) &&
+                   shouldFilterShape(product) &&
+                   shouldFilterMetal(product) &&
+                   product.price >= price[0] && product.price <= price[1]) 
+                   {
                     return product;
+                }
             })}, () => { 
                 this.setState({ numProducts: this.state.filteredProducts.length 
             });
