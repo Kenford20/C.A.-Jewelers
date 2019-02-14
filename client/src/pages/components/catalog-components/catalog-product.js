@@ -11,9 +11,9 @@ const Product = ({ link = '/', productName, description, price, imagePath }) => 
                 <div className="card-body text-center">
                     <h2 className="card-title">{ productName }</h2>
                     <p className="card-text">{ description }</p>
-                    <p className="yellow"> $
-                    { price.toString().slice(0, price.toString().length - 3) + ',' +
-                      price.toString().slice(price.toString().length - 3) 
+                    <p className="yellow"> $ { price.toString().length > 3 ? 
+                        price.toString().slice(0, price.toString().length - 3) + ',' + price.toString().slice(price.toString().length - 3) 
+                        : price
                     }</p>
                 </div>
             </div>

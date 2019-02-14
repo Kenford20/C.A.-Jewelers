@@ -1,9 +1,10 @@
 #catalog-product .card{
     margin:5px;
     border:0;
-    max-height:375px;
+    max-height: 375px;
+    box-sizing: border-box;
 }
-.card >div >h2{
+.card > div > h2{
     font-size:1rem;
 }
 .td-none{
@@ -19,7 +20,7 @@
 }
 .yellow{
     color:var(--yellow);
-    font-size:1rem;
+    font-size:1.2rem;
 }
 
 #catalog-product .card-img-top{

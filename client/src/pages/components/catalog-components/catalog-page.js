@@ -10,15 +10,19 @@ import FilterSort from '../../components/catalog-components/filter-sort';
 import FilterSortMobile from '../../components/catalog-components/filter-sort-mobile';
 import NumItemsMobile from '../../components/catalog-components/num-items-mobile';
 
+import '../../styles/catalog-styles/spinner.css';
+
 class CatalogPage extends Component {
     constructor(props){
         super(props); 
         this.updateFilters = this.updateFilters.bind(this);
-        
+        this.resetFilters = this.resetFilters.bind(this);
+
         this.state = {
             products: [],
             filteredProducts: [],
             numProducts: 0,
+            fetchingProducts: false,
             filterOptions: {
                 style: '',
                 shape: '',
@@ -34,12 +38,14 @@ class CatalogPage extends Component {
         }
     }
     
-    componentDidMount(){        
+    componentDidMount(){   
+        this.setState({ fetchingProducts: true });     
         axios.get(this.props.apiEndpoint).then(response => {
             console.log(response);
             this.setState({ 
                 products: response.data,
-                filteredProducts: response.data
+                filteredProducts: response.data,
+                fetchingProducts: false
             });
             this.setState({ numProducts: this.state.products.length });
         });
@@ -145,9 +151,33 @@ class CatalogPage extends Component {
             });
         });
     }
+
+    resetFilters() {
+        this.setState({
+            filterOptions: {
+                style: '',
+                shape: '',
+                metal: '',
+                price: [0, 1000000]
+            },
+            areFiltersActive: {
+                style: false,
+                shape: false,
+                metal: false,
+                price: false
+            }
+         }, this.filterProducts);
+    }
     
     render() { 
         const { heading, categoryRoute, categoryRouteName, subcategoryRouteName, pageDescription } = this.props;
+        
+        let spinner = (
+            <div id="catalog-spinner">
+                <img src={require("../../images/logo.png")} alt="loading spinner"></img>
+            </div>
+        );
+
         return ( 
             <div id="catalog-page">
                 <GlobalHeader/>
@@ -162,13 +192,22 @@ class CatalogPage extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-3">
-                            <FilterSort updateFilters={ this.updateFilters }/>
-                            <FilterSortMobile updateFilters={ this.updateFilters }/>
+                            <FilterSort 
+                                updateFilters={ this.updateFilters }
+                                resetFilters={ this.resetFilters }
+                            />
+                            <FilterSortMobile 
+                                updateFilters={ this.updateFilters }
+                                resetFilters={ this.resetFilters }
+                            />
                             <NumItemsMobile numProducts={ this.state.numProducts }/>
                         </div>
-                       
                         <div className="col-lg-9">
-                            <ProductsList products={ this.state.filteredProducts }/>
+                            {
+                                this.state.fetchingProducts ? 
+                                spinner :
+                                <ProductsList products={ this.state.filteredProducts }/>
+                            }
                         </div>
                     </div>
                 </div>
