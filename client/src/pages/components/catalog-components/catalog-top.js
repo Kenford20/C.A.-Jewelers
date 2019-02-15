@@ -14,8 +14,8 @@ const CatalogTop = ({ heading, pageDescription, categoryRoute, categoryRouteName
             <div className="w-100 bg-lightgrey catalog-route-border">
                 <div className="container">    
                     <p className="catalog-route">
-                        <a href="/"> HOME </a> / 
-                        <a href={ categoryRoute }> { categoryRouteName } </a> /  
+                        <a href="/"> HOME </a> <span className="route-separators">/</span>
+                        <a href={ categoryRoute }> { categoryRouteName } </a> <span className="route-separators">/</span>
                         <span className="catalog-route-active"> { subcategoryRouteName } </span>
                     </p>
                 </div>

@@ -4,12 +4,17 @@ import HeaderNavbar2 from './header-components/header-navbar2';
 import SearchBar from './header-components/search-bar';
 
 class GlobalHeader extends Component {
-    state = {
-        showSearchBar: false
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            showSearchBar: false,
+        }
     }
 
     toggleSearchBar = (e) => {
         e.preventDefault();
+        alert(this.state.numItems)
         this.setState({ showSearchBar: !this.state.showSearchBar });
     }
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const HeaderNavbar2 = () => {
+const HeaderNavbar2 = ({ numItemsInBag }) => {
     return ( 
         <div id="header-nav2" className="hide container">
             <nav className="navbar navbar-expand-md navbar-dark">
@@ -181,12 +181,8 @@ const HeaderNavbar2 = () => {
     <div id="header-icons">
       <i className="fas fa-search"></i>
       <i className="fas fa-address-book"></i>
-      <i className="fas fa-shopping-bag"></i>
+      <i className="fas fa-shopping-bag"></i><span>{ numItemsInBag }</span>
     </div>
-    {/* <form className="form-inline my-2 my-lg-0">
-      <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></input>
-      <button className="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-    </form> */}
   </div>
 
 </nav>

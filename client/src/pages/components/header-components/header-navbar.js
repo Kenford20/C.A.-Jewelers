@@ -1,6 +1,6 @@
 import React from 'react';
 
-const HeaderNavbar = ({ onToggle }) => {
+const HeaderNavbar = ({ onToggle, numItemsInBag }) => {
     return ( 
         <div id="header-nav" className="hide-md">
             <nav className="navbar navbar-expand-md navbar-light sticky-top">

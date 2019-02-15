@@ -2,15 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import '../styles/product-pages-styles/product-pages.css';
 
-const ProductPageLayout = ({ categoryRoute, categoryRouteName, subcategoryRoute, subcategoryRouteName, productName, price, description }) => {
+const ProductPageLayout = ({ categoryRoute, categoryRouteName, subcategoryRoute, subcategoryRouteName, productName, price, description, addItemToBag }) => {
     return ( 
         <div id="product-page-layout" className="products-page">
             <div className="w-100 bg-lightgrey catalog-route-border">
                 <div className="container">    
                     <p className="catalog-route">
-                        <a className="footer-links" href="/"> HOME </a> / 
-                        <a className="footer-links" href={ categoryRoute }> { categoryRouteName } </a> /  
-                        <a className="footer-links" href={ subcategoryRoute }> { subcategoryRouteName } </a> / 
+                        <a className="footer-links" href="/"> HOME </a> <span className="route-separators">/</span>
+                        <a className="footer-links" href={ categoryRoute }> { categoryRouteName } </a> <span className="route-separators">/</span> 
+                        <a className="footer-links" href={ subcategoryRoute }> { subcategoryRouteName } </a> <span className="route-separators">/</span>
                         <span className="catalog-route-active"> { productName } </span>
                     </p>
                 </div>
@@ -33,7 +33,7 @@ const ProductPageLayout = ({ categoryRoute, categoryRouteName, subcategoryRoute,
                         <p>{ description }</p>
                     </div>
                     <div className="cart-btn">
-                        <button className="feature-btn cart-btn">ADD TO BAG</button>
+                        <button className="feature-btn cart-btn" onClick={ addItemToBag }>ADD TO BAG</button>
                     </div>
                     <div className="product-shipping">
                         <br></br>

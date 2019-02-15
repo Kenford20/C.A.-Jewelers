@@ -9,7 +9,8 @@ const ProductsList = ({ products }) => {
             {products.map(product => 
                 <Product 
                     key={ product._id } 
-                    path={ product.imagePath } 
+                    imagePath={ product.imagePath }
+                    altTag = { product.altTag }
                     productName={ product.title } 
                     description={ product.description } 
                     price={ product.price } 

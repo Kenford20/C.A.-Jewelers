@@ -74,6 +74,8 @@ body{
 	border-radius:0 !important;
 }
 
+.route-separators { margin: 0 7px }
+
 /* slick sliders */
 .slick-prev:before,
 .slick-next:before {

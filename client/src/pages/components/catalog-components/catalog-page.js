@@ -34,7 +34,7 @@ class CatalogPage extends Component {
                 shape: false,
                 metal: false,
                 price: false
-            }
+            },
         }
     }
     

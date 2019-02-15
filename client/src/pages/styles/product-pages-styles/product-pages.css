@@ -1,6 +1,5 @@
 .product-image{
     width:500px;
-
 }
 
 .cart-btn{
@@ -9,7 +8,7 @@
 
 .product-details{
     margin-top:50px;
-    height:300px;
+    min-height:300px;
 }
 .product-details > h2{
     font-size:1.5rem;
@@ -29,5 +28,11 @@
     text-align:center;
     padding:0;
     margin:0 1px;
+}
+
+@media only screen and (max-width: 480px) {
+    .product-image { width: 100% }
+    .product-title h1 { font-size: 24px }
+    .product-details { text-align: center }
 }
 
