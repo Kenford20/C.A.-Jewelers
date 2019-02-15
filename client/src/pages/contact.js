@@ -1,8 +1,8 @@
 import React from 'react';
-import GlobalHeader from './components/global-header';
-import GlobalFooter from './components/global-footer';
-import Map from './components/contact-components/map';
-import ContactInfo from './components/contact-components/contact-info';
+import GlobalHeader from '../components/global-header';
+import GlobalFooter from '../components/global-footer';
+import Map from '../components/contact-components/map';
+import ContactInfo from '../components/contact-components/contact-info';
 
 const Contact = () => {
     return ( 

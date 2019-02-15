@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CatalogPage from '../components/catalog-components/catalog-page';
+import CatalogPage from '../../components/catalog-components/catalog-page';
 
 class Rings extends Component {
     render() { 

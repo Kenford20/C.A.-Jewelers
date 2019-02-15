@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../styles/product-pages-styles/product-pages.css';
+
+import '../../styles/product-pages-styles/product-pages.css';
 
 const ProductPageLayout = ({ categoryRoute, categoryRouteName, subcategoryRoute, subcategoryRouteName, productName, price, description, addItemToBag }) => {
     return ( 

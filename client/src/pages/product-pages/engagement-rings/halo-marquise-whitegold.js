@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import GlobalHeader from '../../components/global-header';
-import ProductPageLayout from '../../product-pages/page-skeleton';
-import GlobalFooter from '../../components/global-footer';
+import GlobalHeader from '../../../components/global-header';
+import GlobalFooter from '../../../components/global-footer';
+import ProductPageLayout from '../page-skeleton';
 import SimilarNecklaces from '../similar-products/similar-necklaces';
 
 

@@ -1,14 +1,14 @@
 import React from 'react';
-import GlobalHeader from './components/global-header';
-import GlobalFooter from './components/global-footer';
-import EngagementHeader from './components/engagement-ring-components/engagement-header';
-import Solitaires from './components/engagement-ring-components/solitaire';
-import Halo from './components/engagement-ring-components/halo';
-import ThreeStone from './components/engagement-ring-components/three-stone';
-import Vintage from './components/engagement-ring-components/vintage';
-import Popular from './components/home-components/popular';
+import GlobalHeader from '../components/global-header';
+import GlobalFooter from '../components/global-footer';
+import EngagementHeader from '../components/engagement-ring-components/engagement-header';
+import Solitaires from '../components/engagement-ring-components/solitaire';
+import Halo from '../components/engagement-ring-components/halo';
+import ThreeStone from '../components/engagement-ring-components/three-stone';
+import Vintage from '../components/engagement-ring-components/vintage';
+import Popular from '../components/home-components/popular';
 
-import './styles/engagement-ring-styles/engagement-ring.css';
+import '../styles/engagement-ring-styles/engagement-ring.css';
 
 const EngagementRings = () => {
     return ( 

@@ -1,9 +1,9 @@
 import React from 'react';
-import GlobalHeader from './components/global-header';
-import GlobalFooter from './components/global-footer';
-import AboutDescription from './components/about-components/about-description';
+import GlobalHeader from '../components/global-header';
+import GlobalFooter from '../components/global-footer';
+import AboutDescription from '../components/about-components/about-description';
 
-import './styles/about-styles/about.css';
+import '../styles/about-styles/about.css';
 
 const About = () => {
     return ( 

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import GlobalHeader from './components/global-header';
-import GlobalFooter from './components/global-footer';
-import DesignHeader from './components/custom-design/header-image';
-import DesignBody from './components/custom-design/design-body';
-import './styles/custom-design-styles/custom-design.css';
+import GlobalHeader from '../components/global-header';
+import GlobalFooter from '../components/global-footer';
+import DesignHeader from '../components/custom-design/header-image';
+import DesignBody from '../components/custom-design/design-body';
+import '../styles/custom-design-styles/custom-design.css';
 
 class CustomDesign extends Component {
     state = { 

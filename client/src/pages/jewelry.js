@@ -1,14 +1,14 @@
 import React from 'react';
-import GlobalHeader from './components/global-header';
-import GlobalFooter from './components/global-footer';
-import JewelryHeader from './components/jewelry-components/jewelry-header';
-import Rings from './components/jewelry-components/rings';
-import Bracelets from './components/jewelry-components/bracelets';
-import Necklaces from './components/jewelry-components/necklaces';
-import Earrings from './components/jewelry-components/earrings';
-import CheapProducts from './components/jewelry-components/cheap-products';
+import GlobalHeader from '../components/global-header';
+import GlobalFooter from '../components/global-footer';
+import JewelryHeader from '../components/jewelry-components/jewelry-header';
+import Rings from '../components/jewelry-components/rings';
+import Bracelets from '../components/jewelry-components/bracelets';
+import Necklaces from '../components/jewelry-components/necklaces';
+import Earrings from '../components/jewelry-components/earrings';
+import CheapProducts from '../components/jewelry-components/cheap-products';
 
-import './styles/jewelry-styles/jewelry.css';
+import '../styles/jewelry-styles/jewelry.css';
 
 const Jewelry = () => {
     return ( 
