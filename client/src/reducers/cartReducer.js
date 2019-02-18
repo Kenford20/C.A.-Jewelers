@@ -8,13 +8,15 @@ const initialState = {
 export default function(state = initialState, action) {
     switch(action.type) {
         case ADD_ITEM_TO_CART: 
+            console.log(action.payload)
             return {
                 ...state,
                 numItems: state.numItems + 1,
                 items: [...state.items, action.payload]
-            }
+            } 
 
         case REMOVE_ITEM_FROM_CART:
+            console.log('remove item reducer')
             return {
                 ...state,
                 numItems: state.numItems - 1,

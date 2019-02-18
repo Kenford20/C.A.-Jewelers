@@ -6,6 +6,17 @@
 .filter-options {
     margin-left: 15px;
     color: rgb(100, 100, 100);
+    cursor: pointer;
+}
+.filter-options::before {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    background: lightgrey;
 }
 
 .list-group-item-success{
@@ -44,6 +55,17 @@
 #reset-filters:hover { 
     background: var(--yellow);
     color: white;
+}
+
+.filter-checkbox {
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    background: grey;
+    cursor: pointer;
 }
 
 @media only screen and (min-width:0px) and (max-width:995px){

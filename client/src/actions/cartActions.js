@@ -1,15 +1,17 @@
 import { ADD_ITEM_TO_CART, REMOVE_ITEM_FROM_CART } from './types';
 
-export const addToCart = () => dispatch => {
+export const addToCart = (productDetails) => dispatch => {
+    console.log('adding item')
     dispatch({ 
         type: ADD_ITEM_TO_CART,
-        payload: stuffaboutitemaddedtocart
+        payload: productDetails
     })
 }
 
-export const RemoveFromCart = () => dispatch => {
+export const RemoveFromCart = (productDetails) => dispatch => {
+    console.log('removing item');
     dispatch({ 
         type: REMOVE_ITEM_FROM_CART,
-        payload: stuffaboutitemremovedtocart 
+        payload: productDetails 
     })
 }

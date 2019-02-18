@@ -1,10 +1,12 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-const HeaderNavbar2 = ({ numItemsInBag }) => {
+class HeaderNavbar2 extends React.Component {
+  render(){
     return ( 
         <div id="header-nav2" className="hide container">
             <nav className="navbar navbar-expand-md navbar-dark">
-            <a id="header-logo" className="center" href="/"><img src={require("../../images/logo2.png")} alt="logo" height="45px" width="125px"></img></a>
+  <a id="header-logo" className="center" href="/"><img src={require("../../images/logo2.png")} alt="logo" height="45px" width="125px"></img></a>
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>
   </button>
@@ -16,7 +18,6 @@ const HeaderNavbar2 = ({ numItemsInBag }) => {
           ENGAGEMENT
         </a>
         <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-
             <div className="row w-60 ml-auto">
               <div className="col-md-3">
                 <span className="text-uppercase">shop by style</span>
@@ -59,7 +60,6 @@ const HeaderNavbar2 = ({ numItemsInBag }) => {
                   <img src={"https://s3.amazonaws.com/media-cajewelers.com/BridalSetPrincess.jpg"} alt="engagement-thumbnail" width="300px" height="200px" ></img>
                 </a>              </div>
           </div>
- 
         </div>
       </li>
       
@@ -68,7 +68,6 @@ const HeaderNavbar2 = ({ numItemsInBag }) => {
           WEDDING
         </a>
         <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-
             <div className="row w-60 ml-auto">
               <div className="col-md-3">
                 <span className="text-uppercase">women</span>
@@ -111,7 +110,6 @@ const HeaderNavbar2 = ({ numItemsInBag }) => {
                   <img src={require("../../images/wedding-thumbnail.jpeg")} alt="engagement-thumbnail" width="300px" height="200px" ></img>
                 </a>              </div>
           </div>
- 
         </div>
       </li>
       
@@ -120,7 +118,6 @@ const HeaderNavbar2 = ({ numItemsInBag }) => {
           JEWELRY
         </a>
         <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-
             <div className="row w-60 ml-auto">
               <div className="col-md-3">
                 <span className="text-uppercase">Category</span>
@@ -161,12 +158,11 @@ const HeaderNavbar2 = ({ numItemsInBag }) => {
               <div className="col-md-6 text-center">
                 <a href="">
                   <img src={"https://s3.amazonaws.com/media-cajewelers.com/Settings.jpg"} alt="engagement-thumbnail" width="300px" height="200px" ></img>
-                </a>              </div>
+                </a>              
+              </div>
           </div>
- 
         </div>
-      </li>
-      
+      </li>   
 
       <li className="nav-item">
         <a className="nav-link nav-link-spacing" href="/about" >ABOUT</a>
@@ -181,15 +177,20 @@ const HeaderNavbar2 = ({ numItemsInBag }) => {
     <div id="header-icons">
       <i className="fas fa-search"></i>
       <i className="fas fa-address-book"></i>
-      <i className="fas fa-shopping-bag"></i><span>{ numItemsInBag }</span>
+      <a href="/cart">
+        <i className="fas fa-shopping-bag"></i><span id="">{ this.props.numItemsInBag }</span>
+      </a>
     </div>
   </div>
 
 </nav>
-
-          </div>
-
-     );
+</div>
+    );
+  }
 }
- 
-export default HeaderNavbar2;
+
+const mapStateToProps = state => ({
+  numItemsInBag: state.cart.numItems
+});
+
+export default connect(mapStateToProps)(HeaderNavbar2);

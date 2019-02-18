@@ -1,9 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { addToCart } from '../../actions/cartActions';
 
 import '../../styles/product-pages-styles/product-pages.css';
 
-const ProductPageLayout = ({ categoryRoute, categoryRouteName, subcategoryRoute, subcategoryRouteName, productName, price, description, addItemToBag }) => {
+class ProductPageLayout extends React.Component {
+    addItemToBag = () => {
+        let itemDetails = {
+            imgUrl: this.props.imgUrl,
+            name: this.props.productName,
+            price: this.props.price,
+            description: this.props.description,
+            quantity: 1
+        }
+
+        this.props.addToCart(itemDetails);
+    }
+
+    render() {
+        const { imgUrl, categoryRoute, categoryRouteName, subcategoryRoute, subcategoryRouteName, productName, price, description } = this.props;
     return ( 
         <div id="product-page-layout" className="products-page">
             <div className="w-100 bg-lightgrey catalog-route-border">
@@ -20,7 +36,7 @@ const ProductPageLayout = ({ categoryRoute, categoryRouteName, subcategoryRoute,
             <div className="row container m-auto">
                 <div className="col-lg-6">
                     <div className="product-image-container">
-                        <img className="product-image" src={"https://s3.amazonaws.com/media-cajewelers.com/BeadSet-resized.jpg"} alt="Card image cap"></img>
+                        <img className="product-image" src={ imgUrl } alt="Card image cap"></img>
                     </div>
                 </div>
                 <div className="col-lg-6">
@@ -34,7 +50,7 @@ const ProductPageLayout = ({ categoryRoute, categoryRouteName, subcategoryRoute,
                         <p>{ description }</p>
                     </div>
                     <div className="cart-btn">
-                        <button className="feature-btn cart-btn" onClick={ addItemToBag }>ADD TO BAG</button>
+                        <a href="/cart" className="feature-btn cart-btn" onClick={ this.addItemToBag }>ADD TO BAG</a>
                     </div>
                     <div className="product-shipping">
                         <br></br>
@@ -76,6 +92,7 @@ const ProductPageLayout = ({ categoryRoute, categoryRouteName, subcategoryRoute,
             </div>
         </div>
     );
+    }
 }
 
 ProductPageLayout.propTypes = {
@@ -88,4 +105,4 @@ ProductPageLayout.propTypes = {
     price: PropTypes.number
 }
  
-export default ProductPageLayout;
+export default connect(null, { addToCart })(ProductPageLayout);

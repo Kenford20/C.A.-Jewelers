@@ -12,6 +12,7 @@ class HaloMarquiseWhiteGold extends Component {
             <div className="halo-marquise-whitegold-page">
                 <GlobalHeader/>
                 <ProductPageLayout
+                    imgUrl = "https://s3.amazonaws.com/media-cajewelers.com/BeadSet-resized.jpg"
                     categoryRoute="/engagement-rings"
                     categoryRouteName="ENGAGEMENT RINGS"
                     subcategoryRoute="/engagement-rings/halo-rings"

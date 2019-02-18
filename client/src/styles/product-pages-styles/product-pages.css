@@ -3,8 +3,11 @@
 }
 
 .cart-btn{
+    display: block;
     width:100%;
+    text-align: center;
 }
+.cart-btn:hover { text-decoration: none }
 
 .product-details{
     margin-top:50px;
