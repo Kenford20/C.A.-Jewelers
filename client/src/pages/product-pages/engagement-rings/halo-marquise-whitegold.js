@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { connect } from 'react-redux';
 import GlobalHeader from '../../../components/global-header';
 import GlobalFooter from '../../../components/global-footer';
 import ProductPageLayout from '../page-skeleton';
@@ -24,8 +24,12 @@ class HaloMarquiseWhiteGold extends Component {
                 <SimilarNecklaces/>
                 <GlobalFooter/>
             </div>
-         );
+        );
     }
 }
+
+const mapStateToProps = state => {
+
+}
  
-export default HaloMarquiseWhiteGold;
+export default connect(mapStateToProps)(HaloMarquiseWhiteGold);

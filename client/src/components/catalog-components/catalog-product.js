@@ -1,10 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { addProductPageInfo } from '../../actions/productPageActions';
+import { connect } from 'react-redux';
+
 import '../../styles/catalog-styles/product.css';
 
-const Product = ({ link = '/', productName, description, price, imagePath, altTag = "placeholder tag" }) => {
+class Product extends React.Component {
+
+    sendProductPageInfo = () => {
+        alert('sending product info')
+        let productInfo = {
+            imgUrl: this.props.imagePath,
+            productName: this.props.productName,
+            price: this.props.price,
+            description: this.props.description,
+            categoryRouteName: this.props.category,
+            subcategoryRouteName: this.props.style,
+            subcategoryRoute: this.props.link
+        }
+        console.log(productInfo)
+        this.props.addProductPageInfo(productInfo);
+    }
+
+    render() {
+        const { link = '/', productName, description, price, imagePath, altTag = "placeholder tag" } = this.props;
+        let productUrl = link + productName.replace(/ +/g, '-').replace(/\//, '-');
+
     return ( 
-        <a href={ link } className="col-sm-6 col-md-4 col-lg-4 td-none" id="catalog-product">
+        <a href={ productUrl } className="col-sm-6 col-md-4 col-lg-4 td-none" id="catalog-product" onClick={ this.sendProductPageInfo }>
             <div className="card">
                 <img className="card-img-top" src={ imagePath } alt={ altTag }></img>
                 <div className="card-body text-center">
@@ -19,6 +42,7 @@ const Product = ({ link = '/', productName, description, price, imagePath, altTa
             </div>
         </a>
      );
+    }
 }
 
 Product.propTypes = {
@@ -30,4 +54,4 @@ Product.propTypes = {
     price: PropTypes.number.isRequired
 };
  
-export default Product;
+export default connect(null, { addProductPageInfo })(Product);

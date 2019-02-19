@@ -204,9 +204,9 @@ class CatalogPage extends Component {
                         </div>
                         <div className="col-lg-9">
                             {
-                                this.state.fetchingProducts ? 
-                                spinner :
-                                <ProductsList products={ this.state.filteredProducts }/>
+                                this.state.fetchingProducts 
+                                ? spinner 
+                                : <ProductsList products={ this.state.filteredProducts }/>
                             }
                         </div>
                     </div>

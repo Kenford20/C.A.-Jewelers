@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import Home from './home';
 import Education from './education';
@@ -26,10 +27,14 @@ import Earrings from './jewelry/earrings';
 import Necklaces from './jewelry/necklaces';
 import Rings from './jewelry/rings';
 
+import ProductPage from './product-pages/product-page';
 import HaloMarquiseWhiteGold from './product-pages/engagement-rings/halo-marquise-whitegold';
 import SirenaDiamondNecklace from './product-pages/necklaces/sirena-diamond-necklace';
 
-export default () => (
+class Routes extends React.Component {
+	render(){
+		let productPath = this.props.subcategoryRoute + this.props.productName.replace(/ +/g, '-').replace(/\//, '-');
+	return(
   <BrowserRouter>
   	<Switch>
 	    <Route exact path='/' component={Home} />
@@ -56,10 +61,19 @@ export default () => (
 			<Route exact path='/jewelry/necklaces' component={Necklaces}/>
 			<Route exact path='/jewelry/rings' component={Rings}/>
 
-			<Route exact path='/engagement-rings/halo-rings/halo-marquise-white-gold' component={HaloMarquiseWhiteGold}/>
+			<Route exact path={ productPath } component={ProductPage}/>
 			<Route exact path='/jewelry/necklaces/sirena-diamond-necklace' component={SirenaDiamondNecklace}/>
 
 	    <Route component={Whoops404}/>
     </Switch>
  </BrowserRouter>
-);
+ 		)
+	}
+}
+
+const mapStateToProps = state => ({
+	subcategoryRoute: state.product.subcategoryRoute,
+	productName: state.product.productName
+});
+
+export default connect(mapStateToProps)(Routes);

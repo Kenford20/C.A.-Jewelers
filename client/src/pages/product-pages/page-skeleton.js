@@ -18,6 +18,10 @@ class ProductPageLayout extends React.Component {
         this.props.addToCart(itemDetails);
     }
 
+    componentDidMount() {
+        console.log(this.props)
+    }
+
     render() {
         const { imgUrl, categoryRoute, categoryRouteName, subcategoryRoute, subcategoryRouteName, productName, price, description } = this.props;
     return ( 
