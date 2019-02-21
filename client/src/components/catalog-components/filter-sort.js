@@ -8,8 +8,7 @@ class FilterSort extends Component {
             <div id="filter-sort">
                 <a href="#style-filter" className="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#style-filter">
                 Style <div className="chevron-container"><i className="fa fa-chevron-down chevron-small"></i></div></a>
-                    <div className="collapse" id="style-filter">
-                        {/* <a href="#SubMenu1" className="list-group-item filter-options" data-toggle="collapse" data-parent="#SubMenu1">Subitem 1 <i className="fa fa-caret-down"></i></a> */}
+                    <div className="collapse show" id="style-filter">
                         <h6 className="list-group-item filter-options" onClick={ updateFilters }>Halo</h6>
                         <h6 className="list-group-item filter-options" onClick={ updateFilters }>Solitaire</h6>
                         <h6 className="list-group-item filter-options" onClick={ updateFilters }>Three Stone</h6>
@@ -29,7 +28,7 @@ class FilterSort extends Component {
                 <a href="#metal-filter" className="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#metal-filter">
                 Metal <div className="chevron-container"><i className="fa fa-chevron-down chevron-small"></i></div></a>
                     <div className="collapse" id="metal-filter">
-                        <h6 className="list-group-item filter-options" onClick={ updateFilters }>Gold</h6>
+                        <h6 className="list-group-item filter-options" onClick={ updateFilters }>Yellow Gold</h6>
                         <h6 className="list-group-item filter-options" onClick={ updateFilters }>Rose Gold</h6>
                         <h6 className="list-group-item filter-options" onClick={ updateFilters }>White Gold</h6>
                         <h6 className="list-group-item filter-options" onClick={ updateFilters }>Platinum</h6>

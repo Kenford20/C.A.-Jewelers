@@ -40,7 +40,9 @@ class CatalogPage extends Component {
     
     componentDidMount(){   
         this.setState({ fetchingProducts: true });     
-        axios.get(this.props.apiEndpoint).then(response => {
+
+        axios.get(this.props.apiEndpoint)
+        .then(response => {
             console.log(response);
             this.setState({ 
                 products: response.data,
@@ -48,6 +50,23 @@ class CatalogPage extends Component {
                 fetchingProducts: false
             });
             this.setState({ numProducts: this.state.products.length });
+        })
+        .catch(function (error) {
+            if (error.response) {
+              // The request was made and the server responded with a status code that falls out of the range of 2xx
+              console.log(error.response.data);
+              console.log(error.response.status);
+              console.log(error.response.headers);
+            } else if (error.request) {
+              // The request was made but no response was received
+              // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+              // http.ClientRequest in node.js
+              console.log(error.request);
+            } else {
+              // Something happened in setting up the request that triggered an Error
+              console.log('Error', error.message);
+            }
+            console.log(error.config);
         });
     }
 
@@ -55,67 +74,83 @@ class CatalogPage extends Component {
         let filterType = e.target.parentNode.id;
         let selectedOption = e.target.innerHTML;
 
+        // style the active filter while keeping the unactive filters' styles unchanged
+        [...document.getElementById(filterType)
+            .getElementsByClassName('filter-options')]
+            .map(el => { 
+                el.style.background = 'white'
+                el.style.color = 'rgb(100, 100, 100)'
+        });
+                
+        e.target.style.background = '#b59734';
+        e.target.style.color = 'white';
+            
         switch(filterType) {
             case 'style-filter':
             case 'style-filter-mobile': {
-                this.setState(prevState => ({ 
-                    filterOptions: {
-                        ...prevState.filterOptions, 
-                        style: selectedOption,
-                    },
-                    areFiltersActive: {
-                        ...prevState.areFiltersActive,
-                        style: true
-                    }
-                }), this.filterProducts); 
+                let filterOption = 'style';
+                this.changeFilterState(selectedOption, filterOption, null, e.target);
             } break;
 
             case 'shape-filter':
             case 'shape-filter-mobile': {
-                this.setState(prevState => ({ 
-                    filterOptions: {
-                        ...prevState.filterOptions, 
-                        shape: selectedOption
-                    },
-                    areFiltersActive: {
-                        ...prevState.areFiltersActive,
-                        shape: true
-                    }
-                }), this.filterProducts); 
+                let filterOption = 'shape';
+                this.changeFilterState(selectedOption, filterOption, null, e.target);
             } break;
 
             case 'metal-filter':
             case 'metal-filter-mobile': {
-                this.setState(prevState => ({ 
-                    filterOptions: {
-                        ...prevState.filterOptions, 
-                        metal: selectedOption
-                    },
-                    areFiltersActive: {
-                        ...prevState.areFiltersActive,
-                        metal: true
-                    }
-                }), this.filterProducts); 
+                let filterOption = 'metal';
+                this.changeFilterState(selectedOption, filterOption, null, e.target);
             } break;
 
             case 'price-filter':
             case 'price-filter-mobile': {
-                this.setState(prevState => ({ 
-                    filterOptions: {
-                        ...prevState.filterOptions, 
-                        price: selectedOption === '$ 500 or less' ? [0, 500] :
-                               selectedOption === '$ 501 - 1000' ? [501, 1000] :
-                               selectedOption === '$ 1001 - 3000' ? [1001, 3000] :
-                               selectedOption === '$ 3001 - 5000' ? [3001, 5000] : [5000, 1000000]
-                    },
-                    areFiltersActive: {
-                        ...prevState.areFiltersActive,
-                        price: true
-                    }
-                }), this.filterProducts); 
+                let filterOption = 'price';
+                let priceRange = selectedOption === '$ 500 or less' ? [0, 500] :
+                                 selectedOption === '$ 501 - 1000' ? [501, 1000] :
+                                 selectedOption === '$ 1001 - 3000' ? [1001, 3000] :
+                                 selectedOption === '$ 3001 - 5000' ? [3001, 5000] : [5000, 1000000];
+                this.changeFilterState(selectedOption, filterOption, priceRange, e.target);
             } break;
 
             default: alert('something went wrong');
+        }
+    }
+
+    changeFilterState(selectedOption, filterOption, priceRange, e) {
+        // handle removing an already active price filter by converting array values into strings to be compared in the if block below
+        if(filterOption === 'price') {
+            selectedOption = `${priceRange[0]} ${priceRange[1]}`;
+            this.state.filterOptions[filterOption] = `${this.state.filterOptions[filterOption][0]} ${this.state.filterOptions[filterOption][1]}`;
+        }
+
+        // remove filter if selected filter is already active
+        if(selectedOption === this.state.filterOptions[filterOption]) {
+            e.style.background = 'white';
+            e.style.color = 'rgb(100, 100, 100)';
+
+            this.setState(prevState => ({
+                filterOptions: {
+                    ...prevState.filterOptions,
+                    [filterOption]: filterOption === 'price' ? [0, 100000] : ''
+                },
+                areFiltersActive: {
+                    ...prevState.areFiltersActive,
+                    [filterOption]: false
+                }
+            }), this.filterProducts);
+        } else { // apply filter
+            this.setState(prevState => ({ 
+                filterOptions: {
+                    ...prevState.filterOptions, 
+                    [filterOption]: filterOption === 'price' ? priceRange : selectedOption,
+                },
+                areFiltersActive: {
+                    ...prevState.areFiltersActive,
+                    [filterOption]: true
+                }
+            }), this.filterProducts); 
         }
     }
 
@@ -153,6 +188,14 @@ class CatalogPage extends Component {
     }
 
     resetFilters() {
+        // reset the styles of any active filters
+        [...document.getElementById('filter-sort')
+        .getElementsByClassName('filter-options')]
+        .map(el => { 
+            el.style.background = 'white'
+            el.style.color = 'rgb(100, 100, 100)'
+        });
+
         this.setState({
             filterOptions: {
                 style: '',
