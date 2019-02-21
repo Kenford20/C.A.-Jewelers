@@ -17,6 +17,7 @@ class CatalogPage extends Component {
         super(props); 
         this.updateFilters = this.updateFilters.bind(this);
         this.resetFilters = this.resetFilters.bind(this);
+        this.sortProducts = this.sortProducts.bind(this);
 
         this.state = {
             products: [],
@@ -71,6 +72,10 @@ class CatalogPage extends Component {
     }
 
     updateFilters(e) {
+        // simulate filtering time to prevent instant DOM change
+        this.setState({ fetchingProducts: true });
+        setTimeout(() => { this.setState({ fetchingProducts: false })}, 800);
+
         let filterType = e.target.parentNode.id;
         let selectedOption = e.target.innerHTML;
 
@@ -84,24 +89,24 @@ class CatalogPage extends Component {
                 
         e.target.style.background = '#b59734';
         e.target.style.color = 'white';
-            
+        
         switch(filterType) {
             case 'style-filter':
             case 'style-filter-mobile': {
                 let filterOption = 'style';
-                this.changeFilterState(selectedOption, filterOption, null, e.target);
+                this.updateFilterState(selectedOption, filterOption, null, e.target);
             } break;
 
             case 'shape-filter':
             case 'shape-filter-mobile': {
                 let filterOption = 'shape';
-                this.changeFilterState(selectedOption, filterOption, null, e.target);
+                this.updateFilterState(selectedOption, filterOption, null, e.target);
             } break;
 
             case 'metal-filter':
             case 'metal-filter-mobile': {
                 let filterOption = 'metal';
-                this.changeFilterState(selectedOption, filterOption, null, e.target);
+                this.updateFilterState(selectedOption, filterOption, null, e.target);
             } break;
 
             case 'price-filter':
@@ -111,14 +116,14 @@ class CatalogPage extends Component {
                                  selectedOption === '$ 501 - 1000' ? [501, 1000] :
                                  selectedOption === '$ 1001 - 3000' ? [1001, 3000] :
                                  selectedOption === '$ 3001 - 5000' ? [3001, 5000] : [5000, 1000000];
-                this.changeFilterState(selectedOption, filterOption, priceRange, e.target);
+                this.updateFilterState(selectedOption, filterOption, priceRange, e.target);
             } break;
 
             default: alert('something went wrong');
         }
     }
 
-    changeFilterState(selectedOption, filterOption, priceRange, e) {
+    updateFilterState(selectedOption, filterOption, priceRange, e) {
         // handle removing an already active price filter by converting array values into strings to be compared in the if block below
         if(filterOption === 'price') {
             selectedOption = `${priceRange[0]} ${priceRange[1]}`;
@@ -181,10 +186,8 @@ class CatalogPage extends Component {
                    {
                     return product;
                 }
-            })}, () => { 
-                this.setState({ numProducts: this.state.filteredProducts.length 
-            });
-        });
+            }),
+        }, () => this.setState({ numProducts: this.state.filteredProducts.length }, this.sortProducts));
     }
 
     resetFilters() {
@@ -211,6 +214,32 @@ class CatalogPage extends Component {
             }
          }, this.filterProducts);
     }
+
+    sortProducts() {
+        // simulate sorting time to prevent instant DOM change
+        this.setState({ fetchingProducts: true });
+        setTimeout(() => { this.setState({ fetchingProducts: false })}, 800);
+
+        let sortOption = document.querySelector('#sort-select').value;
+        
+        if(sortOption === 'low-to-high') {            
+            this.setState({
+                filteredProducts: this.state.filteredProducts.sort((productX, productY) => {
+                   return productX.price - productY.price;
+                })
+            })
+        } else if(sortOption === 'high-to-low') {
+            this.setState({
+                filteredProducts: this.state.filteredProducts.sort((productX, productY) => {
+                    return productY.price - productX.price;
+                })
+            })
+        } else if(sortOption === 'best-sellers') {
+            this.setState({
+                // currently dont have a way to determine what products are best sellers, so if user sorts once, products will stay sorted until page refresh to get original order of products back
+            })
+        }
+    }
     
     render() { 
         const { heading, categoryRoute, categoryRouteName, subcategoryRouteName, pageDescription } = this.props;
@@ -231,6 +260,7 @@ class CatalogPage extends Component {
                     subcategoryRouteName = { subcategoryRouteName }
                     pageDescription = { pageDescription }
                     numProducts = { this.state.numProducts }
+                    sortProducts = { this.sortProducts }
                 />
                 <div className="container">
                     <div className="row">

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import '../../styles/catalog-styles/catalog-top.css';
 
-const CatalogTop = ({ heading, pageDescription, categoryRoute, categoryRouteName, subcategoryRouteName, numProducts }) => {
+const CatalogTop = ({ heading, pageDescription, categoryRoute, categoryRouteName, subcategoryRouteName, numProducts, sortProducts }) => {
     return ( 
         <div id="catalog-top">
             <div className="w-100">
@@ -26,11 +26,11 @@ const CatalogTop = ({ heading, pageDescription, categoryRoute, categoryRouteName
                         <span> { numProducts } ITEMS </span>
                     </div>
                     <div className="col-lg-5 text-right"> 
-                    <span>Sort By: </span>
-                        <select id="sort-select">
-                            <option value="quote">Best Sellers</option>
-                            <option value="alphanumeric">Price: Low to High</option>
-                            <option value="paragraph">Price: High to Low</option>
+                        <span>Sort By: </span>
+                        <select id="sort-select" onChange={ sortProducts }>
+                            <option value="best-sellers">Best Sellers</option>
+                            <option value="low-to-high">Price: Low to High</option>
+                            <option value="high-to-low">Price: High to Low</option>
                         </select>
                     </div>
                 </div>             
