@@ -145,7 +145,9 @@ class CatalogPage extends Component {
                     [filterOption]: false
                 }
             }), this.filterProducts);
-        } else { // apply filter
+        } 
+        // apply filter to products
+        else { 
             this.setState(prevState => ({ 
                 filterOptions: {
                     ...prevState.filterOptions, 
@@ -215,26 +217,28 @@ class CatalogPage extends Component {
          }, this.filterProducts);
     }
 
-    sortProducts() {
+    // optional event parameter since mobile view doesnt have a dropdown for the sorting options
+    sortProducts(e = '') {
         // simulate sorting time to prevent instant DOM change
         this.setState({ fetchingProducts: true });
         setTimeout(() => { this.setState({ fetchingProducts: false })}, 800);
 
         let sortOption = document.querySelector('#sort-select').value;
+        let mobileSortOption = e !== '' ? e.target.innerHTML : ''; // no e.target.innerHTML for nonmobile view
         
-        if(sortOption === 'low-to-high') {            
+        if(sortOption === 'low-to-high' || mobileSortOption === 'Price: Low to High') {            
             this.setState({
                 filteredProducts: this.state.filteredProducts.sort((productX, productY) => {
                    return productX.price - productY.price;
                 })
             })
-        } else if(sortOption === 'high-to-low') {
+        } else if(sortOption === 'high-to-low' || mobileSortOption === 'Price: High to Low') {
             this.setState({
                 filteredProducts: this.state.filteredProducts.sort((productX, productY) => {
                     return productY.price - productX.price;
                 })
             })
-        } else if(sortOption === 'best-sellers') {
+        } else if(sortOption === 'best-sellers' || mobileSortOption === 'Best Sellers') {
             this.setState({
                 // currently dont have a way to determine what products are best sellers, so if user sorts once, products will stay sorted until page refresh to get original order of products back
             })
@@ -272,6 +276,7 @@ class CatalogPage extends Component {
                             <FilterSortMobile 
                                 updateFilters={ this.updateFilters }
                                 resetFilters={ this.resetFilters }
+                                sortProducts={ this.sortProducts }
                             />
                             <NumItemsMobile numProducts={ this.state.numProducts }/>
                         </div>

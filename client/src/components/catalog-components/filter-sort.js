@@ -9,7 +9,7 @@ class FilterSort extends Component {
                 <a href="#style-filter" className="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#style-filter">
                 Style <div className="chevron-container"><i className="fa fa-chevron-down chevron-small"></i></div></a>
                     <div className="collapse show" id="style-filter">
-                        <h6 className="list-group-item filter-options" onClick={ updateFilters }>Halo</h6>
+                        <h6 id="abc" className="list-group-item filter-options" onClick={ updateFilters }>Halo</h6>
                         <h6 className="list-group-item filter-options" onClick={ updateFilters }>Solitaire</h6>
                         <h6 className="list-group-item filter-options" onClick={ updateFilters }>Three Stone</h6>
                         <h6 className="list-group-item filter-options" onClick={ updateFilters }>Vintage</h6>
