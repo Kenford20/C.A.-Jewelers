@@ -16,11 +16,14 @@ export default function(state = initialState, action) {
             } 
 
         case REMOVE_ITEM_FROM_CART:
-            console.log('remove item reducer')
+            console.log(`remove item reducer`)
             return {
                 ...state,
                 numItems: state.numItems - 1,
-                items: [state.items.filter(item => item !== action.payload)]
+                items: state.items.filter(item => {
+                    if(item.productId !== action.payload)
+                        return item;
+                })
             }
         default: return state;
     }

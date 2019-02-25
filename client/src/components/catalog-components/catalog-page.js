@@ -9,8 +9,7 @@ import CatalogTop from '../../components/catalog-components/catalog-top';
 import FilterSort from '../../components/catalog-components/filter-sort'; 
 import FilterSortMobile from '../../components/catalog-components/filter-sort-mobile';
 import NumItemsMobile from '../../components/catalog-components/num-items-mobile';
-
-import '../../styles/catalog-styles/spinner.css';
+import Spinner from '../../components/spinner';
 
 class CatalogPage extends Component {
     constructor(props){
@@ -247,12 +246,6 @@ class CatalogPage extends Component {
     
     render() { 
         const { heading, categoryRoute, categoryRouteName, subcategoryRouteName, pageDescription } = this.props;
-        
-        let spinner = (
-            <div id="catalog-spinner">
-                <img src={require("../../images/logo.png")} alt="loading spinner"></img>
-            </div>
-        );
 
         return ( 
             <div id="catalog-page">
@@ -283,7 +276,7 @@ class CatalogPage extends Component {
                         <div className="col-lg-9">
                             {
                                 this.state.fetchingProducts 
-                                ? spinner 
+                                ? <Spinner/> 
                                 : <ProductsList products={ this.state.filteredProducts }/>
                             }
                         </div>

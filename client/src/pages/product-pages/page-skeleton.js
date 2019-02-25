@@ -8,6 +8,8 @@ import '../../styles/product-pages-styles/product-pages.css';
 class ProductPageLayout extends React.Component {
     addItemToBag = () => {
         let itemDetails = {
+            productId: this.props.productId,
+            productUrl: this.props.productUrl,
             imgUrl: this.props.imgUrl,
             name: this.props.productName,
             price: this.props.price,
@@ -16,10 +18,6 @@ class ProductPageLayout extends React.Component {
         }
 
         this.props.addToCart(itemDetails);
-    }
-
-    componentDidMount() {
-        console.log(this.props)
     }
 
     render() {
@@ -106,7 +104,9 @@ ProductPageLayout.propTypes = {
     subcategoryRouteName: PropTypes.string,
     productName: PropTypes.string,
     description: PropTypes.string,
-    price: PropTypes.number
+    price: PropTypes.number,
+    productUrl: PropTypes.string,
+    productId: PropTypes.string
 }
  
 export default connect(null, { addToCart })(ProductPageLayout);

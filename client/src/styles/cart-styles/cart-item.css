@@ -1,0 +1,27 @@
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 25px 0;
+    font-size: 14px;
+}
+
+.cart-item img { 
+    width: 150px;
+    height: 150px;
+}
+
+#cart-items {
+    grid-area: cartItems;
+}
+
+.cart-item-info {
+    flex-basis: 350px;
+}
+.cart-item-info p {
+    margin: 0;
+}
+
+.cart-item-price {
+    flex-basis: 100px;
+    justify-content: flex-end;;
+}

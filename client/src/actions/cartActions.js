@@ -8,10 +8,10 @@ export const addToCart = (productDetails) => dispatch => {
     })
 }
 
-export const RemoveFromCart = (productDetails) => dispatch => {
+export const removeFromCart = (productId) => dispatch => {
     console.log('removing item');
     dispatch({ 
         type: REMOVE_ITEM_FROM_CART,
-        payload: productDetails 
+        payload: productId 
     })
 }

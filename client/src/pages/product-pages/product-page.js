@@ -26,6 +26,8 @@ class ProductPage extends Component {
             <div className="product-page">
                 <GlobalHeader/>
                 <ProductPageLayout
+                    productId = { this.props.productId }
+                    productUrl = { this.props.productUrl }
                     imgUrl={ this.props.imgUrl }
                     productName={ this.props.productName }
                     price={ this.props.price }
@@ -43,6 +45,8 @@ class ProductPage extends Component {
 }
 
 const mapStateToProps = state => ({
+    productId: state.product.productId,
+    productUrl: state.product.productUrl,
     imgUrl: state.product.imgUrl,
     productName: state.product.productName,
     price: state.product.price,
@@ -53,6 +57,8 @@ const mapStateToProps = state => ({
 });
 
 ProductPage.propTypes = { 
+    productId: PropTypes.string.productId,
+    productUrl: PropTypes.string.isRequired,
     imgUrl: PropTypes.string.isRequired,
     productName: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,

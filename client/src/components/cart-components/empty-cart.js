@@ -1,5 +1,7 @@
 import React from 'react';
 
+import '../../styles/cart-styles/empty-cart.css';
+
 const EmptyCart = () => {
     return ( 
         <div className="container" id="empty-cart">

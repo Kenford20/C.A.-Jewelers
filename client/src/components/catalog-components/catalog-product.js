@@ -9,6 +9,8 @@ class Product extends React.Component {
 
     sendProductPageInfo = () => {
         let productInfo = {
+            productId: this.props.productId,
+            productUrl: this.props.link + this.props.productName.replace(/ +/g, '-').replace(/\//, '-'),
             imgUrl: this.props.imagePath,
             productName: this.props.productName,
             price: this.props.price,

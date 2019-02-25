@@ -1,9 +1,11 @@
 import { ADD_PRODUCT_PAGE_INFO } from '../actions/types';
 
 const initialState = {
+    productId: 'productId',
+    productUrl: '/',
     imgUrl: "https://s3.amazonaws.com/media-cajewelers.com/BeadSet-resized.jpg",
     productName: "14K Gold Marquise Halo Engagement Ring",
-    price: 1235,
+    price: 1234,
     description: "In laoreet lacus metus, non facilisis elit semper sed.",
     categoryRouteName: "engagement rings",
     subcategoryRouteName: "halo",
@@ -16,6 +18,8 @@ export default function(state = initialState, action) {
             console.log(action.payload)
             return {
                 ...state,
+                productId: action.payload.productId,
+                productUrl: action.payload.productUrl,
                 imgUrl: action.payload.imgUrl,
                 productName: action.payload.productName,
                 price: action.payload.price,

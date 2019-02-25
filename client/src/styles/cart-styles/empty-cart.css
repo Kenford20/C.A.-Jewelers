@@ -1,0 +1,20 @@
+#shopping-suggestions-wrapper {
+    display: flex;
+}
+.shopping-suggestions {
+    flex: 1;
+    text-align: center;
+    border: 2px solid var(--yellow);
+    margin: 0 15px;
+    padding: 60px 5px;
+}
+.shopping-suggestions:hover {
+    text-decoration: none;
+}
+.shopping-suggestions:hover h2{
+    color: var(--yellow);
+}
+.shopping-suggestions h2{
+    font-size: 16px;
+    color: black;
+}
