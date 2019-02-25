@@ -1,7 +1,7 @@
+/* empty cart */
 #shopping-suggestions-wrapper {
     display: flex;
 }
-
 .shopping-suggestions {
     flex: 1;
     text-align: center;
@@ -18,4 +18,21 @@
 .shopping-suggestions h2{
     font-size: 16px;
     color: black;
+}
+
+/* items in cart */
+.cart-item {
+    display: flex;
+    margin: 25px 0;
+    flex-direction: row;
+}
+.cart-item img { 
+    width: 150px;
+    height: 150px;
+}
+
+#cart-items-summary {
+    display: grid;
+    grid-template-columns: 2.5fr 1.5fr;
+    grid-gap: 100px;
 }
