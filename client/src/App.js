@@ -1,15 +1,21 @@
 import React, { Component } from 'react';
 import Routes from './pages/routes.js';
-import { Provider } from 'react-redux';
 import store from './redux-store'
+import { Provider } from 'react-redux';
+import { persistStore } from 'redux-persist';
+import { PersistGate } from 'redux-persist/integration/react';
+
+const persistor = persistStore(store);
 
 class App extends Component {
   render() {
     return (
       <Provider store={ store }>
-      <div className="App">
-        <Routes/>
-      </div>
+        <PersistGate loading={ null } persistor={ persistor }>
+          <div className="App">
+            <Routes/>
+          </div>
+        </PersistGate>
       </Provider>
     );
   }

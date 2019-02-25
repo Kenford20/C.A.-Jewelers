@@ -8,7 +8,6 @@ import '../../styles/catalog-styles/product.css';
 class Product extends React.Component {
 
     sendProductPageInfo = () => {
-        alert('sending product info')
         let productInfo = {
             imgUrl: this.props.imagePath,
             productName: this.props.productName,
