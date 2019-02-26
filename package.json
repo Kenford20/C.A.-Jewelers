@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "engines": {
-    "node": "8.11.3"
+    "node": "10.x"
   },
   "scripts": {
     "start": "node server.js",
@@ -13,7 +13,6 @@
   },
   "author": "Kenny Zhou",
   "license": "ISC",
-  "homepage": "https://arcane-plains-24194.herokuapp.com//",
   "dependencies": {
     "body-parser": "^1.18.3",
     "concurrently": "^4.0.1",
