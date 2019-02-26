@@ -1,15 +1,25 @@
 import React from 'react';
 
+import { connect } from 'react-redux';
+
 const HeaderNavbar = ({ onToggle, numItemsInBag }) => {
     return ( 
         <div id="header-nav" className="hide-md">
             <nav className="navbar navbar-expand-md navbar-light sticky-top">
                 <div className="container-fluid">
-                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>  
+                    <div>
+                        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                            <span className="navbar-toggler-icon"></span>
+                        </button>  
+                        <a id="search-btn" href=""><i className="fas fa-phone"></i></a>
+                    </div>
                     <a id="header-logo" href="/"><img src={require("../../images/logo2.png")} alt="logo" height="55px" width="185px"></img></a>  
-                    <a id="search-btn" href="" onClick={ onToggle }><i className="fas fa-search"></i></a>
+                    <div id="header-icons">
+                        <a id="search-btn" href="" onClick={ onToggle }><i className="fas fa-search"></i></a>
+                        <a href="/cart">
+                            <i className="fas fa-shopping-bag"></i><div id="num-cart-items">{ numItemsInBag }</div>
+                        </a>
+                    </div>
                 </div>
                 <div className="collapse navbar-collapse" id="navbarResponsive">
                     <ul className="navbar-nav">
@@ -84,5 +94,9 @@ const HeaderNavbar = ({ onToggle, numItemsInBag }) => {
         </div>
      );
 }
+
+const mapStateToProps = state => ({
+    numItemsInBag: state.cart.numItems
+  });
  
-export default HeaderNavbar;
+export default connect(mapStateToProps)(HeaderNavbar);

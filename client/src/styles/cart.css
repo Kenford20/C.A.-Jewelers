@@ -4,9 +4,32 @@
     grid-template-areas:
         "heading heading heading"
         "cartItems . summary";
-    grid-template-columns: 1.5fr 50px 0.8fr;
+    grid-template-columns: 1.5fr 75px 0.8fr;
 }
 
 #cart-items-summary h2 {
     grid-area: heading;
+}
+
+@media only screen and (max-width: 1201px) {
+    #cart-items-summary {
+        grid-template-columns: 1.5fr 60px 1fr;
+    }
+}
+
+@media only screen and (max-width: 996px) {
+    #cart-items-summary {
+        grid-template-areas: 
+            "heading"
+            "cartItems"
+            "summary";
+        grid-template-columns: 100%;
+        width: 95%;
+    }
+}
+
+@media only screen and (max-width: 765px) {
+    #cart .container {
+        max-width: 100%;
+    }
 }

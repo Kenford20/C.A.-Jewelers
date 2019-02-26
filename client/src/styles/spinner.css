@@ -2,6 +2,7 @@
     margin: auto;
     width: 350px;
     margin-top: 50px;
+    padding: 50px;
 }
 
 #catalog-spinner::before {

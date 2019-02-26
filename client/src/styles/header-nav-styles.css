@@ -7,6 +7,7 @@
 }
 
 .fa-search:hover, 
+.fa-phone:hover,
 .fa-shopping-bag:hover, 
 .fa-address-book:hover{
 	color:var(--yellow);
@@ -59,6 +60,13 @@
     font-size:1.2rem;
 }
 
+.navbar-toggler-icon {
+    width: 1.3em;
+    height: 1.3em;
+    position: relative;
+    top: -2px;
+}
+
 
 
 /* custom classNamees for dropdown menu items*/
@@ -84,13 +92,13 @@
 }
 
 /* Search Bar */
-.fa-search {
+.fa-search, .fa-address-book, .fa-shopping-bag, .fa-phone {
     color:grey;
+    font-size:20px;
+    margin:0 10px;
 }
-
-#search-btn{
+#search-btn {
     font-size:25px;
-    padding:12px;
 }
 
 #custom-search-input{
@@ -140,6 +148,23 @@
     top: 15px;
     font-weight: 900;
     cursor: normal;
+}
+
+@media only screen and (max-width: 375px) {
+    #header-logo img { width: 150px }
+
+}
+
+
+@media only screen and (max-width: 480px) {
+    .fa-search, .fa-phone { margin: 0 3px 0 0 }
+}
+
+@media only screen and (max-width: 765px) {
+    #num-cart-items {
+        right: 2px;
+        top: 20px;
+    }
 }
 
 @media only screen and (min-width:765px){
@@ -198,12 +223,6 @@
     padding-top:0px;
     padding-bottom:0px;
     height:60px;
-    }
-
-    .fa-search, .fa-address-book, .fa-shopping-bag{
-        color:grey;
-        font-size:20px;
-        margin:0 10px;
     }
 
     /* remove the padding from the nav-item and add some margin to give some breathing room on hovers */

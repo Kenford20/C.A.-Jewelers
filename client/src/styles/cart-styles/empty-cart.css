@@ -1,12 +1,16 @@
 #shopping-suggestions-wrapper {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 .shopping-suggestions {
-    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     border: 2px solid var(--yellow);
     margin: 0 15px;
     padding: 60px 5px;
+
 }
 .shopping-suggestions:hover {
     text-decoration: none;
@@ -17,4 +21,18 @@
 .shopping-suggestions h2{
     font-size: 16px;
     color: black;
+}
+
+@media only screen and (max-width: 996px) {
+    #shopping-suggestions-wrapper {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-row-gap: 30px;
+    }
+}
+
+@media only screen and (max-width: 481px) {
+    .shopping-suggestions { padding: 40px 5px }
+    .shopping-suggestions h2 { font-size: 13px }
+    #empty-cart h3, #empty-cart p { padding: 0 15px }
 }
