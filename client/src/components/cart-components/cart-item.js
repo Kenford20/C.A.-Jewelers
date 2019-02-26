@@ -10,7 +10,7 @@ const CartItem = ({ productId, itemLink, imgUrl, name, description, quantity, pr
                 <div className="remove-item" onClick={ ()=>removeItem(productId) }><span>Remove</span></div>
             </div>
             <div className="cart-item-info">
-                <p>{ name }</p>
+                <p className="cart-item-name">{ name }</p>
                 <p>{ description }</p>
                 <p>Quantity: { quantity }</p>
                 <p>Ring Size: { ringSize }</p>

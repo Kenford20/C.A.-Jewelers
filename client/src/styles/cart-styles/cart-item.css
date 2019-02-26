@@ -3,8 +3,11 @@
     justify-content: space-between;
     margin: 25px 0;
     font-size: 14px;
+    color: rgba(50, 50, 50, 0.9)
 }
-
+.cart-item-name, .remove-item {
+    color: black;
+}
 .cart-item img { 
     width: 150px;
     height: 150px;
@@ -24,4 +27,29 @@
 .cart-item-price {
     flex-basis: 100px;
     justify-content: flex-end;;
+}
+
+.remove-item {
+    text-align: right;
+    cursor: pointer;
+    position: relative;
+    width: 75px;
+    margin: 5px auto;
+}
+.remove-item:hover {
+    color: var(--yellow);
+}
+.remove-item::before, .remove-item::after {
+    content: '';
+    display: inline-block;
+    width: 13px;
+    height: 2px;
+    background: var(--yellow);
+    position: absolute;
+    left: 0;
+    top: 9px;
+    transform: rotate(45deg);
+}
+.remove-item::after {
+    transform: rotate(135deg);
 }

@@ -27,6 +27,7 @@ class Cart extends Component {
 
     render() { 
         let isCartEmpty = this.props.numItems === 0;
+        let itemPrices = this.props.cartItems.map(item => item.price);
     
         const itemsInCart = this.props.cartItems.map(item => (
             <CartItem 
@@ -37,7 +38,7 @@ class Cart extends Component {
                 name = { item.name }
                 description = { item.description }
                 quantity = { item.quantity }
-                price = { item.price }
+                price = { parseFloat(item.price).toFixed(2) }
                 removeItem = { this.removeItem }
             />
         ));
@@ -60,7 +61,7 @@ class Cart extends Component {
                         <div id="cart-items">
                             { this.state.loading ? <Spinner/> : itemsInCart }
                         </div>
-                        { !isCartEmpty && <OrderSummary/> }
+                        { !isCartEmpty && !this.state.loading && <OrderSummary itemPrices={ itemPrices }/> }
                   </div>
             }
             <GlobalFooter/>

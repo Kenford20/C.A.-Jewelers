@@ -14,7 +14,6 @@ class GlobalHeader extends Component {
 
     toggleSearchBar = (e) => {
         e.preventDefault();
-        alert(this.state.numItems)
         this.setState({ showSearchBar: !this.state.showSearchBar });
     }
 

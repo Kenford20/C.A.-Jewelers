@@ -24,8 +24,9 @@ class Product extends React.Component {
     }
 
     render() {
-        const { link = '/', productName, description, price, imagePath, altTag = "placeholder tag" } = this.props;
+        const { link = '/', productName, description, imagePath, altTag = "placeholder tag" } = this.props;
         let productUrl = link + productName.replace(/ +/g, '-').replace(/\//, '-');
+        let price = parseFloat(this.props.price * 100 / 100).toFixed(2);
 
     return ( 
         <a href={ productUrl } className="col-sm-6 col-md-4 col-lg-4 td-none" id="catalog-product" onClick={ this.sendProductPageInfo }>
@@ -35,8 +36,8 @@ class Product extends React.Component {
                     <h2 className="card-title">{ productName }</h2>
                     <p className="card-text">{ description }</p>
                     <p className="yellow"> $ { 
-                        price.toString().length > 3 
-                        ? price.toString().slice(0, price.toString().length - 3) + ',' + price.toString().slice(price.toString().length - 3) 
+                        price.toString().length > 6
+                        ? price.toString().slice(0, price.toString().length - 6) + ',' + price.toString().slice(price.toString().length - 6) 
                         : price
                     }</p>
                 </div>

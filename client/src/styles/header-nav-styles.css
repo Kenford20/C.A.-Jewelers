@@ -82,9 +82,6 @@
 .navbar-collapse-dropdown-item2{
     background-color:rgb(241, 241, 240) !important;
 }
-/*.navbar-collapse-dropdown-item:hover{
-    background-color:#d5d5d5;
-}*/
 
 /* Search Bar */
 .fa-search {
@@ -128,6 +125,21 @@
     border: 0;
     box-shadow: none;
     border-left: solid 1px #ccc;
+}
+
+#num-cart-items {
+    background: var(--yellow);
+    color: white;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    font-size: 10px;
+    text-align: center;
+    position: absolute;
+    right: 0;
+    top: 15px;
+    font-weight: 900;
+    cursor: normal;
 }
 
 @media only screen and (min-width:765px){

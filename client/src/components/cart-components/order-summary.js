@@ -2,16 +2,30 @@ import React from 'react';
 
 import '../../styles/cart-styles/order-summary.css';
 
-const OrderSummary = ({ subtotal, salesTax }) => {
+class OrderSummary extends React.Component {
+    render() {
+        const { itemPrices } = this.props;
+        let subTotal = parseFloat(itemPrices.reduce((a,b) => a + b)).toFixed(2);
+        
+        let subTotalStr = subTotal.toString().length > 6 
+                          ? subTotal.toString().slice(0, subTotal.toString().length - 6) + ',' + subTotal.toString().slice(subTotal.toString().length - 6) 
+                          : subTotal;
+
+        let salesTax = parseFloat((subTotal*0.1025)).toFixed(1);
+        let total = parseFloat(parseFloat(subTotal) + parseFloat(salesTax)).toFixed(2);
+        let totalStr = total.toString().length > 6 
+                       ? total.toString().slice(0, total.toString().length - 6) + ',' + total.toString().slice(total.toString().length - 6) 
+                       : total;
+
     return ( 
         <div id="order-summary">
             <div id="checkout">
                 <h5>Order Summary</h5>
-                <div className="summary-details"><span>Subtotal</span> <span>$1,000.00{ subtotal }</span></div>
+                <div className="summary-details"><span>Subtotal</span> <span>${ subTotalStr }</span></div>
                 <div className="summary-details"><span>FedEx Shipping</span> <span>Free</span></div>
-                <div className="summary-details"><span>Sales Tax</span> <span>${ 1000 * 0.1025 }0</span></div>
+                <div className="summary-details"><span>Sales Tax</span> <span>${ salesTax }0</span></div>
                 <br/>
-                <strong><div className="summary-details"><span>Total</span> <span>$1,102.50</span></div></strong>
+                <strong><div className="summary-details"><span>Total</span> <span>${ totalStr }</span></div></strong>
                 <br/>
                 <span id="checkout-btn">CHECKOUT</span>
                 <p style={{ textAlign: 'center', margin: '15px 0' }}>OR</p>
@@ -33,6 +47,7 @@ const OrderSummary = ({ subtotal, salesTax }) => {
             </div>
         </div>
      );
+    }
 }
  
 export default OrderSummary;

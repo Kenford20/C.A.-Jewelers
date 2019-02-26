@@ -178,7 +178,7 @@ class HeaderNavbar2 extends React.Component {
       <i className="fas fa-search"></i>
       <i className="fas fa-address-book"></i>
       <a href="/cart">
-        <i className="fas fa-shopping-bag"></i><span id="">{ this.props.numItemsInBag }</span>
+        <i className="fas fa-shopping-bag"></i><div id="num-cart-items">{ this.props.numItemsInBag }</div>
       </a>
     </div>
   </div>
