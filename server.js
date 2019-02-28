@@ -1,8 +1,10 @@
 require('dotenv').config();
 const express = require('express');
+const helmet = require('helmet');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const path = require('path');
+
 const products = require('./routes/api/products');
 const allRings = require('./routes/api/engagement/all-rings');
 const haloEngagementRings = require('./routes/api/engagement/halo-engagement-rings');
@@ -12,6 +14,8 @@ const vintageEngagementRings = require('./routes/api/engagement/vintage-engageme
 
 const port = process.env.PORT || 4000;
 const app = express();
+
+app.use(helmet());
 
 // Body parser Middleware
 app.use(bodyParser.json());
