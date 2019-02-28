@@ -5,14 +5,19 @@ import AboutDescription from '../components/about-components/about-description';
 
 import '../styles/about-styles/about.css';
 
-const About = () => {
-    return ( 
-        <div id="about-page">
-            <GlobalHeader/>
-            <AboutDescription/>
-            <GlobalFooter/>
-        </div>
-     );
+class About extends React.Component {
+    componentDidMount() {
+        document.title = "About C.A. Jewelers | Chicago's Jewelers Row";
+    }
+    render () {
+        return ( 
+            <div id="about-page">
+                <GlobalHeader/>
+                <AboutDescription/>
+                <GlobalFooter/>
+            </div>
+        );
+    }
 }
  
 export default About;

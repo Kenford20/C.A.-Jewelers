@@ -19,6 +19,10 @@ class Cart extends Component {
         };
     }
 
+    componentDidMount() {
+        document.title = 'Shopping Cart | C.A. Jewelers';
+    }
+
     removeItem = (itemId) => {
         this.setState({ loading: true });
         setTimeout(() => { this.setState({ loading: false })}, 1000);

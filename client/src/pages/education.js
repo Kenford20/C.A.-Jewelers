@@ -5,14 +5,20 @@ import EducationDescription from '../components/education-components/education-d
 
 import '../styles/education-styles/education.css';
 
-const Education = () => {
-    return ( 
-        <div id="education-page">
-            <GlobalHeader/>
-            <EducationDescription/>
-            <GlobalFooter/>
-        </div>
-     );
+class Education extends React.Component {
+    componentDidMount() {
+        document.title = 'Learn About Diamonds | C.A. Jewelers';
+    }
+    
+    render() {
+        return ( 
+            <div id="education-page">
+                <GlobalHeader/>
+                <EducationDescription/>
+                <GlobalFooter/>
+            </div>
+        );
+    }
 }
  
 export default Education;

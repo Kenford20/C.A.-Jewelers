@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import CatalogPage from '../../components/catalog-components/catalog-page';
 
 class HaloEngagementRings extends Component {
+    componentDidMount() {
+        document.title = 'Halo Engagement Rings | C.A. Jewelers Diamond Rings';
+    }
+    
     render() { 
         let apiEndpoint = window.location.origin + '/api/halo-engagement-rings';
         return ( 

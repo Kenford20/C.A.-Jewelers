@@ -20,6 +20,10 @@ class Home extends Component {
         this.state = {  }
     }
 
+    componentDidMount() {
+        document.title = "C.A. Jewelers: Engagement Rings & Custom Fine Jewelry | Chicago, IL";
+    }
+
     render() { 
         return (
             <div id="home-page">

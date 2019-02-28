@@ -6,12 +6,8 @@ import DesignBody from '../components/custom-design/design-body';
 import '../styles/custom-design-styles/custom-design.css';
 
 class CustomDesign extends Component {
-    state = { 
-
-    }
-
     componentWillMount(){
-       document.title = "Custom Designed Jewelry | C.A. Jewelers"
+       document.title = "Custom Designed Jewelry in Chicago | C.A. Jewelers"
     }
 
     render() { 

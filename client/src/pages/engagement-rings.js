@@ -10,19 +10,24 @@ import Popular from '../components/home-components/popular';
 
 import '../styles/engagement-ring-styles/engagement-ring.css';
 
-const EngagementRings = () => {
-    return ( 
-        <div id="engagement-rings-page">
-            <GlobalHeader/>
-            <EngagementHeader/>
-            <Solitaires/>
-            <Halo/>
-            <ThreeStone/>
-            <Vintage/>
-            <Popular/>
-            <GlobalFooter/>
-        </div>
-     );
+class EngagementRings extends React.Component {
+    componentDidMount() {
+        document.title = 'Engagement Rings | C.A. Jewelers Diamond Rings';
+    }
+    render() {
+        return ( 
+            <div id="engagement-rings-page">
+                <GlobalHeader/>
+                <EngagementHeader/>
+                <Solitaires/>
+                <Halo/>
+                <ThreeStone/>
+                <Vintage/>
+                <Popular/>
+                <GlobalFooter/>
+            </div>
+        );
+    }
 }
  
 export default EngagementRings;

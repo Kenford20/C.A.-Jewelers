@@ -4,15 +4,21 @@ import GlobalFooter from '../components/global-footer';
 import Map from '../components/contact-components/map';
 import ContactInfo from '../components/contact-components/contact-info';
 
-const Contact = () => {
-    return ( 
-        <div id="contact-page">
-            <GlobalHeader/>
-            <ContactInfo/>
-            <Map/>
-            <GlobalFooter/>
-        </div>
-     );
+class Contact extends React.Component {
+    componentDidMount() {
+        document.title = 'Contact C.A. Jewelers Inc.';
+    }
+
+    render() {
+        return ( 
+            <div id="contact-page">
+                <GlobalHeader/>
+                <ContactInfo/>
+                <Map/>
+                <GlobalFooter/>
+            </div>
+        );
+    }
 }
  
 export default Contact;

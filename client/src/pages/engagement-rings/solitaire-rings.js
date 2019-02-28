@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import CatalogPage from '../../components/catalog-components/catalog-page';
 
 class SolitaireEngagementRings extends Component {
+    componentDidMount() {
+        document.title = 'Solitaire Engagement Rings | C.A. Jewelers Diamond Rings';
+    }
+    
     render() { 
         let apiEndpoint = window.location.origin + '/api/solitaire-engagement-rings';
         return ( 

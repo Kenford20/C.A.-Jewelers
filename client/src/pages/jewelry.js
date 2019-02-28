@@ -10,36 +10,40 @@ import CheapProducts from '../components/jewelry-components/cheap-products';
 
 import '../styles/jewelry-styles/jewelry.css';
 
-const Jewelry = () => {
-    return ( 
-        <div id="jewelry-page">
-            <GlobalHeader/>
-            <JewelryHeader/>
-            <div className="container">  
-                <div className="row">
-                    <div className="col-md-5">
-                        <Earrings/>
+class Jewelry extends React.Component {
+    componentDidMount() {
+        document.title = 'Fine Jewelry | C.A. Jewelers';
+    }
+    render() {
+        return ( 
+            <div id="jewelry-page">
+                <GlobalHeader/>
+                <JewelryHeader/>
+                <div className="container">  
+                    <div className="row">
+                        <div className="col-md-5">
+                            <Earrings/>
+                        </div>
+                        <div className="col-md-7">
+                            <Bracelets/>
+                        </div>
                     </div>
-                    <div className="col-md-7">
-                        <Bracelets/>
-                    </div>
-                </div>
 
-                <div className="row">
-                    <div className="col-md-7">
-                        <Necklaces/>
-                    </div>
-                    <div className="col-md-5">
-                        <Rings/>
+                    <div className="row">
+                        <div className="col-md-7">
+                            <Necklaces/>
+                        </div>
+                        <div className="col-md-5">
+                            <Rings/>
+                        </div>
                     </div>
                 </div>
+                <CheapProducts/>
+                <GlobalFooter/>
+
             </div>
-            <CheapProducts/>
-            <GlobalFooter/>
-
-        </div>
-
-     );
+        );
+    }
 }
  
 export default Jewelry;
