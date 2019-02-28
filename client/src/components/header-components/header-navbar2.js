@@ -64,7 +64,7 @@ class HeaderNavbar2 extends React.Component {
       </li>
       
       <li className="nav-item dropdown">
-        <a href="/wedding/womens-wedding-rings" className="nav-link dropdown-toggle nav-link-spacing" id="navbarDropdown" aria-haspopup="true" aria-expanded="false">
+        <a href="/wedding" className="nav-link dropdown-toggle nav-link-spacing" id="navbarDropdown" aria-haspopup="true" aria-expanded="false">
           WEDDING
         </a>
         <div className="dropdown-menu" aria-labelledby="navbarDropdown">

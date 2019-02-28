@@ -8,7 +8,7 @@ const EngagementHeader = () => {
                     <h4 className="image-header"> <strong> Engagement Rings </strong></h4>
                 </div>
                     <p className="image-text"> Propose to your bae the right wae </p>
-                    <a href="./engagement-rings/all-rings"><button className="feature-btn"> VIEW ALL RINGS </button></a>
+                    <a href="./engagement-rings/all-rings"><button id="engagement-header-btn"> VIEW ALL RINGS </button></a>
             </div>
         </div>
      );

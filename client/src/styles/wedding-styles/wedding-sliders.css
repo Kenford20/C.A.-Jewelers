@@ -1,0 +1,12 @@
+.wedding-slider-description {
+    color: black;
+}
+.wedding-slider-description:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.wedding-slider-description img {
+    height: 150px;
+    width: 200px;
+}
