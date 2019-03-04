@@ -8,6 +8,10 @@
   margin-bottom:60px;
 }
 
+#custom-design-btn {
+  text-decoration: none;
+}
+
 @media only screen and (max-width:765px){
 	video{
     margin-top:30px;

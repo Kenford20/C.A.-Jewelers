@@ -10,7 +10,7 @@ const HeaderImage = () => {
                     <h2 className="header-subtitle subtitle-size"> Cute and </h2> 
                     <h2 className="header-subtitle subtitle-size"> Catchy Caption </h2>
                     <div>
-                        <a href="../../engagement-rings"><button className="feature-btn"><strong>Browse Engagement Rings</strong></button></a>
+                        <a href="/engagement-rings"><button className="feature-btn"><strong>Browse Engagement Rings</strong></button></a>
                     </div>
                 </div>
             </div>

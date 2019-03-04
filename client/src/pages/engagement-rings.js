@@ -2,10 +2,7 @@ import React from 'react';
 import GlobalHeader from '../components/global-header';
 import GlobalFooter from '../components/global-footer';
 import EngagementHeader from '../components/engagement-ring-components/engagement-header';
-import Solitaires from '../components/engagement-ring-components/solitaire';
-import Halo from '../components/engagement-ring-components/halo';
-import ThreeStone from '../components/engagement-ring-components/three-stone';
-import Vintage from '../components/engagement-ring-components/vintage';
+import EngagementBody from '../components/engagement-ring-components/engagement-body';
 import Popular from '../components/home-components/popular';
 
 import '../styles/engagement-ring-styles/engagement-ring.css';
@@ -19,10 +16,7 @@ class EngagementRings extends React.Component {
             <div id="engagement-rings-page">
                 <GlobalHeader/>
                 <EngagementHeader/>
-                <Solitaires/>
-                <Halo/>
-                <ThreeStone/>
-                <Vintage/>
+                <EngagementBody/>
                 <Popular/>
                 <GlobalFooter/>
             </div>

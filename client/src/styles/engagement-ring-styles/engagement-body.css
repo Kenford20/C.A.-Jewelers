@@ -1,0 +1,109 @@
+#engagement-rings-body {
+    display: grid;
+    margin-top: 75px;
+    grid-template-areas:
+        "halo halo"
+        "three-stone vintage"
+        "solitaire solitaire";
+}
+#engagement-rings-body a { color: black; text-decoration: underline }
+#engagement-rings-body a:hover { color: var(--yellow) }
+
+#halo-body {
+    grid-area: halo;
+    display: flex;
+    background:rgb(236, 236, 236);
+}
+
+#three-stone-body { grid-area: three-stone }
+#vintage-body { grid-area: vintage }
+
+#solitaire-body {
+    grid-area: solitaire;
+    display: flex;
+    background:rgb(226, 226, 226);
+}
+
+#three-stone-body, #vintage-body {
+    width: 500px;
+    margin: 50px auto;
+    text-align: center;
+}
+#three-stone-body div, #vintage-body div {
+    width: 90%;
+    margin: 20px auto 0 auto;
+}
+
+#halo-body img, #three-stone-body img, #vintage-body img, #solitaire-body img {
+    width: 450px;
+}
+#halo-body img, #solitaire-body img {
+    height: 100%;
+}
+
+#halo-description, #solitaire-description {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#halo-description div, #solitaire-description div {
+    width: 75%;
+    padding: 20px;
+}
+
+@media only screen and (max-width: 996px) {
+    #engagement-rings-body {
+        font-size: 15px;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    #engagement-rings-body h2 { font-size: 28px }
+    #three-stone-body, #vintage-body { width: 450px }
+    #halo-body img, #three-stone-body img, #vintage-body img, #solitaire-body img { width: 400px}
+    
+    #halo-description div, #solitaire-description div {
+        width: 90%;
+        padding: 20px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #engagement-rings-body {
+        grid-template-areas:
+            "halo"
+            "three-stone"
+            "vintage"
+            "solitaire";
+        font-size: 14px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #halo-body, #solitaire-body { 
+        flex-direction: column;
+        background: white;
+    }
+
+    #halo-body div, #solitaire-body div { 
+        width: 90%;
+        margin: 20px auto; 
+        text-align: center;
+    }
+
+    #halo-body img, #solitaire-body img { width: 100% }
+    #solitaire-body img { order: 1 }
+    #solitaire-body div { order: 2}
+}
+
+@media only screen and (max-width: 481px) {
+    #engagement-rings-body h2 { font-size: 25px }
+    #halo-body, #solitaire-body, #three-stone-body, #vintage-body { 
+        width: 100%;
+        margin-top: 0;
+    }
+    #halo-body div, #solitaire-body div { 
+        width: 95%;
+        margin: 0 auto;
+    }
+    #halo-body img, #three-stone-body img, #vintage-body img, #solitaire-body img { width: 100% }
+}

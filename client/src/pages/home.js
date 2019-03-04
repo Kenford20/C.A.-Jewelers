@@ -7,7 +7,7 @@ import HeaderImage from '../components/home-components/header-image';
 import BodyOpener from '../components/home-components/body-opener';
 import Diamonds from '../components/home-components/diamonds';
 import CustomDesign from '../components/home-components/custom-design';
-import ColorStonesSlider from '../components/home-components/color-stones-slider'
+import ColorStonesSlider from '../components/home-components/fine-jewelry';
 import VisitUs from '../components/home-components/visit-us';
 import Testimonials from '../components/home-components/testimonials';
 import GlobalFooter from '../components/global-footer';
@@ -15,10 +15,6 @@ import WeddingHeader from '../components/home-components/wedding-band';
 import PopularProducts from '../components/home-components/popular';
 
 class Home extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {  }
-    }
 
     componentDidMount() {
         document.title = "C.A. Jewelers: Engagement Rings & Custom Fine Jewelry | Chicago, IL";
