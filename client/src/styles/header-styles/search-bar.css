@@ -1,0 +1,27 @@
+/* Search Bar */
+#search-btn {
+    font-size:25px;
+}
+
+#custom-search-input{
+	margin: 10px;
+    border: solid 1px #E4E4E4;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+#custom-search-input input{
+    border: 0;
+    box-shadow: none;
+    font-size: 13px;
+}
+
+#custom-search-input button{
+    border: 0;
+    background: white;
+    border-left: solid 1px #ccc;
+}
+
+#custom-search-input button:hover{
+    border-left: solid 1px #ccc;
+}

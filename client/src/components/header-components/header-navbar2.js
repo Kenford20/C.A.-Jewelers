@@ -1,8 +1,37 @@
 import React from 'react';
+import MiniCartItem from './mini-cart-item';
+import { removeFromCart } from '../../actions/cartActions';
 import { connect } from 'react-redux';
 
 class HeaderNavbar2 extends React.Component {
+  
+  removeItem = (itemId) => {
+    // this.setState({ loading: true });
+    // setTimeout(() => { this.setState({ loading: false })}, 1000);
+    // maybe add a global loader component thats absolute centered and dims the background
+    this.props.removeFromCart(itemId);
+  }
+
   render(){
+    const miniCart = (
+      this.props.cartItems.map(item => (
+          <MiniCartItem
+            key = { item.productId }
+            itemLink = { item.itemLink }
+            imgUrl = { item.imgUrl }
+            productId = { item.productId }
+            name = { item.name }
+            price = { item.price }
+            removeItem = { this.removeItem }
+          />
+      ))
+    );
+
+    let emptyMiniCart = (
+      <div id="empty-mini-cart">
+        <p>Your cart is empty! :(</p>
+      </div>
+    );
     return ( 
         <div id="header-nav2" className="hide container">
             <nav className="navbar navbar-expand-md navbar-dark">
@@ -181,6 +210,19 @@ class HeaderNavbar2 extends React.Component {
         <i className="fas fa-shopping-bag"></i><div id="num-cart-items">{ this.props.numItemsInBag }</div>
       </a>
     </div>
+
+    <div id="mini-cart-header">
+      {
+        this.props.cartItems.length === 0 
+        ? emptyMiniCart
+        : miniCart
+      }
+      <p id="mini-cart-subtotal">SUBTOTAL: <span>$1,234</span></p>
+      <div id="mini-cart-btns-wrapper">
+        <button id="mini-cart-btn" className="mini-cart-btns">CART</button>
+        <button id="mini-cart-checkout" className="mini-cart-btns">CHECKOUT</button>
+      </div>
+    </div>
   </div>
 
 </nav>
@@ -190,7 +232,8 @@ class HeaderNavbar2 extends React.Component {
 }
 
 const mapStateToProps = state => ({
+  cartItems: state.cart.items,
   numItemsInBag: state.cart.numItems
 });
 
-export default connect(mapStateToProps)(HeaderNavbar2);
+export default connect(mapStateToProps, { removeFromCart })(HeaderNavbar2);
