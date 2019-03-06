@@ -41,12 +41,16 @@ class Cart extends Component {
             <CartItem 
                 key = { item.productId }
                 productId = { item.productId }
-                itemLink = { item.productUrl }
+                productUrl = { item.productUrl }
                 imgUrl = { item.imgUrl }
                 name = { item.name }
                 description = { item.description }
                 quantity = { item.quantity }
                 price = { parseFloat(item.price).toFixed(2) }
+                categoryRoute = { item.categoryRoute }
+                categoryRouteName = { item.categoryRouteName } 
+                subcategoryRoute = { item.subcategoryRoute }
+                subcategoryRouteName = { item.subcategoryRouteName }
                 removeItem = { this.removeItem }
             />
         ));

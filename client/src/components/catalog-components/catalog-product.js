@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { addProductPageInfo } from '../../actions/productPageActions';
+import { updateProductPage } from '../../actions/productPageActions';
 import { connect } from 'react-redux';
 
 import '../../styles/catalog-styles/product.css';
@@ -19,8 +19,7 @@ class Product extends React.Component {
             subcategoryRouteName: this.props.style,
             subcategoryRoute: this.props.link
         }
-        console.log(productInfo)
-        this.props.addProductPageInfo(productInfo);
+        this.props.updateProductPage(productInfo);
     }
 
     render() {
@@ -56,4 +55,4 @@ Product.propTypes = {
     price: PropTypes.number.isRequired
 };
  
-export default connect(null, { addProductPageInfo })(Product);
+export default connect(null, { updateProductPage })(Product);

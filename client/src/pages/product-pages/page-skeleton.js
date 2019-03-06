@@ -14,9 +14,12 @@ class ProductPageLayout extends React.Component {
             name: this.props.productName,
             price: this.props.price,
             description: this.props.description,
+            categoryRoute: this.props.categoryRoute,
+            categoryRouteName: this.props.categoryRouteName,
+            subcategoryRoute: this.props.subcategoryRoute,
+            subcategoryRouteName: this.props.subcategoryRouteName,
             quantity: 1
         }
-
         this.props.addToCart(itemDetails);
     }
 
@@ -98,15 +101,18 @@ class ProductPageLayout extends React.Component {
 }
 
 ProductPageLayout.propTypes = {
-    categoryRoute: PropTypes.string,
-    categoryRouteName: PropTypes.string,
-    subcategoryRoute: PropTypes.string,
-    subcategoryRouteName: PropTypes.string,
-    productName: PropTypes.string,
-    description: PropTypes.string,
-    price: PropTypes.number,
-    productUrl: PropTypes.string,
-    productId: PropTypes.string
+    categoryRoute: PropTypes.string.isRequired,
+    categoryRouteName: PropTypes.string.isRequired,
+    subcategoryRoute: PropTypes.string.isRequired,
+    subcategoryRouteName: PropTypes.string.isRequired,
+    productName: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    price: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number
+    ]).isRequired,
+    productUrl: PropTypes.string.isRequired,
+    productId: PropTypes.string.isRequired
 }
  
 export default connect(null, { addToCart })(ProductPageLayout);

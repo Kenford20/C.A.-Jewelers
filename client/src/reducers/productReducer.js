@@ -1,4 +1,4 @@
-import { ADD_PRODUCT_PAGE_INFO } from '../actions/types';
+import { UPDATE_PRODUCT_PAGE } from '../actions/types';
 
 const initialState = {
     productId: 'productId',
@@ -14,7 +14,7 @@ const initialState = {
 
 export default function(state = initialState, action) {
     switch(action.type) {
-        case ADD_PRODUCT_PAGE_INFO: 
+        case UPDATE_PRODUCT_PAGE: 
             console.log(action.payload)
             return {
                 ...state,

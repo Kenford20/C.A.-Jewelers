@@ -11,7 +11,7 @@ class ProductPage extends Component {
 
     determineRoute = () => {
         switch(this.props.categoryRouteName) {
-            case 'engagement rings': return '/engagement-rings';
+            case 'engagement ring': return '/engagement-rings';
             case 'jewelry': return '/jewelry';
             case 'wedding': return '/wedding';
 
@@ -30,7 +30,7 @@ class ProductPage extends Component {
                     productUrl = { this.props.productUrl }
                     imgUrl={ this.props.imgUrl }
                     productName={ this.props.productName }
-                    price={ this.props.price }
+                    price={ parseFloat(this.props.price).toFixed(2) }
                     description={ this.props.description }
                     categoryRoute={ categoryRoute }
                     categoryRouteName={ this.props.categoryRouteName } 
@@ -57,11 +57,14 @@ const mapStateToProps = state => ({
 });
 
 ProductPage.propTypes = { 
-    productId: PropTypes.string.productId,
+    productId: PropTypes.string.isRequired,
     productUrl: PropTypes.string.isRequired,
     imgUrl: PropTypes.string.isRequired,
     productName: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
+    price: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number
+    ]).isRequired,
     description: PropTypes.string.isRequired,
     categoryRouteName: PropTypes.string.isRequired,
     subcategoryRouteName: PropTypes.string.isRequired,

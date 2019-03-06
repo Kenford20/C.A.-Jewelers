@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Product from './catalog-product';
+
 import '../../styles/catalog-styles/products-list.css';
 
 const ProductsList = ({ products }) => {

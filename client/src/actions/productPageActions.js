@@ -1,9 +1,9 @@
-import { ADD_PRODUCT_PAGE_INFO } from './types';
+import { UPDATE_PRODUCT_PAGE } from './types';
 
-export const addProductPageInfo = (productDetails) => dispatch => {
+export const updateProductPage = (productDetails) => dispatch => {
     console.log('adding item')
     dispatch({ 
-        type: ADD_PRODUCT_PAGE_INFO,
+        type: UPDATE_PRODUCT_PAGE,
         payload: productDetails
     })
 }
