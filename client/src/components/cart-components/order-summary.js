@@ -4,8 +4,7 @@ import '../../styles/cart-styles/order-summary.css';
 
 class OrderSummary extends React.Component {
     render() {
-        const { itemPrices } = this.props;
-        let subTotal = parseFloat(itemPrices.reduce((a,b) => a + b)).toFixed(2);
+        const { subTotal } = this.props;
         
         let subTotalStr = subTotal.toString().length > 6 
                           ? subTotal.toString().slice(0, subTotal.toString().length - 6) + ',' + subTotal.toString().slice(subTotal.toString().length - 6) 

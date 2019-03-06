@@ -23,15 +23,19 @@ class Cart extends Component {
         document.title = 'Shopping Cart | C.A. Jewelers';
     }
 
-    removeItem = (itemId) => {
+    removeItem = (itemId, itemPrice) => {
         this.setState({ loading: true });
         setTimeout(() => { this.setState({ loading: false })}, 1000);
-        this.props.removeFromCart(itemId);
+
+        let removedItemInfo = {
+            id: itemId,
+            price: itemPrice
+        }
+        this.props.removeFromCart(removedItemInfo);
     }
 
     render() { 
         let isCartEmpty = this.props.numItems === 0;
-        let itemPrices = this.props.cartItems.map(item => item.price);
     
         const itemsInCart = this.props.cartItems.map(item => (
             <CartItem 
@@ -65,7 +69,7 @@ class Cart extends Component {
                         <div id="cart-items">
                             { this.state.loading ? <Spinner/> : itemsInCart }
                         </div>
-                        { !isCartEmpty && !this.state.loading && <OrderSummary itemPrices={ itemPrices }/> }
+                        { !isCartEmpty && !this.state.loading && <OrderSummary subTotal={ this.props.subTotal }/> }
                   </div>
             }
             <GlobalFooter/>
@@ -76,7 +80,8 @@ class Cart extends Component {
 
 const mapStateToProps = state => ({
     cartItems: state.cart.items,
-    numItems: state.cart.numItems
+    numItems: state.cart.numItems,
+    subTotal: state.cart.subTotal
 });
  
 export default connect(mapStateToProps, { removeFromCart })(Cart);

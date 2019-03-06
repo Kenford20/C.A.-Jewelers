@@ -7,7 +7,7 @@ const CartItem = ({ productId, itemLink, imgUrl, name, description, quantity, pr
         <div className="cart-item">
             <div className="cart-item-img">
                 <a href={ itemLink } className="cart-item-img"><img src={ imgUrl }></img></a>
-                <div className="remove-item" onClick={ ()=>removeItem(productId) }><span>Remove</span></div>
+                <div className="remove-item" onClick={ ()=>removeItem(productId, price) }><span>Remove</span></div>
             </div>
             <div className="cart-item-info-wrapper">
                 <div className="cart-item-info">
