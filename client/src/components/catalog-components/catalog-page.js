@@ -249,6 +249,7 @@ class CatalogPage extends Component {
 
         return ( 
             <div id="catalog-page">
+                { this.state.fetchingProducts && <Spinner/> }
                 <GlobalHeader/>
                 <CatalogTop 
                     heading = { heading } 
@@ -275,9 +276,7 @@ class CatalogPage extends Component {
                         </div>
                         <div className="col-lg-9">
                             {
-                                this.state.fetchingProducts 
-                                ? <Spinner/> 
-                                : <ProductsList products={ this.state.filteredProducts }/>
+                                !this.state.fetchingProducts && <ProductsList products={ this.state.filteredProducts }/>
                             }
                         </div>
                     </div>

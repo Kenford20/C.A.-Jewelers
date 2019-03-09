@@ -10,3 +10,10 @@
     height: 150px;
     width: 200px;
 }
+
+@media only screen and (max-width: 481px) {
+    .wedding-slider-description img {
+        height: 100px;
+        width: 100px;
+    }
+}

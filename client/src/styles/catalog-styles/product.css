@@ -27,3 +27,8 @@
     min-height:225px;
     border-radius:0;
 }
+
+@media only screen and (max-width: 481px) {
+    #catalog-product .card { font-size: 12px }
+    #catalog-product .card > div > h2 { font-size: 14px }
+}

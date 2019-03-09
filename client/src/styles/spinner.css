@@ -1,9 +1,19 @@
 #catalog-spinner {
-    margin: auto;
+    /* margin: auto;
     width: 350px;
     margin-top: 50px;
-    padding: 50px;
+    padding: 50px; */
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background: rgba(255, 255, 255, 0.65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
 }
+
+
 
 #catalog-spinner::before {
     content: '';
@@ -27,8 +37,5 @@
 }
 
 @media only screen and (max-width: 480px) {
-    #catalog-spinner {
-        width: 150px;
-        margin-top: 15px;
-    }
+   
 }

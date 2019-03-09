@@ -6,7 +6,7 @@
 #wedding-header {
     position: relative;
     display: flex;
-    align-items: center;
+    align-items: center; 
 }
 
 #wedding-header-text {
@@ -22,5 +22,13 @@
 
 #mens-wedding-section, #womens-wedding-section {
     margin-top: 75px;
+}
+
+@media only screen and (max-width: 481px) {
+    #wedding-header-text {
+        width: 100%;
+        left: 0;
+        text-align: center;
+    }
 }
 

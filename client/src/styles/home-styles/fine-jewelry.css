@@ -1,7 +1,6 @@
-/* description */
 #jewelry-description{
     text-align:center;
-    width:90%;
+    width:100%;
     margin:auto;
     color:rgb(65, 65, 65);
 }
@@ -19,9 +18,8 @@
     color:var(--yellow);
 }
 
-/* slider */
 #jewelry{
-    width:90%;
+    width: 90%;
     margin:0px auto;
 }
 
@@ -31,3 +29,7 @@
     height:300px;
 }
 
+@media only screen and (max-width: 481px) {
+    #jewelry { width: 100% }
+    #jewelry-description { width: 95%; }
+}

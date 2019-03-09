@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/home-styles/color-stones-slider.css';
+import '../../styles/home-styles/fine-jewelry.css';
 
 const JewelryHome = () => {
     return ( 
