@@ -15,7 +15,7 @@ export default function(state = initialState, action) {
                 ...state,
                 numItems: state.numItems + 1,
                 items: [...state.items, action.payload],
-                subTotal: state.subTotal + action.payload.price
+                subTotal: parseFloat(state.subTotal) + parseFloat(action.payload.price)
             } 
 
         case REMOVE_ITEM_FROM_CART:
@@ -27,7 +27,7 @@ export default function(state = initialState, action) {
                     if(item.productId !== action.payload.id)
                         return item;
                 }),
-                subTotal: state.subTotal - action.payload.price
+                subTotal: parseFloat(state.subTotal) - parseFloat(action.payload.price)
             }
         default: return state;
     }

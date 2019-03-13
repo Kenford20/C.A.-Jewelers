@@ -37,7 +37,11 @@ class CartItem extends React.Component {
                         <p>Ring Size: { ringSize }</p>
                     </div>
                     <div className="cart-item-price">
-                        ${ price }
+                        ${ 
+                            price.toString().length > 6
+                            ? price.toString().slice(0, price.toString().length - 6) + ',' + price.toString().slice(price.toString().length - 6) 
+                            : price
+                        }
                     </div>
                 </div>
             </div>

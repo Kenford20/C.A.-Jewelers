@@ -6,21 +6,28 @@ import { addToCart } from '../../actions/cartActions';
 import '../../styles/product-pages-styles/product-pages.css';
 
 class ProductPageLayout extends React.Component {
-    addItemToBag = () => {
-        let itemDetails = {
-            productId: this.props.productId,
-            productUrl: this.props.productUrl,
-            imgUrl: this.props.imgUrl,
-            name: this.props.productName,
-            price: this.props.price,
-            description: this.props.description,
-            categoryRoute: this.props.categoryRoute,
-            categoryRouteName: this.props.categoryRouteName,
-            subcategoryRoute: this.props.subcategoryRoute,
-            subcategoryRouteName: this.props.subcategoryRouteName,
-            quantity: 1
+    addItemToBag = (e) => {
+        let ringSize = document.querySelector('#ring-size-dropdown').value;
+        if(ringSize === '') {
+            e.preventDefault();
+            alert('Please select a ring size!');
+        } else {
+            let itemDetails = {
+                productId: this.props.productId,
+                productUrl: this.props.productUrl,
+                imgUrl: this.props.imgUrl,
+                name: this.props.productName,
+                price: this.props.price,
+                description: this.props.description,
+                categoryRoute: this.props.categoryRoute,
+                categoryRouteName: this.props.categoryRouteName,
+                subcategoryRoute: this.props.subcategoryRoute,
+                subcategoryRouteName: this.props.subcategoryRouteName,
+                quantity: 1,
+                ringSize: ringSize
+            }
+            this.props.addToCart(itemDetails);
         }
-        this.props.addToCart(itemDetails);
     }
 
     render() {
@@ -39,20 +46,38 @@ class ProductPageLayout extends React.Component {
             </div>
 
             <div className="row container m-auto">
-                <div className="col-lg-6">
+                <div className="col-lg-7">
                     <div className="product-image-container">
                         <img className="product-image" src={ imgUrl } alt="Card image cap"></img>
                     </div>
                 </div>
-                <div className="col-lg-6">
+                <div className="col-lg-5">
                     <div className="product-title">
                         <h1>{ productName }</h1>
                     </div>
                     <div className="product-price">
-                        <h2 className="yellow">${ price }</h2>
+                        <h2 className="yellow">${ 
+                            price.toString().length > 6
+                            ? price.toString().slice(0, price.toString().length - 6) + ',' + price.toString().slice(price.toString().length - 6) 
+                            : price
+                        }</h2>
                     </div> 
                     <div className="product-description">
                         <p>{ description }</p>
+                    </div>
+                    <div className="ring-size">
+                        <select id="ring-size-dropdown">
+                            <option value="" selected disabled hidden>Ring Size</option>
+                            <option value="4">4</option>
+                            <option value="4.5">4.5</option>
+                            <option value="5">5</option>
+                            <option value="5.5">5.5</option>
+                            <option value="6">6</option>
+                            <option value="6.5">6.5</option>
+                            <option value="7">7</option>
+                            <option value="7.5">7.5</option>
+                            <option value="8">8</option>
+                        </select>
                     </div>
                     <div className="cart-btn">
                         <a href="/cart" className="feature-btn cart-btn" onClick={ this.addItemToBag }>ADD TO BAG</a>

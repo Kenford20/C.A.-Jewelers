@@ -1,5 +1,5 @@
 .product-image{
-    width:500px;
+    width: 95%;
 }
 
 .cart-btn{
@@ -31,6 +31,14 @@
     text-align:center;
     padding:0;
     margin:0 1px;
+}
+
+#ring-size-dropdown {
+    width: 150px;
+    margin: 5px 0 20px 0;
+}
+#ring-size-dropdown > option:hover {
+    background: red;
 }
 
 @media only screen and (max-width: 480px) {

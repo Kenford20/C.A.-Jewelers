@@ -31,7 +31,7 @@ class HeaderNavbar2 extends React.Component {
   }
 
   render(){
-    const { subTotal } = this.props;
+    const subTotal = parseFloat(this.props.subTotal).toFixed(2);
 
     const miniCartItems = (
       this.props.cartItems.map(item => (
@@ -190,7 +190,7 @@ class HeaderNavbar2 extends React.Component {
               { 
                 subTotal.toString().length > 6
                 ? subTotal.toString().slice(0, subTotal.toString().length - 6) + ',' + subTotal.toString().slice(subTotal.toString().length - 6) 
-                : subTotal
+                : parseFloat(subTotal).toFixed(2)
               }
             </span>
           </p>

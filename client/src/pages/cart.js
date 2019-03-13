@@ -52,6 +52,8 @@ class Cart extends Component {
                 subcategoryRoute = { item.subcategoryRoute }
                 subcategoryRouteName = { item.subcategoryRouteName }
                 removeItem = { this.removeItem }
+                quantity = { item.quantity }
+                ringSize = { item.ringSize }
             />
         ));
 
@@ -73,7 +75,7 @@ class Cart extends Component {
                         <div id="cart-items">
                             { this.state.loading ? <Spinner/> : itemsInCart }
                         </div>
-                        { !isCartEmpty && !this.state.loading && <OrderSummary subTotal={ this.props.subTotal }/> }
+                        { !isCartEmpty && !this.state.loading && <OrderSummary subTotal={ parseFloat(this.props.subTotal).toFixed(2) }/> }
                   </div>
             }
             <GlobalFooter/>
