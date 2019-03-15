@@ -17,18 +17,18 @@ class OrderSummary extends React.Component {
                        : total;
 
     return ( 
-        <div id="order-summary">
-            <div id="checkout">
+        <div id="order-summary-wrapper">
+            <div id="order-summary">
                 <h5>Order Summary</h5>
                 <div className="summary-details"><span>Subtotal</span> <span>${ subTotalStr }</span></div>
                 <div className="summary-details"><span>FedEx Shipping</span> <span>Free</span></div>
                 <div className="summary-details"><span>Sales Tax</span> <span>${ salesTax }0</span></div>
                 <br/>
-                <strong><div className="summary-details"><span>Total</span> <span>${ totalStr }</span></div></strong>
+                <strong><div className="summary-details" style={{ fontSize: '18px' }}><span>Total</span> <span>${ totalStr }</span></div></strong>
                 <br/>
-                <span id="checkout-btn">CHECKOUT</span>
-                <p style={{ textAlign: 'center', margin: '15px 0' }}>OR</p>
-                <span id="paypal-checkout">insert PAYPAL btn here</span>
+                <a href="/checkout" id="checkout-btn">CHECKOUT</a>
+                {/* <p style={{ textAlign: 'center', margin: '15px 0' }}>OR</p>
+                <span id="paypal-checkout">insert PAYPAL btn here</span> */}
             </div>
 
             <div id="shipping-info">

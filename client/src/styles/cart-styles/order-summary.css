@@ -1,23 +1,23 @@
-#order-summary {
+#order-summary-wrapper {
     grid-area: summary;
     font-size: 14px;
 }
-#order-summary p {
+#order-summary-wrapper p {
     margin: 0;
     display: inline-block;
     width: 100%;
 }
 
-#checkout, #shipping-info {
+#order-summary, #shipping-info {
     border: 1px solid rgba(100, 100, 100, 0.25);
     padding: 15px;
     margin-bottom: 50px;
 }
-
-#checkout h5 {
+#order-summary h5 {
     text-align: center;
     margin-bottom: 25px;
 }
+#checkout-btn:hover { text-decoration: none }
 
 #shipping-info p {
     margin-bottom: 8px;

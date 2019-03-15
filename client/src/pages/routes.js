@@ -9,6 +9,7 @@ import Contact from './contact';
 import FAQ from './faq';
 import CustomDesign from './custom-design-page';
 import Cart from './cart';
+import Checkout from './checkout'
 import Whoops404 from './whoops';
 
 import EngagementRings from './engagement-rings';
@@ -42,29 +43,30 @@ class Routes extends React.Component {
 	    <Route exact path='/education'component={Education} />
 	    <Route exact path='/about' component={About} />
 	    <Route exact path='/contact' component={Contact} />
-		<Route exact path='/faq' component={FAQ} />
-		<Route exact path='/custom-design-jewelry' component={CustomDesign}/>
-		<Route exact path='/cart' component={Cart}/>
+			<Route exact path='/faq' component={FAQ} />
+			<Route exact path='/custom-design-jewelry' component={CustomDesign}/>
+			<Route exact path='/cart' component={Cart}/>
+			<Route exact path='/checkout' component={Checkout}/>
 
-		<Route exact path='/engagement-rings' component={EngagementRings} />
-		<Route exact path='/engagement-rings/all-rings' component={AllRings} />
-		<Route exact path='/engagement-rings/halo-rings' component={HaloEngagementRings} />
-		<Route exact path='/engagement-rings/solitaire-rings' component={SolitaireEngagementRings} />
-		<Route exact path='/engagement-rings/three-stone-rings' component={ThreeStoneEngagementRings} />
-		<Route exact path='/engagement-rings/vintage-rings' component={VintageEngagementRings} />
+			<Route exact path='/engagement-rings' component={EngagementRings} />
+			<Route exact path='/engagement-rings/all-rings' component={AllRings} />
+			<Route exact path='/engagement-rings/halo-rings' component={HaloEngagementRings} />
+			<Route exact path='/engagement-rings/solitaire-rings' component={SolitaireEngagementRings} />
+			<Route exact path='/engagement-rings/three-stone-rings' component={ThreeStoneEngagementRings} />
+			<Route exact path='/engagement-rings/vintage-rings' component={VintageEngagementRings} />
 
-		<Route exact path='/wedding' component={Wedding} />
-		<Route exact path='/wedding/mens-wedding-rings' component={MensWeddingRings} />
-		<Route exact path='/wedding/womens-wedding-rings' component={WomensWeddingRings} />
+			<Route exact path='/wedding' component={Wedding} />
+			<Route exact path='/wedding/mens-wedding-rings' component={MensWeddingRings} />
+			<Route exact path='/wedding/womens-wedding-rings' component={WomensWeddingRings} />
 
-		<Route exact path='/jewelry' component={Jewelry} />
-		<Route exact path='/jewelry/bracelets' component={Bracelets}/>
-		<Route exact path='/jewelry/earrings' component={Earrings}/>
-		<Route exact path='/jewelry/necklaces' component={Necklaces}/>
-		<Route exact path='/jewelry/rings' component={Rings}/>
+			<Route exact path='/jewelry' component={Jewelry} />
+			<Route exact path='/jewelry/bracelets' component={Bracelets}/>
+			<Route exact path='/jewelry/earrings' component={Earrings}/>
+			<Route exact path='/jewelry/necklaces' component={Necklaces}/>
+			<Route exact path='/jewelry/rings' component={Rings}/>
 
-		<Route exact path={ productPath } component={ProductPage}/>
-		<Route exact path='/jewelry/necklaces/sirena-diamond-necklace' component={SirenaDiamondNecklace}/>
+			<Route exact path={ productPath } component={ProductPage}/>
+			<Route exact path='/jewelry/necklaces/sirena-diamond-necklace' component={SirenaDiamondNecklace}/>
 
 	    <Route component={Whoops404}/>
     </Switch>

@@ -1,5 +1,6 @@
 import React from 'react';
 import MiniCartItem from './mini-cart-item';
+import Spinner from '../spinner';
 import { removeFromCart } from '../../actions/cartActions';
 import { connect } from 'react-redux';
 
@@ -8,14 +9,15 @@ class HeaderNavbar2 extends React.Component {
     super(props);
 
     this.state = {
-      showMiniCart: false
+      showMiniCart: false,
+      loading: false
     }
   }
 
   removeItem = (itemId, itemPrice) => {
-    // this.setState({ loading: true });
-    // setTimeout(() => { this.setState({ loading: false })}, 1000);
-    // maybe add a global loader component thats absolute centered and dims the background
+    this.setState({ loading: true });
+    setTimeout(() => { this.setState({ loading: false })}, 1000);
+
     let removedItemInfo = {
       id: itemId,
       price: itemPrice
@@ -55,6 +57,7 @@ class HeaderNavbar2 extends React.Component {
 
     return ( 
         <div id="header-nav2" className="hide container">
+          { this.state.loading && <Spinner/> }
             <nav className="navbar navbar-expand-md navbar-dark">
               <a id="header-logo" className="center" href="/"><img src={require("../../images/logo2.png")} alt="logo" height="45px" width="125px"></img></a>
               <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -196,7 +199,7 @@ class HeaderNavbar2 extends React.Component {
           </p>
           <div id="mini-cart-btns-wrapper">
             <a href="/cart" id="mini-cart-btn" className="mini-cart-btns">CART</a>
-            <a href="#" id="mini-cart-checkout" className="mini-cart-btns">CHECKOUT</a>
+            <a href="/checkout" id="mini-cart-checkout" className="mini-cart-btns">CHECKOUT</a>
           </div>
         </div>
       )}

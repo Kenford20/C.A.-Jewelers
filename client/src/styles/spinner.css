@@ -1,8 +1,5 @@
 #catalog-spinner {
-    /* margin: auto;
-    width: 350px;
-    margin-top: 50px;
-    padding: 50px; */
+    left: 0;
     width: 100vw;
     height: 100vh;
     position: fixed;
