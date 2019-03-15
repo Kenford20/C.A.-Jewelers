@@ -1,0 +1,43 @@
+#checkout-form {
+    display: grid;
+    grid-template-areas: 
+        "shipping payment"
+        "shipping payment";
+    grid-template-columns: 1.2fr 1fr;
+    grid-gap: 0 30px;
+}
+
+#checkout-form label {
+    margin: 0 0 5px 0;
+    font-size: 13px;
+}
+
+#checkout-form input, .credit-card-inputs {
+    width: 90%;
+    margin-bottom: 15px;
+    padding: 5px 0 5px 10px;
+    font-size: 13px;
+}
+#shipping-info-wrapper {
+    grid-area: shipping;
+    border-right: 1px solid grey;
+}
+#shipping-info-wrapper input {
+    display: block;
+}
+#payment-info-wrapper {
+    grid-area: payment;
+}
+
+.credit-card-inputs {
+    border: 1px solid rgb(175, 175, 175);
+    padding: 10px 0 10px 10px;
+}
+#credit-card-exp-date, #credit-card-cvc {
+    width: 100%;
+}
+.two-col-inputs {
+    display: inline-block;
+    width: 45%;
+    margin-right: 14px;
+}

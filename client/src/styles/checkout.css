@@ -1,0 +1,7 @@
+
+#form-summary-wrapper {
+    display: grid;
+    grid-template-columns: 375px 1fr;
+    grid-gap: 0 40px;
+    margin: 25px auto 60px auto;
+}
