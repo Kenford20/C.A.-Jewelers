@@ -12,14 +12,20 @@ const solitaireEngagementRings = require('./routes/api/engagement/solitaire-enga
 const threeStoneEngagementRings = require('./routes/api/engagement/three-stone-engagement-rings');
 const vintageEngagementRings = require('./routes/api/engagement/vintage-engagement-rings');
 
+const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
+const stripePublicKey = process.env.STRIPE_PUBLIC_KEY;
+
+const stripe = require('stripe')(stripeSecretKey);
+
 const port = process.env.PORT || 4000;
 const app = express();
 
 app.use(helmet());
+app.use(cors());
 
 // Body parser Middleware
 app.use(bodyParser.json());
-app.use(cors());
+app.use(bodyParser.urlencoded({extended: false}));
 
 // connecting database
 const db = require('./models');
