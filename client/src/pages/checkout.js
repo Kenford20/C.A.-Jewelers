@@ -36,7 +36,7 @@ class Checkout extends React.Component {
                     <h2 style={{ textAlign: 'center', marginTop: '40px' }}>Secure Checkout</h2>
                     <div id="form-summary-wrapper" className="container">
                         <CheckoutSummary/>
-                        <CheckoutForm/>
+                        <CheckoutForm chargeAmount={ this.props.subTotal }/>
                     </div>
                     <GlobalFooter/>
                 </div>

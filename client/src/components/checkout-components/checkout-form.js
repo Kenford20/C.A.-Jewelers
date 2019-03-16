@@ -1,5 +1,8 @@
 import React from 'react';
 import { CardNumberElement, CardExpiryElement, CardCVCElement, injectStripe, ReactStripeElements } from 'react-stripe-elements';
+import { connect } from 'react-redux';
+import { updateCheckoutInfo } from '../../actions/checkoutActions';
+import { Redirect } from 'react-router-dom';
 
 import '../../styles/checkout-styles/checkout-form.css';
 
@@ -15,10 +18,10 @@ class CheckoutForm extends React.Component {
             city: '',
             state: '',
             country: '',
-            zipCode: 12345,
+            zipCode: '',
             checkoutEmail: '',
             phone: '',
-            cc: ''
+            confirmationPageUrl: '#'
         }
     }
 
@@ -26,6 +29,30 @@ class CheckoutForm extends React.Component {
         this.setState({
             [e.target.id]: e.target.value
         }, console.log(this.state))
+    }
+
+    checkBlankFormFields = (form) => {
+        for(let input in form) {
+            if(form[input] === '')
+                return false;
+        }
+        return true;
+    }
+
+    updateConfirmationPage = async (e) => {
+        e.preventDefault();
+        if(this.checkBlankFormFields(this.state)) {
+            let token = await this.props.stripe.createToken({ name: this.state.firstName });
+            let checkoutDetails = {
+                shippingInfo: this.state,
+                stripeToken: token
+            }
+
+            this.props.updateCheckoutInfo(checkoutDetails);
+            this.setState({ confirmationPageUrl: '/order-confirmation' })
+        } else {
+            alert('Please complete every field!');
+        }
     }
 
     render() { 
@@ -116,7 +143,14 @@ class CheckoutForm extends React.Component {
                     </div>
                     <br/>
                     <br/>
-                    <a href="/checkout" id="checkout-btn">PROCEED TO CONFIRMATION</a>
+                    <a 
+                        id="checkout-btn" 
+                        href={ this.state.confirmationPageUrl }
+                        style={{ border:'none' }}
+                        onClick={ this.updateConfirmationPage }
+                    >
+                        REVIEW & PLACE ORDER
+                    </a>
                     <p style={{ textAlign: 'center', margin: '15px 0' }}>OR</p>
                     <span id="paypal-checkout">insert PAYPAL btn here</span>
                 </div>
@@ -126,4 +160,4 @@ class CheckoutForm extends React.Component {
     }
 }
  
-export default injectStripe(CheckoutForm);
+export default connect(null, { updateCheckoutInfo })(injectStripe(CheckoutForm));
