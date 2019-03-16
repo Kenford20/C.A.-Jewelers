@@ -12,6 +12,8 @@ const solitaireEngagementRings = require('./routes/api/engagement/solitaire-enga
 const threeStoneEngagementRings = require('./routes/api/engagement/three-stone-engagement-rings');
 const vintageEngagementRings = require('./routes/api/engagement/vintage-engagement-rings');
 
+const chargeCustomer = require('./routes/stripe/charge');
+
 const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
 const stripePublicKey = process.env.STRIPE_PUBLIC_KEY;
 
@@ -38,6 +40,8 @@ app.use('/api/halo-engagement-rings', haloEngagementRings);
 app.use('/api/solitaire-engagement-rings', solitaireEngagementRings);
 app.use('/api/three-stone-engagement-rings', threeStoneEngagementRings);
 app.use('/api/vintage-engagement-rings', vintageEngagementRings);
+
+app.use('/api/charge', chargeCustomer);
 
 // Set static folder
 if (process.env.NODE_ENV === 'production') {
