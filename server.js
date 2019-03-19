@@ -13,6 +13,7 @@ const threeStoneEngagementRings = require('./routes/api/engagement/three-stone-e
 const vintageEngagementRings = require('./routes/api/engagement/vintage-engagement-rings');
 
 const chargeCustomer = require('./routes/stripe/charge');
+const sendCustomerReceipt = require('./routes/email/customer-receipt');
 
 const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
 const stripePublicKey = process.env.STRIPE_PUBLIC_KEY;
@@ -42,6 +43,7 @@ app.use('/api/three-stone-engagement-rings', threeStoneEngagementRings);
 app.use('/api/vintage-engagement-rings', vintageEngagementRings);
 
 app.use('/api/charge', chargeCustomer);
+app.use('/api/send-customer-receipt', sendCustomerReceipt);
 
 // Set static folder
 if (process.env.NODE_ENV === 'production') {
