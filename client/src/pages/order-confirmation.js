@@ -31,6 +31,28 @@ class OrderConfirmation extends React.Component {
         }
     } 
 
+    sendConfirmationEmails = async() => {
+        try {
+            let apiEndPoint = window.location.origin + '/api/order-success';
+            let tax = 0.1025;
+            let amount = this.props.subTotal * tax;
+            let orderDetails = this.props.checkoutInfo.shippingInfo;
+            
+            await fetch(apiEndPoint, {
+                method: 'POST',
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                body: JSON.stringify({ 
+                    amount,
+                    orderDetails
+                })
+            })
+        } catch(err) {
+            throw err;
+        }
+    }
+
     componentDidMount() {
         console.log(this.props.customerInfo)
     }

@@ -9,8 +9,9 @@ import Contact from './contact';
 import FAQ from './faq';
 import CustomDesign from './custom-design-page';
 import Cart from './cart';
-import Checkout from './checkout'
-import OrderConfirmation from './order-confirmation'
+import Checkout from './checkout';
+import OrderConfirmation from './order-confirmation';
+import OrderSuccess from './order-success';
 import Whoops404 from './whoops';
 
 import EngagementRings from './engagement-rings';
@@ -49,6 +50,7 @@ class Routes extends React.Component {
 		<Route exact path='/cart' component={Cart}/>
 		<Route exact path='/checkout' component={Checkout}/>
 		<Route exact path='/order-confirmation' component={OrderConfirmation}/>
+		<Route exact path='/order-success' component={OrderSuccess}/>
 
 		<Route exact path='/engagement-rings' component={EngagementRings} />
 		<Route exact path='/engagement-rings/all-rings' component={AllRings} />
