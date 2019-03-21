@@ -7,13 +7,22 @@
     grid-gap: 0 40px; 
     grid-template-columns: 2.25fr 1fr;
 }
+#order-confirmation-page .cart-item {
+    padding: 20px 0;
+    margin: 15px 0 5px 0;
+}
+
 
 #order-review-title {
     font-size: 24px;
     position: relative;
     margin-bottom: 15px;
 }
-#order-review-title::after {
+#order-review-cart-title { 
+    position: relative;
+    margin-top: 20px;
+}
+#order-review-title::after, #order-review-cart-title::after {
     content: '';
     display: inline-block;
     position: absolute;
@@ -34,9 +43,21 @@
 
 #order-review-summary {
     grid-area: summary;
+}
+#summary {
     padding: 25px;
     background: rgb(243, 241, 241);
     height: fit-content;
+}
+
+#order-review-terms {
+    margin-top: 15px;
+    font-size: 12px;
+    line-height: 2;
+}
+#order-review-terms a {
+    color: black;
+    text-decoration: underline;
 }
 
 #order-review-cart-summary {

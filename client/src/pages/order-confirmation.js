@@ -123,7 +123,6 @@ class OrderConfirmation extends React.Component {
                     
                     <div id="order-review-info-wrapper">
                         <div id="order-review-details">
-                            {/* <h4 style={{ color: 'var(--yellow)' }}>Shipping to: { firstName + ' ' + lastName }</h4> */}
                             <div id="order-review-shipping">
                                 <p><strong>Shipping Address <a href="/checkout" className="order-review-edit-btn">Change <i className="far fa-edit"></i></a></strong></p>
                                 <div className="customer-info-box">
@@ -143,20 +142,24 @@ class OrderConfirmation extends React.Component {
                         </div>
                     </div>
                     <div id="order-review-cart-summary">
-                        <hr/>
-                        <h4>Cart Summary</h4>
+                        <h4 id="order-review-cart-title">Cart Summary</h4>
                         { itemsInCart }
                     </div>
 
                     <div id="order-review-summary">
-                        <h4 style={{ marginBottom: '20px' }}>Order Summary</h4>
-                        <div className="summary-details"><span>Subtotal: </span> <span>${ subTotalStr }</span></div>
-                        <div className="summary-details"><span>Shipping: </span> <span>Free</span></div>
-                        <div className="summary-details"><span>Sales Tax: </span> <span>${ salesTax }0</span></div>
-                        <hr/>
-                        <strong><div className="summary-details"><span>Order Total: </span> <span>${ totalStr }</span></div></strong>
-                        <br/>
-                        <span id="place-order-btn">SUBMIT ORDER</span>
+                        <div id="summary">
+                            <h4 style={{ marginBottom: '20px' }}>Order Summary</h4>
+                            <div className="summary-details"><span>Subtotal: </span> <span>${ subTotalStr }</span></div>
+                            <div className="summary-details"><span>Shipping: </span> <span>Free</span></div>
+                            <div className="summary-details"><span>Sales Tax: </span> <span>${ salesTax }0</span></div>
+                            <hr/>
+                            <strong><div className="summary-details"><span>Order Total: </span> <span>${ totalStr }</span></div></strong>
+                            <br/>
+                            <span id="place-order-btn">SUBMIT ORDER</span>
+                        </div>
+                        <div id="order-review-terms">
+                            By placing an order at <a href="">cajewelers.com</a>, you are agreeing to our <a href="">Terms and Conditions</a> and <a href="">Return policy</a>. We may occasionally email product recommendations and offers. You may unsubscribe at any time if you please by clicking the appropriate link inside the email.
+                        </div>
                     </div>
                 </div>
                 <GlobalFooter/>

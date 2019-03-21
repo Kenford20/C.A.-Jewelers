@@ -20,8 +20,7 @@ class CheckoutForm extends React.Component {
             country: '',
             zipCode: '',
             checkoutEmail: '',
-            phone: '',
-            confirmationPageUrl: '#'
+            phone: ''
         }
     }
 
@@ -40,7 +39,6 @@ class CheckoutForm extends React.Component {
     }
 
     updateConfirmationPage = async (e) => {
-        e.preventDefault();
         if(this.checkBlankFormFields(this.state)) {
             let token = await this.props.stripe.createToken({ name: this.state.firstName });
             let checkoutDetails = {
@@ -49,8 +47,8 @@ class CheckoutForm extends React.Component {
             }
 
             this.props.updateCheckoutInfo(checkoutDetails);
-            this.setState({ confirmationPageUrl: '/order-confirmation' })
         } else {
+            e.preventDefault();
             alert('Please complete every field!');
         }
     }
@@ -61,7 +59,7 @@ class CheckoutForm extends React.Component {
             <form id="checkout-form">
                 <div id="shipping-info-wrapper">
                     <h5><span style={{ color: 'var(--yellow)', fontSize: '32px' }}>1. </span>Shipping Information</h5>
-                    <div className="two-col-inputs">
+                    <div className="two-col-inputs" style={{ marginRight: '20px' }}>
                         <label>First Name</label>
                         <input 
                             id="firstName" 
@@ -93,7 +91,7 @@ class CheckoutForm extends React.Component {
                         placeholder="City"
                         onChange={ this.onChangeHandler }
                     ></input>
-                    <div className="two-col-inputs">
+                    <div className="two-col-inputs" style={{ marginRight: '20px' }}>
                         <label>State</label>
                         <input 
                             id="state" 
@@ -132,8 +130,8 @@ class CheckoutForm extends React.Component {
                 <div id="payment-info-wrapper">
                     <h5><span style={{ color: 'var(--yellow)', fontSize: '32px' }}>2. </span>Payment Information</h5>
                     <label>Credit Card Number</label>
-                    <CardNumberElement className="credit-card-inputs"/>
-                    <div className="two-col-inputs">
+                    <CardNumberElement id="credit-card-num" className="credit-card-inputs"/>
+                    <div className="two-col-inputs" style={{ marginRight: '20px' }}>
                         <label>Expiration Date</label>
                         <CardExpiryElement id="credit-card-exp-date" className="credit-card-inputs"/>
                     </div>
@@ -145,11 +143,11 @@ class CheckoutForm extends React.Component {
                     <br/>
                     <a 
                         id="checkout-btn" 
-                        href={ this.state.confirmationPageUrl }
+                        href='/order-confirmation'
                         style={{ border:'none' }}
                         onClick={ this.updateConfirmationPage }
                     >
-                        REVIEW & PLACE ORDER
+                        REVIEW YOUR ORDER
                     </a>
                     <p style={{ textAlign: 'center', margin: '15px 0' }}>OR</p>
                     <span id="paypal-checkout">insert PAYPAL btn here</span>
