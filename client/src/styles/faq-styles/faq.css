@@ -1,0 +1,11 @@
+#faq-description h5 {
+    color: blue;
+}
+
+#faq-description > h5::after {
+    content: '';
+    display: inline-block;
+    width: 5px;
+    height: 2px;
+    color: red;
+}

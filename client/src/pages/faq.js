@@ -3,6 +3,8 @@ import GlobalHeader from '../components/global-header';
 import GlobalFooter from '../components/global-footer';
 import FAQDescription from '../components/faq-components/faq-description';
 
+import '../styles/faq-styles/faq.css';
+
 class FAQ extends React.Component {
     componentDidMount() {
         document.title = 'Frequently Asked Questions | C.A. Jewelers';

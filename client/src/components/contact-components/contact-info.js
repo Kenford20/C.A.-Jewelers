@@ -5,7 +5,7 @@ import ContactForm from './contact-form';
 const ContactInfo = () => {
     return ( 
         <div id="contact">
-            <div className="container-fluid text-center">
+            <div className="container text-center">
                 <br></br>
                 <h3>CONTACT US</h3>
                 <br></br>
@@ -13,14 +13,16 @@ const ContactInfo = () => {
                 <br></br>
             </div>
             
-            <div className="container-fluid text-center" id="contact-info">
-                <p><strong>Contact: </strong>Susie Lam & Tommy Lam</p>
-                <p><i className="fas fa-phone icon-grey"></i> (312) 419-8829</p>
-                <p><i className="fas fa-phone icon-grey"></i> (312) 332-3883</p>
-                <p><i className="fas fa-fax icon-grey"></i> (312) 419-8281</p>
-                <i className="fas fa-envelope icon-grey"></i><a> info@cajewelers.com</a>
-                <br></br>
-                <input id="appointment-btn" type="submit" className="btn submit-form-btn" value="SCHEDULE AN APPOINTMENT"></input>
+            <div id="contact-info">
+                <p className="text-center"><strong>Contact: </strong>Susie Lam & Tommy Lam</p>
+                <div>
+                    <p><i className="fas fa-phone icon-grey"></i> (312) 419-8829</p>
+                    <p><i className="fas fa-phone icon-grey"></i> (312) 332-3883</p>
+                    <p><i className="fas fa-fax icon-grey"></i> (312) 419-8281</p>
+                    <i className="fas fa-envelope icon-grey"></i><a> info@cajewelers.com</a>
+                    <br></br>
+                    <input id="appointment-btn" type="submit" className="btn submit-form-btn" value="SCHEDULE AN APPOINTMENT"></input>
+                </div>
             </div>
             <br></br>
             <h5 className="text-center"><strong>EMAIL US</strong></h5>

@@ -5,13 +5,25 @@
 
 .icon-grey{
     color:grey;
+    font-size: 20px;
+    margin: 0 10px;
+}
+.icon-grey:hover {
+    color: var(--yellow);
 }
 
 #contact-info{
     background-color:#e5e6e8;
-    padding-top:25px;
-    padding-bottom:25px;
-    margin-bottom:25px;
+    padding: 25px;
+}
+#contact-info div {
+    width: fit-content;
+    margin: auto;
+}
+
+#appointment-btn{
+    width: 100%;
+    margin: 25px 0 0 0;
 }
 
 .submit-form-btn{
@@ -30,10 +42,6 @@
     font-size:11px;
 }
 
-#appointment-btn{
-    margin-top:25px;
-    width:70%;
-}
 
 .appointment-btn:hover, .submit-form-btn:hover{
 	background:#e5d08a;
@@ -44,6 +52,7 @@
     width: 700px;
     margin: auto;
 }
+
 @media only screen and (max-width: 480px) {
     #contact_form {
         width: 100%;

@@ -1,8 +1,10 @@
 import React from 'react';
 
+// import '../../styles/faq-styles/faq.css';
+
 const FAQDescription = () => {
     return ( 
-        <div id="faq-description">
+        <div id="faq-description" className="container">
             <h1>FAQ</h1>
             <h2>Frequently Asked Questions</h2>
             <br></br>
