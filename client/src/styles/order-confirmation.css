@@ -12,7 +12,6 @@
     margin: 15px 0 5px 0;
 }
 
-
 #order-review-title {
     font-size: 24px;
     position: relative;
@@ -33,13 +32,13 @@
     background: var(--yellow);
 }
 
+#order-review-info-wrapper {
+    grid-area: details;
+}
 #order-review-info-wrapper p {
     margin: 0;
 }
 
-#order-review-info-wrapper {
-    grid-area: details;
-}
 
 #order-review-summary {
     grid-area: summary;
@@ -102,4 +101,40 @@
 }
 #place-order-btn:hover {
     background: #997f2c;
+}
+
+@media only screen and (max-width: 992px) {
+    #order-confirmation-wrapper {
+        grid-template-areas:
+            "heading"
+            "details"
+            "cart"
+            "summary";
+        grid-template-columns: 1fr;
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 481px) {
+    #order-review-details {
+        grid-template-areas:
+            "heading"
+            "shipping"
+            "payment";
+        grid-gap: 15px 0;
+    }
+    #order-review-title, #order-review-cart-title {
+        font-size: 20px;
+    }
+    #order-review-summary {
+        font-size: 14px;
+        margin-top: 20px;
+    }
+    #summary h4 { font-size: 20px }
+}
+
+@media only screen and (max-width: 350px) {
+    #order-review-title, #order-review-cart-title {
+        font-size: 18px;
+    }
 }
