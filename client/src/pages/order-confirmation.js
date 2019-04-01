@@ -11,9 +11,9 @@ class OrderConfirmation extends React.Component {
         try {
             let apiEndPoint = window.location.origin + '/api/charge';
             let tax = 0.1025;
-            let amount = this.props.subTotal * tax;
-            let orderDetails = this.props.checkoutInfo.shippingInfo;
-            let token = this.props.checkoutInfo.stripeToken;
+            let amount = this.props.subTotal + this.props.subTotal * tax;
+            let orderDetails = this.props.customerInfo;
+            let token = this.props.paymentInfo.token.id;
 
             await fetch(apiEndPoint, {
                 method: 'POST',
@@ -26,17 +26,24 @@ class OrderConfirmation extends React.Component {
                     orderDetails
                 })
             })
+            .then(response => {
+                console.log(response);
+                if(response.status === 200) {
+                    this.sendConfirmationEmails();
+                }
+            })
         } catch(err) {
             throw err;
         }
     } 
 
     sendConfirmationEmails = async() => {
+        alert(`sending confirmation email to ${this.props.customerInfo.checkoutEmail}`)
         try {
-            let apiEndPoint = window.location.origin + '/api/order-success';
+            let apiEndPoint = window.location.origin + '/api/email-receipt';
             let tax = 0.1025;
-            let amount = this.props.subTotal * tax;
-            let orderDetails = this.props.checkoutInfo.shippingInfo;
+            let amount = this.props.subTotal + this.props.subTotal * tax;
+            let orderDetails = this.props.customerInfo;
             
             await fetch(apiEndPoint, {
                 method: 'POST',
@@ -48,15 +55,20 @@ class OrderConfirmation extends React.Component {
                     orderDetails
                 })
             })
+            .then(response => {
+                console.log(response);
+                if(response.status === 200) {
+                    alert('successfully sent confirmation email');
+                    window.location = '/order-success';
+                } else {
+                    alert('something went wrong, email not sent');
+                }
+            })
         } catch(err) {
             throw err;
         }
     }
 
-    componentDidMount() {
-        console.log(this.props.customerInfo)
-    }
-    
     render() { 
         const { 
             firstName, 
@@ -72,7 +84,7 @@ class OrderConfirmation extends React.Component {
             last4: cardLast4, 
             exp_month: cardExpMonth, 
             exp_year: cardExpYear 
-        } = this.props.cardInfo;
+        } = this.props.paymentInfo.token.card;
 
         let subTotal = this.props.subTotal;
         let subTotalStr = subTotal.toString().length > 6 
@@ -155,7 +167,12 @@ class OrderConfirmation extends React.Component {
                             <hr/>
                             <strong><div className="summary-details"><span>Order Total: </span> <span>${ totalStr }</span></div></strong>
                             <br/>
-                            <span id="place-order-btn">SUBMIT ORDER</span>
+                            <span 
+                                id="place-order-btn"
+                                onClick={ this.handlePlaceOrder }
+                            >
+                                SUBMIT ORDER
+                            </span>
                         </div>
                         <div id="order-review-terms">
                             By placing an order at <a href="">cajewelers.com</a>, you are agreeing to our <a href="">Terms and Conditions</a> and <a href="">Return policy</a>. We may occasionally email product recommendations and offers. You may unsubscribe at any time if you please by clicking the appropriate link inside the email.
@@ -172,8 +189,8 @@ const mapStateToProps = state => ({
     cartItems: state.cart.items,
     numItems: state.cart.numItems,
     subTotal: state.cart.subTotal,
-    customerInfo: state.checkout.checkoutDetails,
-    cardInfo: state.checkout.stripeToken.token.card
+    customerInfo: state.checkout.shippingInfo,
+    paymentInfo: state.checkout.paymentInfo
 });
  
 export default connect(mapStateToProps)(OrderConfirmation);

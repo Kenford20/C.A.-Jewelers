@@ -31,6 +31,16 @@ class CheckoutForm extends React.Component {
     }
 
     checkBlankFormFields = (form) => {
+        let ccNum = document.querySelector("#credit-card-num");
+        let ccExpDate = document.querySelector("#credit-card-exp-date");
+        let CVC = document.querySelector('#credit-card-cvc');
+        
+        if(ccNum.classList.contains('StripeElement--empty') || ccNum.classList.contains('StripeElement--invalid')
+        || ccExpDate.classList.contains('StripeElement--empty') || ccExpDate.classList.contains('StripeElement--invalid')
+        || CVC.classList.contains('StripeElements--empty') || CVC.classList.contains('StripeElement--invalid')) {
+            return false;
+        }
+
         for(let input in form) {
             if(form[input] === '')
                 return false;
@@ -39,16 +49,16 @@ class CheckoutForm extends React.Component {
     }
 
     updateConfirmationPage = async (e) => {
+        e.preventDefault();
         if(this.checkBlankFormFields(this.state)) {
             let token = await this.props.stripe.createToken({ name: this.state.firstName });
             let checkoutDetails = {
                 shippingInfo: this.state,
-                stripeToken: token
+                paymentInfo: token
             }
-
             this.props.updateCheckoutInfo(checkoutDetails);
+            window.location="/order-confirmation";
         } else {
-            e.preventDefault();
             alert('Please complete every field!');
         }
     }
@@ -141,14 +151,7 @@ class CheckoutForm extends React.Component {
                     </div>
                     <br/>
                     <br/>
-                    <a 
-                        id="checkout-btn" 
-                        href='/order-confirmation'
-                        style={{ border:'none' }}
-                        onClick={ this.updateConfirmationPage }
-                    >
-                        REVIEW YOUR ORDER
-                    </a>
+                    <span id="checkout-btn" onClick={ this.updateConfirmationPage }>REVIEW YOUR ORDER</span>
                     <p style={{ textAlign: 'center', margin: '15px 0' }}>OR</p>
                     <span id="paypal-checkout">insert PAYPAL btn here</span>
                 </div>

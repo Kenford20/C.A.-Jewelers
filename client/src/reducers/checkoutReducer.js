@@ -1,8 +1,18 @@
 import { UPDATE_CHECKOUT_CONFIRMATION_INFO } from '../actions/types';
 
 const initialState = {
-    checkoutDetails: {},
-    stripeToken: ''
+    shippingInfo: {
+        firstName: '',
+        lastName: '',
+        address: '',
+        city: '',
+        state: '',
+        country: '',
+        zipCode: '',
+        checkoutEmail: '',
+        phone: ''
+    },
+    paymentInfo: ''
 }
 
 export default function(state = initialState, action) {
@@ -11,8 +21,8 @@ export default function(state = initialState, action) {
             console.log(action.payload)
             return {
                 ...state,
-                checkoutDetails: action.payload.shippingInfo,
-                stripeToken: action.payload.stripeToken
+                shippingInfo: action.payload.shippingInfo,
+                paymentInfo: action.payload.paymentInfo
             } 
             
         default: return state;
