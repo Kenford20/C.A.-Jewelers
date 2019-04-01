@@ -16,10 +16,10 @@ const charge = (token, amount) => {
 
 router.post('/', async(req, res) => {
     try {
-        console.log(req.body.token)
-        // let data = await charge(req.body.token.id, req.body.amount);
+        console.log(req.body)
+        // let data = await charge(req.body.token, req.body.amount);
         // console.log(data);
-        // res.send('Charged');
+        res.send('Successfully charged the card!');
     } catch(err) {
         console.log(err);
         res.status(500);
