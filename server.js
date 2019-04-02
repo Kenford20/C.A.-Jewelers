@@ -18,7 +18,6 @@ const emailReceipt = require('./routes/email/customer-receipt');
 const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
 const stripePublicKey = process.env.STRIPE_PUBLIC_KEY;
 
-const stripe = require('stripe')(stripeSecretKey);
 const port = process.env.PORT || 4000;
 const app = express();
 

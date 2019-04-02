@@ -11,7 +11,7 @@ class OrderConfirmation extends React.Component {
         try {
             let apiEndPoint = window.location.origin + '/api/charge';
             let tax = 0.1025;
-            let amount = this.props.subTotal + this.props.subTotal * tax;
+            let amount = (this.props.subTotal + this.props.subTotal * tax).toFixed(2);
             let orderDetails = this.props.customerInfo;
             let token = this.props.paymentInfo.token.id;
 
@@ -67,6 +67,10 @@ class OrderConfirmation extends React.Component {
         } catch(err) {
             throw err;
         }
+    }
+
+    componentDidMount() {
+        console.log(this.props.cartItems);
     }
 
     render() { 
