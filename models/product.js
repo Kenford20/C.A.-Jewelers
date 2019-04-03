@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var schema = new Schema({
+var productSchema = new Schema({
     imagePath:   { type:String, required:true },
     title:       { type:String, required:true },
     description: { type:String, required:true },
@@ -12,4 +12,4 @@ var schema = new Schema({
     metal:       { type:String, required:true }
 });
 
-module.exports = mongoose.model('Product', schema);
+module.exports = mongoose.model('Product', productSchema);

@@ -8,8 +8,12 @@ const Product = require('../../../models/product');
 // description: gets all ring products
 router.get('/', (req, res) => {
     Product.find({category: "engagement ring"})
-        //.sort({id: -1})
-        .then(products => res.json(products));
+    .then(products => {
+        console.log(products);
+        res.json(products)
+    }).catch(err => {
+        console.log(err);
+    })
 });
 
 module.exports = router;

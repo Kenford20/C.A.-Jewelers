@@ -15,9 +15,6 @@ const vintageEngagementRings = require('./routes/api/engagement/vintage-engageme
 const chargeCustomer = require('./routes/stripe/charge');
 const emailReceipt = require('./routes/email/customer-receipt');
 
-const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
-const stripePublicKey = process.env.STRIPE_PUBLIC_KEY;
-
 const port = process.env.PORT || 4000;
 const app = express();
 
@@ -29,7 +26,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
 // connecting database
-const db = require('./models');
+const db = require('./models/index');
+// require('./models/insert-db-products');
+
+//const db = require('./');
 const handle = require('./handlers');
 
 // Use Routes
@@ -50,7 +50,6 @@ if (process.env.NODE_ENV === 'production') {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
 }
-//app.get('/', (req, res) => res.json({hello:'world'}));
 
 app.use(handle.notFound);
 app.use(handle.errorHandler);

@@ -9,7 +9,12 @@ const Product = require('../../models/product');
 router.get('/', (req, res) => {
     Product.find()
         //.sort({id: -1})
-        .then(products => res.json(products));
+        .then(products => {
+            console.log(products);
+            res.json(products)
+        }).catch(err => {
+            console.log(err);
+        })
 });
 
 // route:       POST api/products
