@@ -7,6 +7,8 @@ import { PersistGate } from 'redux-persist/integration/react';
 
 const persistor = persistStore(store);
 
+export { persistor };
+
 class App extends Component {
   // purge local storage and reset redux store
   // componentDidMount() {
@@ -26,4 +28,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export { App };

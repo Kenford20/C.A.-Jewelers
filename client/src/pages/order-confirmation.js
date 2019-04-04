@@ -3,10 +3,24 @@ import { connect } from 'react-redux';
 import CartItem from '../components/cart-components/cart-item';
 import GlobalHeader from '../components/global-header';
 import GlobalFooter from '../components/global-footer';
+import Spinner from '../components/spinner';
 
 import '../styles/order-confirmation.css';
+import Jewelry from './wedding';
 
 class OrderConfirmation extends React.Component {
+    constructor(props) { 
+        super(props);
+
+        this.state = {
+            processingPayment: false
+        }
+    }
+    
+    componentDidMount() {
+        console.log(this.props.cartItems);
+    }
+    
     handlePlaceOrder = async () => {
         try {
             let apiEndPoint = window.location.origin + '/api/charge';
@@ -14,6 +28,7 @@ class OrderConfirmation extends React.Component {
             let amount = (this.props.subTotal + this.props.subTotal * tax).toFixed(2);
             let orderDetails = this.props.customerInfo;
             let token = this.props.paymentInfo.token.id;
+            this.setState({ processingPayment: true });
 
             await fetch(apiEndPoint, {
                 method: 'POST',
@@ -38,7 +53,7 @@ class OrderConfirmation extends React.Component {
     } 
 
     sendConfirmationEmails = async() => {
-        alert(`sending confirmation email to ${this.props.customerInfo.checkoutEmail}`)
+        //alert(`sending confirmation email to ${this.props.customerInfo.checkoutEmail}`)
         try {
             let apiEndPoint = window.location.origin + '/api/email-receipt';
             let tax = 0.1025;
@@ -57,8 +72,8 @@ class OrderConfirmation extends React.Component {
             })
             .then(response => {
                 console.log(response);
+                this.setState({ processingPayment: false });
                 if(response.status === 200) {
-                    alert('successfully sent confirmation email');
                     window.location = '/order-success';
                 } else {
                     alert('something went wrong, email not sent');
@@ -69,9 +84,6 @@ class OrderConfirmation extends React.Component {
         }
     }
 
-    componentDidMount() {
-        console.log(this.props.cartItems);
-    }
 
     render() { 
         const { 
@@ -123,6 +135,7 @@ class OrderConfirmation extends React.Component {
 
         return ( 
             <div id="order-confirmation-page">
+                { this.state.processingPayment && <Spinner/> }
                 <GlobalHeader/>
                 <div className="w-100 bg-lightgrey catalog-route-border">
                     <div className="container">    
