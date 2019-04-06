@@ -3,6 +3,8 @@
     height: 500px;
 }
 
+#wedding-header-btn:hover { background: #997f2c }
+
 #wedding-header {
     position: relative;
     display: flex;

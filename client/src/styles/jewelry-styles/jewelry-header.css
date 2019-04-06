@@ -1,34 +1,38 @@
-#jewelry-header{
-    width:100%;
-}
-
-#jewelry-header{
+/* #jewelry-header{
     background:linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.35)),
-    url(../../images/jewelry/header.jpeg) no-repeat;
+    url(../../images/jewelry-header.jpg) no-repeat;
     margin:0;
     padding:0;
     background-size: cover;
-    height: 400px;
+    width: 100%;
+    height: auto;
     background-position: center;
-}
-#jewelry-header-image{
-    height:100%;
-    text-align:center;
+} */
+#jewelry-header{
     display:flex;
     justify-content:center;
     align-items:center;
 }
+#jewelry-header-text {
+    text-align: center;
+    text-transform: uppercase;
+    position: absolute;
+}
+#jewelry-header img {
+    width: 100%;
+    height: auto;
+}
 
 #jewelry-header-image h2, #jewelry-header-image h3{
-	font-family:"Tangerine", Tahoma, Helvetica, Arial, serif;
+	/* font-family:"Tangerine", Tahoma, Helvetica, Arial, serif;
 	font-size:3rem;
     color:white;
-    text-shadow: 3px 3px 3px rgb(248, 55, 55);
+    text-shadow: 3px 3px 3px rgb(248, 55, 55); */
 }
 
-#jewelry-header-text > h3{
+/* #jewelry-header-text > h3{
     font-size:2.5rem;
-}
+} */
 
 .jewelry-btn{
 	font-family:'Gotham SSm',sans-serif;

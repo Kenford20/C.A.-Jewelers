@@ -1,16 +1,20 @@
 import React from 'react';
-import WeddingDescription from '../home-components/wedding-description';
 import '../../styles/home-styles/wedding-band.css';
 
 const WeddingHeader = () => {
     return ( 
         <div id="wedding-bands">
             <a href="/wedding">
-                <div id="wedding-band-image"></div>
-                {/* <h4 className="image-header"> <strong> Wedding Bands </strong></h4>
-                <p className="image-text"> Marry your bae the C.A. wae </p> */}
+                <img src={require('../../images/wedding-bands/wedding4.jpg')} id="wedding-home-img"></img>
             </a>
-            <WeddingDescription/>
+            <div id="wedding-description" style={{ marginTop: '40px'}}>
+                <h2 className="body-subtitles"> WEDDING BANDS </h2>
+                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores dicta ut dignissimos quia iste repellat temporibus tempore molestiae. </p>
+                <div id="wedding-links">
+                    <a href="/wedding/mens-wedding-rings"> Shop Men's </a>
+                    <a href="/wedding/womens-wedding-rings"> Shop Women's </a>
+                </div>
+            </div>
         </div>
      );
 }

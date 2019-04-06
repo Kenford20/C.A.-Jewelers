@@ -4,7 +4,8 @@ import '../../styles/home-styles/fine-jewelry.css';
 const JewelryHome = () => {
     return ( 
         <div id="jewelry">
-            <a href="/jewelry"><img src={"https://s3.amazonaws.com/media-cajewelers.com/Stackables.jpg"}></img></a>
+            {/* <a href="/jewelry"><img src={"https://s3.amazonaws.com/media-cajewelers.com/Stackables.jpg"}></img></a> */}
+            <a href="/jewelry"><img src={require('../../images/jewelry/jewelry2.jpg')}></img></a>
             <div id="jewelry-description">
                 <div id="body-color">
                     <h2 className="body-subtitles"> FINE JEWELRY </h2>

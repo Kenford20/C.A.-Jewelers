@@ -3,7 +3,6 @@
 	margin-top:15px;
 	letter-spacing: .05em;
 	font-size:1.7rem;
-	text-shadow: 3px 3px 3px white;
 	color:black;
 }
 
@@ -12,12 +11,39 @@
 	letter-spacing: .05em;
 	font-size:1.2rem;
 	text-decoration:underline;
-	text-shadow: 3px 3px 3px white;
 	color:black;
 }
 
 .jewelry-containers{
 	text-align:center;
 	margin:auto;
-	width:90%;
+	width: 400px;
+	font-size: 14px;
 }
+
+#earrings, #rings, #necklaces, #bracelets {
+	
+}
+
+.jewelry-sub-containers {
+	display: flex;
+	margin: 100px 0;
+}
+
+@media only screen and (max-width: 481px) {
+	.jewelry-sub-containers {
+		flex-direction: column;
+		margin: 50px 0;
+	}	
+	#bracelets, #rings {
+		flex-direction: column-reverse;
+	}
+	.jewelry-containers {
+		margin-top: 25px;
+	}
+
+	.jewelry-images img{
+		width: 100%;
+	}
+}
+
