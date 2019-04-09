@@ -67,7 +67,7 @@ class HeaderNavbar2 extends React.Component {
   <div className="collapse navbar-collapse" id="navbarSupportedContent">
     <ul className="navbar-nav m-auto">
       <li className="nav-item dropdown">
-        <a href="/engagement-rings/all-rings" className="nav-link dropdown-toggle nav-link-spacing" id="navbarDropdown" aria-haspopup="true" aria-expanded="false">
+        <a href="/engagement" className="nav-link dropdown-toggle nav-link-spacing" id="navbarDropdown" aria-haspopup="true" aria-expanded="false">
           ENGAGEMENT
         </a>
         <div className="dropdown-menu" aria-labelledby="navbarDropdown">

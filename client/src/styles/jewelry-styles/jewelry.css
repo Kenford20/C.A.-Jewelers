@@ -1,20 +1,19 @@
-.jewelry-caption-header{
-	margin-bottom:2px;
-	margin-top:15px;
+.jewelry-caption-header {
+	margin: 15px 0;
 	letter-spacing: .05em;
-	font-size:1.7rem;
-	color:black;
+	font-size: 1.7rem;
+	color: black;
 }
 
-.jewelry-caption-text{
-	margin-bottom:2px;
+.jewelry-caption-text {
+	margin-bottom: 2px;
 	letter-spacing: .05em;
-	font-size:1.2rem;
-	text-decoration:underline;
-	color:black;
+	font-size: 1.2rem;
+	text-decoration: underline;
+	color: black;
 }
 
-.jewelry-containers{
+.jewelry-containers {
 	text-align:center;
 	margin:auto;
 	width: 400px;

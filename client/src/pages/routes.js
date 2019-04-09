@@ -14,6 +14,7 @@ import OrderConfirmation from './order-confirmation';
 import OrderSuccess from './order-success';
 import Whoops404 from './whoops';
 
+import EngagementRings2 from './engagement2';
 import EngagementRings from './engagement-rings';
 import AllRings from './engagement-rings/all-rings';
 import HaloEngagementRings from './engagement-rings/halo-rings';
@@ -21,7 +22,7 @@ import SolitaireEngagementRings from './engagement-rings/solitaire-rings';
 import ThreeStoneEngagementRings from './engagement-rings/three-stone-rings';
 import VintageEngagementRings from './engagement-rings/vintage-rings';
 
-import Wedding from './wedding';
+import Wedding2 from './wedding2';
 import MensWeddingRings from './wedding/mens-wedding';
 import WomensWeddingRings from './wedding/womens-wedding';
 
@@ -52,14 +53,14 @@ class Routes extends React.Component {
 		<Route exact path='/order-confirmation' component={OrderConfirmation}/>
 		<Route exact path='/order-success' component={OrderSuccess}/>
 
-		<Route exact path='/engagement-rings' component={EngagementRings} />
+		<Route exact path='/engagement' component={EngagementRings2} />
 		<Route exact path='/engagement-rings/all-rings' component={AllRings} />
 		<Route exact path='/engagement-rings/halo-rings' component={HaloEngagementRings} />
 		<Route exact path='/engagement-rings/solitaire-rings' component={SolitaireEngagementRings} />
 		<Route exact path='/engagement-rings/three-stone-rings' component={ThreeStoneEngagementRings} />
 		<Route exact path='/engagement-rings/vintage-rings' component={VintageEngagementRings} />
 
-		<Route exact path='/wedding' component={Wedding} />
+		<Route exact path='/wedding' component={Wedding2} />
 		<Route exact path='/wedding/mens-wedding-rings' component={MensWeddingRings} />
 		<Route exact path='/wedding/womens-wedding-rings' component={WomensWeddingRings} />
 

@@ -1,19 +1,23 @@
-#jewelry-header{
+#jewelry-header {
     display:flex;
     justify-content:center;
     align-items:center;
 }
+
 #jewelry-header-text {
     text-align: center;
     text-transform: uppercase;
     position: absolute;
-}
-#jewelry-header img {
-    width: 100%;
-    height: auto;
+    width: 400px;
 }
 
-.jewelry-btn{
+#jewelry-header img {
+    width: 100%;
+    height: 500px;
+}
+
+
+.jewelry-btn {
 	font-family:'Gotham SSm',sans-serif;
     letter-spacing: .09em;
 	font-size:12px;

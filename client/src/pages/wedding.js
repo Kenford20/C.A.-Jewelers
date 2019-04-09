@@ -7,7 +7,7 @@ import CheapProducts from '../components/jewelry-components/cheap-products';
 
 import '../styles/wedding-styles/wedding.css';
 
-class Jewelry extends React.Component {
+class Wedding extends React.Component {
     componentDidMount() {
         document.title = 'Anniversary and Wedding Bands | C.A. Jewelers';
     }
@@ -39,4 +39,4 @@ class Jewelry extends React.Component {
     }
 }
  
-export default Jewelry;
+export default Wedding;
