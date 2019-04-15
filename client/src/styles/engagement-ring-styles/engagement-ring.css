@@ -35,7 +35,7 @@
     text-shadow: 4px 4px 4px black;
 }
 
-.image-caption-header{
+.image-caption-title{
     padding-top:20px;
     font-size:2.1rem;
     color:black;
@@ -45,7 +45,7 @@
     word-spacing:0.09em;
 }
 
-.image-caption-header p{
+.image-caption-title p{
     margin-bottom:2px;
 }
 

@@ -54,11 +54,11 @@ class Routes extends React.Component {
 		<Route exact path='/order-success' component={OrderSuccess}/>
 
 		<Route exact path='/engagement' component={EngagementRings2} />
-		<Route exact path='/engagement-rings/all-rings' component={AllRings} />
-		<Route exact path='/engagement-rings/halo-rings' component={HaloEngagementRings} />
-		<Route exact path='/engagement-rings/solitaire-rings' component={SolitaireEngagementRings} />
-		<Route exact path='/engagement-rings/three-stone-rings' component={ThreeStoneEngagementRings} />
-		<Route exact path='/engagement-rings/vintage-rings' component={VintageEngagementRings} />
+		<Route exact path='/engagement/all-rings' component={AllRings} />
+		<Route exact path='/engagement/halo-rings' component={HaloEngagementRings} />
+		<Route exact path='/engagement/solitaire-rings' component={SolitaireEngagementRings} />
+		<Route exact path='/engagement/three-stone-rings' component={ThreeStoneEngagementRings} />
+		<Route exact path='/engagement/vintage-rings' component={VintageEngagementRings} />
 
 		<Route exact path='/wedding' component={Wedding2} />
 		<Route exact path='/wedding/mens-wedding-rings' component={MensWeddingRings} />

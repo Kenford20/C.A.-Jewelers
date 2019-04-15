@@ -1,44 +1,6 @@
-.jewelry-caption-header {
-	margin: 15px 0;
-	letter-spacing: .05em;
-	font-size: 1.7rem;
-	color: black;
-}
-
-.jewelry-caption-text {
-	margin-bottom: 2px;
-	letter-spacing: .05em;
-	font-size: 1.2rem;
-	text-decoration: underline;
-	color: black;
-}
-
-.jewelry-containers {
-	text-align:center;
-	margin:auto;
-	width: 400px;
-	font-size: 14px;
-}
-
-.jewelry-sub-containers {
-	display: flex;
-	margin: 100px 0;
-}
-
 @media only screen and (max-width: 481px) {
-	.jewelry-sub-containers {
-		flex-direction: column;
-		margin: 50px 0;
-	}	
-	#bracelets, #rings {
+	#jewelry-bracelets-banner, #jewelry-rings-banner {
 		flex-direction: column-reverse;
-	}
-	.jewelry-containers {
-		margin-top: 25px;
-	}
-
-	.jewelry-images img{
-		width: 100%;
 	}
 }
 

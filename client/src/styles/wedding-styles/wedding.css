@@ -1,15 +1,4 @@
-#wedding-header img {
-    width: 100%;
-    height: 500px;
-}
-
 #wedding-header-btn:hover { background: #997f2c }
-
-#wedding-header {
-    position: relative;
-    display: flex;
-    align-items: center; 
-}
 
 #wedding-header-text {
     position: absolute;
@@ -27,10 +16,10 @@
 }
 
 @media only screen and (max-width: 481px) {
-    #wedding-header-text {
+    /* #wedding-header-text {
         width: 100%;
         left: 0;
         text-align: center;
-    }
+    } */
 }
 

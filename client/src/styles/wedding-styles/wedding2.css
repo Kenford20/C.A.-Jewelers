@@ -1,73 +1,13 @@
-#wedding-header img {
-    width: 100%;
-    height: 500px;
+#wedding-header .landing-page-header-text {
+	color: white;
 }
 
-#wedding-header-btn:hover { background: #997f2c }
-
-#wedding-header {
-    position: relative;
-    display: flex;
-    align-items: center; 
-}
-
-#wedding-header-text {
-    position: absolute;
-    left: 125px;
-    width: 400px;
-    color: white;
-}
-#wedding-header-text h1 {
-    text-transform: uppercase;
-    font-size: 36px;
-}
-
-.wedding-caption-header {
-	margin: 15px 0;
-	letter-spacing: .05em;
-	font-size: 1.7rem;
-	color: black;
-}
-
-.wedding-caption-text {
-	margin-bottom: 2px;
-	letter-spacing: .05em;
-	font-size: 1.2rem;
-	text-decoration: underline;
-	color: black;
-}
-
-.wedding-containers {
-	text-align: center;
-	margin: auto;
-	width: 400px;
-	font-size: 14px;
-}
-
-.wedding-sub-containers {
-	display: flex;
-	margin: 100px 0;
+#wedding-header-btn:hover { 
+	background: #997f2c; 
 }
 
 @media only screen and (max-width: 481px) {
-    #wedding-header-text {
-        width: 100%;
-        left: 0;
-        text-align: center;
-    }
-
-	.wedding-sub-containers {
-		flex-direction: column;
-		margin: 50px 0;
-	}	
-	#bracelets, #rings {
+	#womens-wedding-banner {
 		flex-direction: column-reverse;
-	}
-	.wedding-containers {
-		margin-top: 25px;
-	}
-
-	.wedding-images img {
-		width: 100%;
 	}
 }
