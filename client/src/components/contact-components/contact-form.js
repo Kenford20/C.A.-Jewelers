@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ContactForm = () => {
+const ContactForm = ({ onChangeHandler, sendContactMessage }) => {
     return ( 
         <div id="contact-form">
             <div>
@@ -13,13 +13,29 @@ const ContactForm = () => {
                         <div className="row">
                             <div className="col-md-6">
                                 <div className="form-group">
-                                    <input id="form_name" type="text" name="name" className="form-control" placeholder="FIRST NAME" required="required" data-error="Firstname is required."></input>
+                                    <input 
+                                        id="form_name" 
+                                        type="text" 
+                                        name="name" 
+                                        className="form-control" 
+                                        placeholder="FIRST NAME" 
+                                        required="required" 
+                                        data-error="Firstname is required."
+                                        onChange={ (e) => onChangeHandler(e) }
+                                    />
                                     <div className="help-block with-errors"></div>
                                 </div>
                             </div>
                             <div className="col-md-6">
                                 <div className="form-group">
-                                    <input id="form_lastname" type="text" name="surname" className="form-control" placeholder="LAST NAME (OPTIONAL)"></input>
+                                    <input 
+                                        id="form_lastname" 
+                                        type="text" 
+                                        name="surname" 
+                                        className="form-control" 
+                                        placeholder="LAST NAME (OPTIONAL)"
+                                        onChange={ (e) => onChangeHandler(e) }
+                                    />
                                     <div className="help-block with-errors"></div>
                                 </div>
                             </div>
@@ -27,13 +43,29 @@ const ContactForm = () => {
                         <div className="row">
                             <div className="col-md-6">
                                 <div className="form-group">
-                                    <input id="form_email" type="email" name="email" className="form-control" placeholder="EMAIL" required="required" data-error="Valid email is required."></input>
+                                    <input 
+                                        id="form_email" 
+                                        type="email" 
+                                        name="email" 
+                                        className="form-control" 
+                                        placeholder="EMAIL" 
+                                        required="required" 
+                                        data-error="Valid email is required."
+                                        onChange={ (e) => onChangeHandler(e) }
+                                    />
                                     <div className="help-block with-errors"></div>
                                 </div>
                             </div>
                             <div className="col-md-6">
                                 <div className="form-group">
-                                    <input id="form_phone" type="tel" name="phone" className="form-control" placeholder="PHONE NUMBER (OPTIONAL)"></input>
+                                    <input 
+                                        id="form_phone" 
+                                        type="tel" 
+                                        name="phone" 
+                                        className="form-control" 
+                                        placeholder="PHONE NUMBER (OPTIONAL)"
+                                        onChange={ (e) => onChangeHandler(e) }
+                                    />
                                     <div className="help-block with-errors"></div>
                                 </div>
                             </div>
@@ -41,7 +73,15 @@ const ContactForm = () => {
                         <div className="row">
                             <div className="col-md-12">
                                 <div className="form-group">
-                                    <textarea id="form_message" name="message" className="form-control" placeholder="MESSAGE" rows="4" required="required" data-error="Please,leave us a message."></textarea>
+                                    <textarea 
+                                        id="form_message" 
+                                        name="message" 
+                                        className="form-control" 
+                                        placeholder="MESSAGE" 
+                                        rows="4" 
+                                        required="required" data-error="Please,leave us a message."
+                                        onChange={ (e) => onChangeHandler(e) }
+                                    />
                                     <div className="help-block with-errors"></div>
                                 </div>
                                 </div>
@@ -51,7 +91,7 @@ const ContactForm = () => {
                                     </div>
                                 </div>
                                 <div className="col-md-12">
-                                <input type="submit" className="btn submit-form-btn" value="Submit"></input>
+                                <span className="btn submit-form-btn" onClick={ sendContactMessage }>Submit</span>
                             </div>
                         </div>
                     </div>
@@ -60,7 +100,7 @@ const ContactForm = () => {
                 </div>
             </div>
         </div>
-     );
+    );
 }
  
 export default ContactForm;

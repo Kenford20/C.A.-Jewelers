@@ -75,7 +75,7 @@ class CheckoutForm extends React.Component {
                             id="firstName" 
                             placeholder="First name"
                             onChange={ this.onChangeHandler }
-                        ></input>
+                        />
                     </div>
                     <div className="two-col-inputs">
                         <label>Last Name</label>
@@ -83,31 +83,31 @@ class CheckoutForm extends React.Component {
                             id="lastName" 
                             placeholder="Last name"
                             onChange={ this.onChangeHandler }
-                        ></input>
+                        />
                     </div>
                     <label>Shipping Address</label>
                     <input 
                         id="address" 
                         placeholder="Address Line 1"
                         onChange={ this.onChangeHandler }
-                    ></input>
+                    />
                     <input 
                         placeholder="Address Line 2 (Optional)"
                         onChange={ this.onChangeHandler }
-                    ></input>
+                    />
                     <label>City</label>
                     <input 
                         id="city" 
                         placeholder="City"
                         onChange={ this.onChangeHandler }
-                    ></input>
+                    />
                     <div className="two-col-inputs" style={{ marginRight: '20px' }}>
                         <label>State</label>
                         <input 
                             id="state" 
                             placeholder="State dropdown"
                             onChange={ this.onChangeHandler }
-                        ></input>
+                        />
                     </div>
                     <div className="two-col-inputs">
                         <label>Zip Code</label>
@@ -115,26 +115,26 @@ class CheckoutForm extends React.Component {
                             id="zipCode" 
                             placeholder="Zip Code"
                             onChange={ this.onChangeHandler }
-                        ></input>
+                        />
                     </div>
                     <label>Country</label>
                     <input 
                         id="country" 
                         placeholder="Country dropdown"
                         onChange={ this.onChangeHandler }
-                    ></input>
+                    />
                     <label>Email Address</label>
                     <input 
                         id="checkoutEmail" 
                         placeholder="Email"
                         onChange={ this.onChangeHandler }
-                    ></input>
+                    />
                     <label>Phone Number</label>
                     <input 
                         id="phone" 
                         placeholder="Phone"
                         onChange={ this.onChangeHandler }
-                    ></input>
+                    />
                 </div>
 
                 <div id="payment-info-wrapper">

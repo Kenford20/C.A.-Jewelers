@@ -12,21 +12,30 @@ const transporter = nodemailer.createTransport({
 });
 
 router.post('/', async(req, res) => {
+    const {
+        name,
+        surname,
+        email,
+        phone,
+        message
+    } = req.body.state;
+
     const mailOptions = {
         from: req.body.email,
         to: process.env.EMAIL_USERNAME_CONTACT,
-        subject: `Contact Form Message from: ${req.body.name}`,
+        subject: `Contact Form Message from: ${name}`,
         html: `
-            <h2>Message from: ${req.body.name} ${req.body.surname}</h2>
-            <p>Email: ${req.body.email}<p>
-            <p>Phone #: ${req.body.phone}</p>
-            <p>Message: ${req.body.message}</p>
+            <h2>Message from: ${name} ${surname}</h2>
+            <p>Email: ${email}<p>
+            <p>Phone #: ${phone}</p>
+            <p>Message: ${message}</p>
         `
     };
 
     try {
         console.log('sending contact email')
         console.log(req.body)
+        
         await transporter.sendMail(mailOptions, (err, info) => {
             if(err) {
                 console.log(err)

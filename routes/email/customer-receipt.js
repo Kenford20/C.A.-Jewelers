@@ -42,6 +42,7 @@ router.post('/', async(req, res) => {
             } else {
                 console.log('sending response to front end');
                 res.send('Successfully sent confirmation email!');
+                //res.redirect('/contact');
             }
         });
     } catch(err) {
