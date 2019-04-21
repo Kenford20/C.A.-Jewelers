@@ -25,11 +25,11 @@ router.post('/', async(req, res) => {
         to: req.body.orderDetails.checkoutEmail,
         subject: 'Your C.A. Jewelers order has been confirmed',
         html: `
-          <h2>Thank you for choosing C.A. Jewelers as your jeweler!</h2>
-          <p>Your order number is: 123<p>
-          <p>Your order was placed on: ${getDate()}</p>
-          <p>We are getting your order prepared to be shipped. You will be notified when it was been sent.</p>
-          <p>If you have any questions/concerns regarding your order, please contact us ASAP at 123-456-7890 or email us at service@cajewelers.com</p>
+            <h2>Thank you for choosing C.A. Jewelers as your jeweler!</h2>
+            <p>Your order number is: 123<p>
+            <p>Your order was placed on: ${getDate()}</p>
+            <p>We are getting your order prepared to be shipped. You will be notified when it was been sent.</p>
+            <p>If you have any questions/concerns regarding your order, please contact us ASAP at 123-456-7890 or email us at service@cajewelers.com</p>
         `
     };
 
@@ -37,13 +37,13 @@ router.post('/', async(req, res) => {
         console.log('sending confirmation email')
         console.log(req.body)
         await transporter.sendMail(mailOptions, (err, info) => {
-          if(err)
-            console.log(err)
-          else {
-            console.log('sending response to front end');
-            res.send('Successfully sent confirmation email!');
-          }
-        })
+            if(err) {
+                console.log(err)
+            } else {
+                console.log('sending response to front end');
+                res.send('Successfully sent confirmation email!');
+            }
+        });
     } catch(err) {
         console.log(err);
         res.status(500);

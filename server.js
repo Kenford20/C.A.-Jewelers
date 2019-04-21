@@ -14,6 +14,7 @@ const vintageEngagementRings = require('./routes/api/engagement/vintage-engageme
 
 const chargeCustomer = require('./routes/stripe/charge');
 const emailReceipt = require('./routes/email/customer-receipt');
+const sendContactMessage = require('./routes/email/send-contact-message');
 
 const port = process.env.PORT || 4000;
 const app = express();
@@ -42,6 +43,7 @@ app.use('/api/vintage-engagement-rings', vintageEngagementRings);
 
 app.use('/api/charge', chargeCustomer);
 app.use('/api/email-receipt', emailReceipt);
+app.use('/api/contact-form', sendContactMessage);
 
 // Set static folder
 if (process.env.NODE_ENV === 'production') {
