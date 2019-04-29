@@ -9,7 +9,6 @@ const Product = require('../../../models/product');
 router.get('/', (req, res) => {
     Product.find({category: "engagement ring"})
     .then(products => {
-        console.log(products);
         res.json(products)
     }).catch(err => {
         console.log(err);

@@ -23,7 +23,7 @@ class EngagementRings2 extends React.Component {
                     <div className="landing-page-header-text">
                         <h1> Diamond Engagement Rings </h1>
                         <p>Adipisicing ad qui nisi aliqua adipisicing dolore non cupidatat cupidatat laboris labore do ullamco.</p>
-                        <button id="engagement-header-btn">Shop Engagement Rings</button>
+                        <a href="/engagement/all-rings"><button id="engagement-header-btn">Shop Engagement Rings</button></a>
                     </div>
                 </div>
 

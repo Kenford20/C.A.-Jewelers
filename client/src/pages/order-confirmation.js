@@ -6,7 +6,6 @@ import GlobalFooter from '../components/global-footer';
 import Spinner from '../components/spinner';
 
 import '../styles/order-confirmation.css';
-import Jewelry from './wedding';
 
 class OrderConfirmation extends React.Component {
     constructor(props) { 
@@ -19,69 +18,90 @@ class OrderConfirmation extends React.Component {
     
     componentDidMount() {
         console.log(this.props.cartItems);
+        console.log(this.props.customerInfo);
+        console.log(this.props.paymentInfo);
     }
     
-    handlePlaceOrder = async () => {
-        try {
-            let apiEndPoint = window.location.origin + '/api/charge';
-            let tax = 0.1025;
-            let amount = (this.props.subTotal + this.props.subTotal * tax).toFixed(2);
-            let orderDetails = this.props.customerInfo;
-            let token = this.props.paymentInfo.token.id;
-            this.setState({ processingPayment: true });
+    handlePlaceOrder = async() => {
+        let apiEndPoint = window.location.origin + '/api/charge';
+        let tax = 0.1025;
+        this.setState({ processingPayment: true });
 
-            await fetch(apiEndPoint, {
-                method: 'POST',
-                headers: {
-                    'Content-type': 'application/json'
-                },
-                body: JSON.stringify({ 
-                    token, 
-                    amount,
-                    orderDetails
-                })
+        await fetch(apiEndPoint, {
+            method: 'POST',
+            headers: { 'Content-type': 'application/json' },
+            body: JSON.stringify({ 
+                token: this.props.paymentInfo.token.id, 
+                amount: (this.props.subTotal + this.props.subTotal * tax).toFixed(2),
+                orderDetails: this.props.customerInfo
             })
-            .then(response => {
-                console.log(response);
-                if(response.status === 200) {
-                    this.sendConfirmationEmails();
-                }
-            })
-        } catch(err) {
-            throw err;
-        }
+        })
+        .then(response => {
+            console.log(response);
+            if(response.status === 200) {
+                this.sendConfirmationEmails();
+                this.saveOrder();
+            }
+        })
+        .catch(err => console.error(err));
     } 
 
     sendConfirmationEmails = async() => {
         //alert(`sending confirmation email to ${this.props.customerInfo.checkoutEmail}`)
-        try {
-            let apiEndPoint = window.location.origin + '/api/email-receipt';
-            let tax = 0.1025;
-            let amount = this.props.subTotal + this.props.subTotal * tax;
-            let orderDetails = this.props.customerInfo;
-            
-            await fetch(apiEndPoint, {
-                method: 'POST',
-                headers: {
-                    'Content-type': 'application/json'
-                },
-                body: JSON.stringify({ 
-                    amount,
-                    orderDetails
-                })
+        let apiEndPoint = window.location.origin + '/api/email-receipt';
+        let tax = 0.1025;
+        
+        await fetch(apiEndPoint, {
+            method: 'POST',
+            headers: { 'Content-type': 'application/json' },
+            body: JSON.stringify({ 
+                amount: this.props.subTotal + this.props.subTotal*tax,
+                orderDetails: this.props.customerInfo
             })
-            .then(response => {
-                console.log(response);
-                this.setState({ processingPayment: false });
-                if(response.status === 200) {
-                    window.location = '/order-success';
-                } else {
-                    alert('something went wrong, email not sent');
-                }
+        })
+        .then(response => {
+            console.log(response);
+            this.setState({ processingPayment: false });
+            if(response.status === 200) {
+                window.location = '/order-success';
+            } else {
+                alert('something went wrong, email not sent');
+            }
+        })
+        .catch(err => {
+            this.setState({ processingPayment: false });
+            console.error(err);
+        })
+    }
+
+    saveOrder = async() => {
+        alert(`saving order to db`);
+        let apiEndPoint = window.location.origin + '/api/post-customer-order';
+        let tax = 0.1025;
+        
+        await fetch(apiEndPoint, {
+            method: 'POST',
+            headers: { 'Content-type': 'application/json' },
+            body: JSON.stringify({ 
+                amount: this.props.subTotal + this.props.subTotal * tax,
+                productInfo: this.props.cartItems,
+                customerInfo: this.props.customerInfo,
+                paymentInfo: this.props.paymentInfo.token.card
             })
-        } catch(err) {
-            throw err;
-        }
+        })
+        .then(response => {
+            console.log(response);
+            this.setState({ processingPayment: false });
+            if(response.status === 200) {
+                window.location = '/order-success';
+            } else {
+                alert('something went wrong, email not sent');
+            }
+        })
+        .catch(err => {
+            this.setState({ processingPayment: false });
+            console.error(err);
+        })
     }
 
 
