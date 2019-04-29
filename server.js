@@ -14,6 +14,7 @@ const vintageEngagementRings = require('./routes/api/engagement/vintage-engageme
 
 const chargeCustomer = require('./routes/stripe/charge');
 const emailReceipt = require('./routes/email/customer-receipt');
+const postCustomerOrder = require('./routes/orders/post-customer-order');
 const sendContactMessage = require('./routes/email/send-contact-message');
 
 const port = process.env.PORT || 4000;
@@ -28,9 +29,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 // connecting database
 const db = require('./models/index');
-// require('./models/insert-db-products');
 
-//const db = require('./');
 const handle = require('./handlers');
 
 // Use Routes
@@ -43,6 +42,7 @@ app.use('/api/vintage-engagement-rings', vintageEngagementRings);
 
 app.use('/api/charge', chargeCustomer);
 app.use('/api/email-receipt', emailReceipt);
+app.use('/api/post-customer-order', postCustomerOrder);
 app.use('/api/contact-form', sendContactMessage);
 
 // Set static folder
